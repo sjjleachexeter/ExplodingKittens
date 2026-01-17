@@ -1,0 +1,27 @@
+<script src="https://unpkg.com/html5-qrcode"></script>
+
+<div id="reader" style="width: 300px;"></div>
+<p>Scanned code: <span id="result"></span></p>
+
+<script>
+  function onScanSuccess(decodedText) {
+    document.getElementById("result").innerText = decodedText;
+
+    // Send to Django
+    fetch("/scan/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": "{{ csrf_token }}"
+      },
+      body: JSON.stringify({ barcode: decodedText })
+    });
+  }
+
+  const html5QrCode = new Html5Qrcode("reader");
+  html5QrCode.start(
+    { facingMode: "environment" },
+    { fps: 10, qrbox: 250 },
+    onScanSuccess
+  );
+</script>
