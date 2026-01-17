@@ -1,0 +1,1 @@
+1. create django project with docker build script
