@@ -7,7 +7,6 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-
     return render(request, "scanner/index.html")
 
 def scan_barcode(request):

@@ -1,27 +1,24 @@
-<script src="https://unpkg.com/html5-qrcode"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <title>Barcode Scanner app tm</title>
+</head>
+<body>
+<div class="container">
+    <h1>Barcode Scanner app</h1>
+    <button onclick="toggle_scanner_view()">Scan Barcode</button>
+    <div id="scanner_view" style="display: none">
+        <div id="reader"></div>
+        <p>Scanned code: <span id="result"></span></p>
+    </div>
+</div>
 
-<div id="reader" style="width: 300px;"></div>
-<p>Scanned code: <span id="result"></span></p>
 
-<script>
-  function onScanSuccess(decodedText) {
-    document.getElementById("result").innerText = decodedText;
+{% load static %}
+<script src="{% static 'scanner/scripts.js' %}"></script>
+<link rel="stylesheet" href="{% static 'scanner/style.css' %}">
 
-    // Send to Django
-    fetch("/scan/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-CSRFToken": "{{ csrf_token }}"
-      },
-      body: JSON.stringify({ barcode: decodedText })
-    });
-  }
 
-  const html5QrCode = new Html5Qrcode("reader");
-  html5QrCode.start(
-    { facingMode: "environment" },
-    { fps: 10, qrbox: 250 },
-    onScanSuccess
-  );
-</script>
+</body>
+</html>
