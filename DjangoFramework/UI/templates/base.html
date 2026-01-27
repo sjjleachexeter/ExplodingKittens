@@ -33,7 +33,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  rel="stylesheet" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Desktop versions display title & navigation options on a navbar at the top.  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-lg-block">
       <a class="navbar-brand" href="#">Food for Thought</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -50,7 +51,17 @@
         </ul>
       </div>
     </nav>
-    <div class="container">{% block content %} {% endblock %}</div>
+
+    <!-- Mobile versions only display app title & link to privacy statement at top -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-lg-none">
+      <a class="navbar-brand" href="#">Food for Thought</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    </nav>
+
+    <!-- Main content-->
+    <div class="container">{% block content %} {% endblock %}</div> 
+
+    <!-- Mobile versions display navigation at the bottom -->
     <nav class="navbar navbar-light bg-light fixed-bottom d-lg-none bottom-nav">
       <div class="container-fluid">
         <a href="{% url 'home' %}" class="nav-link text-center" title="Home" aria-label="home page">🏠</a>
