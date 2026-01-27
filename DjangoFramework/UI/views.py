@@ -11,64 +11,64 @@ def scan(request):
     '''
     Scanner functionality is implemented on its own page
     Avoids broken behaviour being displayed on home page if camera unavailable'''
-    return HttpResponse("Scan page")
+    return render(request, 'scan.html')
 
 def product_passport(request):
     '''
     Will display product passport page
     '''
-    return HttpResponse("Product passport")
+    return render(request, 'product.html')
 
 def missions(request):
     '''
     Display user missions (shows progress etc)
     '''
-    return HttpResponse("Missions")
+    return render(request, 'missions.html')
 
 def leaderboard(request):
     '''
     Show leaderboard with user position (based on user points)
     '''
-    return HttpResponse("Leaderboard")
+    return render(request, 'leaderboard.html')
 
 def profile(request):
     '''
     Allow user to adjust personal & account settings
     '''
-    return HttpResponse("User's own profile")
+    return render(request, 'profile.html')
 
 def user(request):
     '''
     Display information about a user
     '''
-    return HttpResponse("Profile of another user")
+    return render(request, 'user.html')
 
 def signup(request):
     '''
     Allow user to create an account
     '''
-    return HttpResponse("Signup page")
+    return render(request, 'signup.html')
 
 def login(request):
     '''
     Allow user to log in
     '''
-    return HttpResponse("Login page")
+    return render(request, 'login.html')
 
 def privacy(request):
     '''
     Display privacy policy
     '''
-    return HttpResponse("Privacy Policy")
+    return render(request, 'privacy.html')
 
 def terms(request):
     '''
     Display terms and conditions
     '''
-    return HttpResponse("Terms and Conditions")
+    return render(request, 'terms.html')
 
 def about(request):
     '''
     Display information about app (version etc.)
     '''
-    return HttpResponse("Site info.")
+    return render(request, 'about.html')
