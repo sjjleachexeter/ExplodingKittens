@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block title %}Scan {% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <title>Scan a Barcode</title>
+</head>
+<body>
+<div class="container">
+    <h1>Barcode Scanner app</h1>
+    <button onclick="toggle_scanner_view()">Scan Barcode</button>
+    <div id="scanner_view" style="display: none">
+        <div id="reader"></div>
+        <p>Scanned code: <span id="result"></span></p>
+    </div>
+</div>
+
+
+{% load static %}
+<script src="{% static 'Scanner/scripts.js' %}"></script>
+
+
+
+</body>
+</html>
+
+{% endblock %}
