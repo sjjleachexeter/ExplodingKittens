@@ -1,4 +1,5 @@
 from django.urls import path
+from Users.views import SignupView, LoginView
 from . import views
 
 urlpatterns = [
@@ -10,8 +11,8 @@ urlpatterns = [
     path("leaderboard/", views.leaderboard, name='leaderboard'),
     path("profile/", views.profile, name='profile'),
     path("user/", views.user, name='user'),
-    path("signup/", views.signup, name='signup'),
-    path("login/", views.login, name='login'),
+    path("signup/", SignupView.as_view(), name='signup'),
+    path("login/", LoginView.as_view(), name='login'),
 
 
     # GDPR compliance

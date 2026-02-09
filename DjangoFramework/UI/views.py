@@ -47,13 +47,13 @@ def signup(request):
     '''
     Allow user to create an account
     '''
-    return render(request, 'signup.html')
+    return render(request, 'Users/signup.html')
 
 def login(request):
     '''
     Allow user to log in
     '''
-    return render(request, 'login.html')
+    return render(request, 'registration/login.html')
 
 def privacy(request):
     '''
