@@ -11,8 +11,6 @@ urlpatterns = [
     path("leaderboard/", views.leaderboard, name='leaderboard'),
     path("profile/", views.profile, name='profile'),
     path("user/", views.user, name='user'),
-    path("signup/", SignupView.as_view(), name='signup'),
-    path("login/", LoginView.as_view(), name='login'),
 
 
     # GDPR compliance
