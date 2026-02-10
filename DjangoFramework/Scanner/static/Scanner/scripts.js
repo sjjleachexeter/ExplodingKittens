@@ -26,15 +26,13 @@ function toggle_scanner_view() {
 }
 
 function onScanSuccess(decodedText) {
-    document.getElementById("result").innerText = decodedText;
 
-    // Send to Django
-    fetch("/scan/", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "X-CSRFToken": "{{ csrf_token }}"
-        },
-        body: JSON.stringify({barcode: decodedText})
-    });
+    window.location.href = `/passport/${decodedText}`;
+
 }
+
+function goSearch() {
+    const code = document.getElementById('manuel_code').value;
+    window.location.href = `/passport/${code}`;
+}
+

@@ -12,6 +12,6 @@ def index(request):
 def scan_barcode(request):
     data = json.loads(request.body)
     barcode = data["barcode"]
-
+    print(barcode)
     # process barcode (lookup product, etc.)
     return JsonResponse({"status": "ok", "barcode": barcode})

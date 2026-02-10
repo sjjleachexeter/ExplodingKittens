@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "Databases",
     "UI",
     "Users",
-    "Scanner"
+    "Scanner",
+    "passport",
 ]
 
 MIDDLEWARE = [
