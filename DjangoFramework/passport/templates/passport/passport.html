@@ -1,12 +1,19 @@
 {% extends "base.html" %} {% block title %}Passport {% endblock %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<body>
- <h1>Passport for product: {{ product_id }}</h1>
+    <body>
+    <h1>Passport for product: {{ passport_data.name }}</h1>
+    <p>{{ passport_data.description }}</p>
+    </body>
+    </html>
 
-</body>
-</html>
+    <script>
+        var passport = {{ passport_data }};
+    </script>
+
+    {% load static %}
+    <script src="{% static 'passport/scripts.js' %}"></script>
 
 {% endblock %}
