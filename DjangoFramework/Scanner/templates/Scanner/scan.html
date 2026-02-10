@@ -12,11 +12,14 @@
     <button onclick="toggle_scanner_view()">Scan Barcode</button>
     <div id="scanner_view" style="display: none">
         <div id="reader"></div>
-        <p>Scanned code: <span id="result"></span></p>
     </div>
 </div>
 
-<!--Not working? Enter Manually-->
+
+<!--Not working? Enter Manually (needs validation)-->
+ <label for="manuel_code">Not working? Enter Manually:</label>
+<input type="search" id="manuel_code" name="manuel code" >
+<button onclick="goSearch()">Find Product</button>
 
 
 {% load static %}

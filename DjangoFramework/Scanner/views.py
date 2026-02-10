@@ -8,10 +8,3 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, "Scanner/scan.html")
-
-def scan_barcode(request):
-    data = json.loads(request.body)
-    barcode = data["barcode"]
-
-    # process barcode (lookup product, etc.)
-    return JsonResponse({"status": "ok", "barcode": barcode})
