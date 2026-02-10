@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    body {
+      padding-bottom: 60px;
+    }
+    .bottom-nav a {
+      font-size: 1.5rem; /* bigger emoji/icons */
+      flex: 1 1 0;          /* each link takes equal space */
+      white-space: nowrap; /* prevents wrapping */
+    }
+    .bottom-nav .container-fluid {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: nowrap;
+      width: 100vw;
+      padding: 0;
+      margin: 0;
+    }
+    .bottom-nav .nav-link {
+      padding: 0; /* remove Bootstrap padding */
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+        Food for Thought
+      {% endblock %}
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Desktop versions display title & navigation options on a navbar at the top.  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-lg-block">
+      <div class="container">
+        <a class="navbar-brand" href="#"><h2>FoodForThought</h2></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a href="{% url 'home' %}" class="nav-link text-center" title="Home" aria-label="home page"><h5>Home 🏠</h5></a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'missions' %}" class="nav-link text-center" title="Missions" aria-label="view missions"><h5>Missions 🎯</h5></a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'Scanner' %}" class="nav-link text-center" title="Scan" aria-label="scan a product"><h5>Scan 📷</h5></a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'leaderboard' %}" class="nav-link text-center"  title="Leaderboard" aria-label="leaderboard"><h5>Leaderboard 🏆</h5></a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'profile' %}" class="nav-link text-center" title="Profile" aria-label="profile"><h5>Profile 👤</h5></a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'privacy' %}" class="nav-link text-center" title="Privacy" aria-label="Privacy statement"><h5>Privacy ℹ</h5></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile versions only display app title & link to privacy statement at top -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-lg-none">
+      <div class="container d-flex justify-content-between align-items-center"
+      <a class="navbar-brand" href="#"><h4>FoodForThought</h4></a>
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a href="{% url 'privacy' %}" class="nav-link text-center" title="Privacy" aria-label="Privacy statement"><h4>ℹ</h4></a>
+        </li>
+      </ul>
+    </div>
+    </nav>
+
+    <!-- Main content-->
+    <div class="container">{% block content %} {% endblock %}</div> 
+
+    <!-- Mobile versions display navigation at the bottom -->
+    <nav class="navbar navbar-light bg-light fixed-bottom d-lg-none bottom-nav">
+      <div class="container-fluid">
+        <a href="{% url 'home' %}" class="nav-link text-center" title="Home" aria-label="home page">🏠</a>
+        <a href="{% url 'missions' %}" class="nav-link text-center" title="Missions" aria-label="view missions">🎯</a>
+        <a href="{% url 'Scanner' %}" class="nav-link text-center" title="Scan" aria-label="scan a product">📷</a>
+        <a href="{% url 'leaderboard' %}" class="nav-link text-center"  title="Leaderboard" aria-label="leaderboard">🏆</a>
+        <a href="{% url 'profile' %}" class="nav-link text-center" title="Profile" aria-label="profile">👤</a>
+      </div>
+    </nav>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
+  </body>
+</html>
