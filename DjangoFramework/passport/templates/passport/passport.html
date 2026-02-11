@@ -2,12 +2,14 @@
 {% block content %}
     <!DOCTYPE html>
     <html lang="en">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <body>
     <h1>Passport for product: {{ passport_data.name }}</h1>
     <p>{{ passport_data.description }}</p>
 
-    <!--table of ingredients-->
+    <!--list of ingredients-->
     <h2>Ingredients</h2>
     <ul>
         {% for ingredient in ingredients %}
@@ -16,19 +18,24 @@
         {% endfor %}
 
     </ul>
+    <!-- locations map -->
+    <button type="button" class="collapsible" style="font-size: 20px;">Ingredient Map</button>
+    <div class="content" id="map" style="height: 500px;"></div>
 
     <!--Product stage timeline-->
-    <button type="button" class="collapsible">Stages</button>
+    <h2>Stages</h2>
+    <button type="button" class="collapsible"></button>
     <div class="content">
         {% for stage in stages %}
-            <button type="button" class="collapsible">{{ forloop.counter }}. {{ stage.stage_name }}</button>
+            <button type="button" class="collapsible" style="font-size: 20px;">{{ forloop.counter }}. {{ stage.stage_name }}</button>
             <div class="content">
                 <p>{{ stage.date_start }} - {{ stage.date_start }}</p>
-                <p>from <a href="{% url 'node_info_display' stage.from_node.node_id %}">{{ stage.from_node }}</a> to <a href="{% url 'node_info_display' stage.to_node.node_id %}">{{ stage.to_node }}</a> </p>
+                <p>from <a href="{% url 'node_info_display' stage.from_node.node_id %}">{{ stage.from_node }}</a> to <a
+                        href="{% url 'node_info_display' stage.to_node.node_id %}">{{ stage.to_node }}</a></p>
                 <p>share {{ stage.value_share }}</p>
                 <!--each claim for this stage-->
                 {% for claim in stage.claims.all %}
-                    <button type="button" class="collapsible">Claim: {{ claim.get_claim_type_display }}</button>
+                    <button type="button" class="collapsible" style="font-size: 15px;">Claim: {{ claim.get_claim_type_display }}</button>
                     <div class="content">
                         <p>{{ claim.statement }}</p>
                         <ul>
@@ -52,11 +59,27 @@
             </div>
         {% endfor %}
     </div>
+
     </body>
     </html>
 
     {% load static %}
     <script src="{% static 'passport/scripts.js' %}"></script>
+    <script src="{% static 'passport/map.js' %}"></script>
     <link rel="stylesheet" href="{% static 'passport/style.css' %}">
+
+
+
+    <script>
+        // Pass the city and country for map.js
+
+        {% for ingredient in ingredients %}
+            // Add product location to map
+            console.log("{{ ingredient.origin_country }}");
+            addLocation("", "{{ ingredient.origin_country }}", "{{ ingredient.ingredient }}");
+        {% endfor %}
+
+    </script>
+
 
 {% endblock %}
