@@ -24,15 +24,19 @@
             <button type="button" class="collapsible">{{ forloop.counter }}. {{ stage.stage_name }}</button>
             <div class="content">
                 <p>{{ stage.date_start }} - {{ stage.date_start }}</p>
-                <p>from {{ stage.from_node }} to {{ stage.to_node }}</p>
+                <p>from <a href="{% url 'node_info_display' stage.from_node.node_id %}">{{ stage.from_node }}</a> to <a href="{% url 'node_info_display' stage.to_node.node_id %}">{{ stage.to_node }}</a> </p>
                 <p>share {{ stage.value_share }}</p>
+                <!--each claim for this stage-->
                 {% for claim in stage.claims.all %}
-                    <button type="button" class="collapsible">Claim: {{ claim.statement }}</button>
+                    <button type="button" class="collapsible">Claim: {{ claim.get_claim_type_display }}</button>
                     <div class="content">
+                        <p>{{ claim.statement }}</p>
                         <ul>
+                            <!--evidence for each claim-->
                             {% for link in claim.claim_evidence_links.all %}
                                 {% if link.evidence.scope == "stage" %}
-                                    <li>{{ link.evidence.evidence_id }} - {{ link.evidence.summary }}</li>
+                                    <li>{{ link.evidence.issuer }} on {{ link.evidence.date }}
+                                        - {{ link.evidence.summary }} </li>
                                 {% endif %}
                             {% empty %}
                                 <li>No evidence linked to this claim.</li>
