@@ -1,6 +1,7 @@
+from django.http.response import Http404
 from django.shortcuts import render, redirect
 
-from passport.models import Product, ProductIngredient, Ingredient, Stage
+from passport.models import Product, ProductIngredient, Ingredient, Stage, Node
 
 
 # Create your views here.
@@ -27,3 +28,11 @@ def display_passport(request, product_id=-1):
 
 
 
+def display_node_info(request, node_id=-1):
+    try:
+        node = Node.objects.get(node_id=node_id)
+        context = {'node': node}
+        return render(request, "passport/node_info.html", context)
+
+    except Node.DoesNotExist:
+        raise Http404("Node not found")
