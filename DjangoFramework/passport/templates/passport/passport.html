@@ -18,37 +18,41 @@
     </ul>
 
     <!--Product stage timeline-->
-    <h2>Stages</h2>
-    {% for stage in stages %}
-        <p>{{ stage.stage_name }}: {{ stage.date_start }} - {{ stage.date_start }}</p>
-        <p>from {{ stage.from_node }} to {{ stage.to_node }}</p>
-        <p>share {{ stage.value_share }}</p>
-        {% for claim in stage.claims.all %}
-            <h4>Claim: {{ claim.statement }}</h4>
-            <ul>
-                {% for link in claim.claim_evidence_links.all %}
-                    {% if link.evidence.scope == "stage" %}
-                        <li>{{ link.evidence.evidence_id }} - {{ link.evidence.summary }}</li>
-                    {% endif %}
+    <button type="button" class="collapsible">Stages</button>
+    <div class="content">
+        {% for stage in stages %}
+            <button type="button" class="collapsible">{{ forloop.counter }}. {{ stage.stage_name }}</button>
+            <div class="content">
+                <p>{{ stage.date_start }} - {{ stage.date_start }}</p>
+                <p>from {{ stage.from_node }} to {{ stage.to_node }}</p>
+                <p>share {{ stage.value_share }}</p>
+                {% for claim in stage.claims.all %}
+                    <button type="button" class="collapsible">Claim: {{ claim.statement }}</button>
+                    <div class="content">
+                        <ul>
+                            {% for link in claim.claim_evidence_links.all %}
+                                {% if link.evidence.scope == "stage" %}
+                                    <li>{{ link.evidence.evidence_id }} - {{ link.evidence.summary }}</li>
+                                {% endif %}
+                            {% empty %}
+                                <li>No evidence linked to this claim.</li>
+
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% empty %}
-                    <li>No evidence linked to this claim.</li>
+                    <p>No claims for this stage.</p>
+
                 {% endfor %}
-            </ul>
-        {% empty %}
-            <p>No claims for this stage.</p>
+
+            </div>
         {% endfor %}
-        <p>|<br>|<br>|<br></p>
-
-    {% endfor %}
-
+    </div>
     </body>
     </html>
 
-    <script>
-        var passport = {{ passport_data }};
-    </script>
-
     {% load static %}
     <script src="{% static 'passport/scripts.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'passport/style.css' %}">
 
 {% endblock %}
