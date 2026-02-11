@@ -1,0 +1,13 @@
+services:
+  django-web:
+    build: .
+    container_name: explodingkittens-food4though-docker
+    ports:
+      - "8000:8000"
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      DEBUG: ${DEBUG}
+      DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS}
+    env_file:
+      - .env
+
