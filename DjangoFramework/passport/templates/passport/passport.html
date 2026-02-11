@@ -6,6 +6,41 @@
     <body>
     <h1>Passport for product: {{ passport_data.name }}</h1>
     <p>{{ passport_data.description }}</p>
+
+    <!--table of ingredients-->
+    <h2>Ingredients</h2>
+    <ul>
+        {% for ingredient in ingredients %}
+            <li>{{ ingredient.rounded_proportion|floatformat:-2 }}% {{ ingredient.ingredient }} -
+                origin {{ ingredient.origin_country }} </li>
+        {% endfor %}
+
+    </ul>
+
+    <!--Product stage timeline-->
+    <h2>Stages</h2>
+    {% for stage in stages %}
+        <p>{{ stage.stage_name }}: {{ stage.date_start }} - {{ stage.date_start }}</p>
+        <p>from {{ stage.from_node }} to {{ stage.to_node }}</p>
+        <p>share {{ stage.value_share }}</p>
+        {% for claim in stage.claims.all %}
+            <h4>Claim: {{ claim.statement }}</h4>
+            <ul>
+                {% for link in claim.claim_evidence_links.all %}
+                    {% if link.evidence.scope == "stage" %}
+                        <li>{{ link.evidence.evidence_id }} - {{ link.evidence.summary }}</li>
+                    {% endif %}
+                {% empty %}
+                    <li>No evidence linked to this claim.</li>
+                {% endfor %}
+            </ul>
+        {% empty %}
+            <p>No claims for this stage.</p>
+        {% endfor %}
+        <p>|<br>|<br>|<br></p>
+
+    {% endfor %}
+
     </body>
     </html>
 

@@ -43,6 +43,10 @@ class ProductIngredient(models.Model):
     proportion = models.DecimalField(max_digits = 5, decimal_places =4,validators = [MinValueValidator(0), MaxValueValidator(1)])
     origin_country = models.CharField(max_length = 2) # 2 letter country code
 
+    @property
+    def rounded_proportion(self):
+        return round( 100 * self.proportion, 2)
+
 class NodeRole(models.TextChoices):
     """
     used enum type for the type of nodes
