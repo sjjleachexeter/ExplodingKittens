@@ -2,12 +2,27 @@ services:
   django-web:
     build: .
     container_name: explodingkittens-food4though-docker
-    ports:
-      - "8000:8000"
+    volumes:
+      - static_volume:/app/staticfiles
+    expose:
+      - 8000
     environment:
       SECRET_KEY: ${SECRET_KEY}
       DEBUG: ${DEBUG}
       DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS}
+      DJANGO_CSRF_TRUSTED_ORIGINS: ${DJANGO_CSRF_TRUSTED_ORIGINS}
     env_file:
       - .env
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/app/staticfiles
+      - ./nginx/certs:/etc/nginx/certs
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - django-web
 
+volumes:
+  static_volume:

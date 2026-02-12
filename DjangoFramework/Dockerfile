@@ -24,7 +24,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 FROM python:3.14-slim
 
 RUN useradd -m -r appuser && \
-   mkdir /app && \
+   mkdir /app && mkdir /app/staticfiles && \
    chown -R appuser /app
 
 # Copy the Python dependencies from the builder stage
