@@ -180,6 +180,25 @@ class TestSignup(TestCase):
         self.assertFalse(User.objects.filter(username="wronguser$").exists())
         self.assertContains(response, "username")
 
+    def test_signup_create_same_user(self):
+        self.user = User.objects.create_user(
+            username = 'test',
+            password = 'Password123!'
+        )
+
+        response = self.client.post(
+            self.signup_url,
+            data={
+                "username": "test",
+                "password1": "TestPassword123!",
+                "password2": "TestPassword123!",
+            }
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(User.objects.filter(username="test").count(), 1)
+        self.assertContains(response, "username")
+
 class TestLogin(TestCase):
     def setUp(self):
         self.client = Client()
