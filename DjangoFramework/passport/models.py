@@ -133,8 +133,8 @@ class ProductScan(models.Model):
     id =models.UUIDField(primary_key = True, default=uuid.uuid4, editable=False)
     product= models.ForeignKey(Product, on_delete = models.CASCADE, related_name="scans")
     #has to be connected to user
-    user = models.ForeignKey(on_delete=models.CASCADE, related_name="scans")
-    source = models.CharField(max_length = 20, default="qr")
+    user = models.ForeignKey(on_delete=models.CASCADE, related_name = "scans")
+    source = models.CharField(max_length = 20, default = "qr")
 
 
 
