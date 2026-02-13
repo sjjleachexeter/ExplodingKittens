@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 import uuid
 from django.core.validators import MinValueValidator, MaxValueValidator
@@ -24,7 +25,7 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.product_id})"
-    
+
 class Ingredient(models.Model):
     id = models.UUIDField(primary_key=True, default =uuid.uuid4, editable= False)
     ingredient_id = models.CharField(max_length= 100, unique =True)
@@ -32,7 +33,7 @@ class Ingredient(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 class ProductIngredient(models.Model):
     """
     This table connects products to ingredients, used due to the many to many relationship
@@ -133,7 +134,7 @@ class ProductScan(models.Model):
     id =models.UUIDField(primary_key = True, default=uuid.uuid4, editable=False)
     product= models.ForeignKey(Product, on_delete = models.CASCADE, related_name="scans")
     #has to be connected to user
-    user = models.ForeignKey(on_delete=models.CASCADE, related_name = "scans")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name = "scans")
     source = models.CharField(max_length = 20, default = "qr")
 
 
