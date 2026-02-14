@@ -28,7 +28,7 @@
    ```.dotenv
    SECRET_KEY=<your_secret_key>
    DEBUG=<debug_status>
-   DJANGO_ALLOWED_HOSTS=<your_allowed_hosts>
+   DJANGO_ALLOWED_HOST=<your_allowed_host>
    DJANGO_CSRF_TRUSTED_ORIGINS=<your_trusted_origins>
    ```
 5. build and run with `docker compose up --build`
