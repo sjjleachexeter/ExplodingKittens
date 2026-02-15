@@ -1,3 +1,4 @@
+import pandas
 import pandas as pd
 import uuid
 from datetime import date
@@ -26,8 +27,10 @@ csv_claim_evidence = "passport/initialData/claim_evidence.csv"
 # UUIDv5 helpers
 NAMESPACE = uuid.NAMESPACE_URL
 
+
 def u5(text: str) -> str:
     return str(uuid.uuid5(NAMESPACE, text))
+
 
 def s(v) -> str:
     return "" if pd.isna(v) else str(v).strip()
@@ -35,18 +38,16 @@ def s(v) -> str:
 
 def load_csv_products():
     df = pd.read_csv(csv_products)
-
     for index, row in df.iterrows():
-        product_uuid = u5(s(row["product_id"]) + s(row["name"]))
 
         Product.objects.update_or_create(
-            product_uuid=product_uuid,
+            id=row["product_uuid"],
             defaults={
-                "product_id": s(row["product_id"]),
+                "product_id": int(float(row["product_id"])),
                 "name": s(row["name"]),
                 "category": s(row["category"]),
                 "description": s(row.get("description")),
-                "qr_token": s(row["qr_token"]),
+                "qr_token": int(float(row["product_id"])),
             },
         )
 
@@ -55,10 +56,8 @@ def load_csv_ingredients():
     df = pd.read_csv(csv_ingredients)
 
     for index, row in df.iterrows():
-        ingredient_uuid = u5(s(row["ingredient_id"]) + s(row["name"]))
-
         Ingredient.objects.update_or_create(
-            ingredient_uuid=ingredient_uuid,
+            id=row["ingredient_uuid"],
             defaults={
                 "ingredient_id": s(row["ingredient_id"]),
                 "name": s(row["name"]),
@@ -70,10 +69,8 @@ def load_csv_nodes():
     df = pd.read_csv(csv_nodes)
 
     for index, row in df.iterrows():
-        node_uuid = u5(s(row["node_id"]) + s(row["org_name"]))
-
         Node.objects.update_or_create(
-            node_uuid=node_uuid,
+            id=row["node_uuid"],
             defaults={
                 "node_id": s(row["node_id"]),
                 "org_name": s(row["org_name"]),
@@ -88,44 +85,50 @@ def load_csv_stages():
     df = pd.read_csv(csv_stages)
 
     for index, row in df.iterrows():
-        product_uuid = Product.objects.get(product_id=s(row["product_id"])).product_uuid
-        from_node_uuid = Node.objects.get(node_id=s(row["from_node_id"])).node_uuid
-        to_node_uuid = Node.objects.get(node_id=s(row["to_node_id"])).node_uuid
 
-        stage_uuid = u5(s(row["stage_id"]) + s(row["sequence"]) + s(row["stage_name"]))
+        try:
+            product = Product.objects.get(id=(row["product_uuid"]))
+            from_node_uuid = Node.objects.get(id=(row["from_node"]))
+            to_node_uuid = Node.objects.get(id=(row["to_node"]))
 
-        Stage.objects.update_or_create(
-            stage_uuid=stage_uuid,
-            defaults={
-                "stage_id": s(row["stage_id"]),
-                "product_uuid": product_uuid,
-                "sequence": int(row["sequence"]),
-                "stage_name": s(row["stage_name"]),
-                "from_node": from_node_uuid,
-                "to_node": to_node_uuid,
-                "value_share": row["value_share"],
-            },
-        )
+            stage_uuid = u5(s(row["stage_id"]) + s(row["sequence"]) + s(row["stage_name"]))
+
+            Stage.objects.update_or_create(
+                id=stage_uuid,
+                defaults={
+                    "stage_id": s(row["stage_id"]),
+                    "product": product,
+                    "sequence": int(row["sequence"]),
+                    "stage_name": s(row["stage_name"]),
+                    "from_node": from_node_uuid,
+                    "to_node": to_node_uuid,
+                    "value_share": row["value_share"],
+                },
+            )
+        except Product.DoesNotExist:
+            print(f"could not find product uuid:{row["product_uuid"]}")
+        except Node.DoesNotExist:
+            print(f"could not find node uuid:{row["from_node"]} or {row["to_node"]}")
 
 
 def load_csv_product_ingredients():
     df = pd.read_csv(csv_product_ingredients)
 
     for index, row in df.iterrows():
-        product = Product.objects.get(product_id=s(row["product_id"]))
-        ingredient = Ingredient.objects.get(ingredient_id=s(row["ingredient_id"]))
-
-        prod_ing_uuid = u5(product.product_uuid + ingredient.ingredient_uuid)
-
-        ProductIngredient.objects.update_or_create(
-            prod_ing_uuid=prod_ing_uuid,
-            defaults={
-                "product_uuid": product.product_uuid,
-                "ingredient_uuid": ingredient.ingredient_uuid,
-                "proportion": row["proportion"],
-                "origin_country": s(row.get("origin_country")),
-            },
-        )
+        try:
+            product = Product.objects.get(id=s(row["product_uuid"]))
+            ingredient = Ingredient.objects.get(id=s(row["ingredient_uuid"]))
+            ProductIngredient.objects.update_or_create(
+                id=s(row["prod_ing_uuid"]),
+                defaults={
+                    "product": product,
+                    "ingredient": ingredient,
+                    "proportion": row["proportion"],
+                    "origin_country": s(row.get("origin_country")),
+                },
+            )
+        except Product.DoesNotExist:
+            print(f"could not find product uuid:{row["product_uuid"]}")
 
 
 def load_csv_evidence():
@@ -134,22 +137,25 @@ def load_csv_evidence():
     for index, row in df.iterrows():
         evidence_uuid = u5(s(row["evidence_id"]) + s(row["issuer"]))
 
-        product_uuid = Product.objects.get(product_id=s(row["product_id"])).product_uuid
-        stage_uuid = Stage.objects.get(stage_id=s(row["stage_id"])).stage_uuid
+        product = Product.objects.get(id=s(row["product_uuid"]))
 
+        if not pandas.notnull(row["stage_uuid"]):
+            stage = None
+        else:
+            stage = Stage.objects.get(id=s(row["stage_uuid"]))
         Evidence.objects.update_or_create(
-            evidence_uuid=evidence_uuid,
+            id=evidence_uuid,
             defaults={
                 "evidence_id": s(row["evidence_id"]),
                 "scope": s(row["scope"]),
-                "type": s(row.get("evidence_type")),
+                "evidence_type": s(row.get("evidence_type")),
                 "issuer": s(row["issuer"]),
-                "date": date.today() if pd.isna(row.get("date")) else row.get("date"),
+                "date": date.today() if pd.isna(row.get("date")) or row["date"] == "unknown" else pd.to_datetime(
+                    row.get("date")),
                 "summary": s(row.get("summary")),
-                "product_uuid": product_uuid,
-                "stage_uuid": stage_uuid,
-                "file_reference": "",
-                "link_reference": "",
+                "product": product,
+                "stage": stage,
+
             },
         )
 
@@ -158,35 +164,47 @@ def load_csv_claims():
     df = pd.read_csv(csv_claims)
 
     for index, row in df.iterrows():
-        claim_uuid = u5(s(row["claim_id"]) + s(row["claim_type"]))
 
-        product_uuid = Product.objects.get(product_id=s(row["product_id"])).product_uuid
-        stage_uuid = Stage.objects.get(stage_id=s(row["stage_id"])).stage_uuid
+        try:
+            product = Product.objects.get(id=s(row["product_uuid"]))
+            if not pandas.notnull(row["stage_uuid"]):
+                stage = None
+            else:
+                stage = Stage.objects.get(id=s(row["stage_uuid"]))
 
-        Claim.objects.update_or_create(
-            claim_uuid=claim_uuid,
-            defaults={
-                "claim_id": s(row["claim_id"]),
-                "product_uuid": product_uuid,
-                "stage_uuid": stage_uuid,
-                "claim_type": s(row["claim_type"]),
-                "statement": s(row.get("statement")),
-                "missing_evidence": s(row.get("missing_evidence")).upper() == "TRUE",
-            },
-        )
+            Claim.objects.update_or_create(
+                id=row["claim_uuid"],
+                defaults={
+                    "claim_id": s(row["claim_id"]),
+                    "product": product,
+                    "stage": stage,
+                    "claim_type": s(row["claim_type"]),
+                    "statement": s(row.get("statement")),
+                    "missing_evidence": s(row.get("missing_evidence")).upper() == "TRUE",
+                },
+            )
+        except Product.DoesNotExist:
+            print(f"could not find product uuid:{row["product_uuid"]}")
+        except Stage.DoesNotExist:
+            print(f"could not find stage uuid:{row["stage_uuid"]}")
 
 
 def load_csv_claim_evidence():
     df = pd.read_csv(csv_claim_evidence)
 
     for index, row in df.iterrows():
-        claim_uuid = Claim.objects.get(claim_id=s(row["claim_id"])).claim_uuid
-        evidence_uuid = Evidence.objects.get(evidence_id=s(row["evidence_id"])).evidence_uuid
+        try:
+            claim = Claim.objects.get(id=s(row["claim_uuid"]))
+            evidence = Evidence.objects.get(id=s(row["evidence_uuid"]))
 
-        ClaimEvidence.objects.update_or_create(
-            claim_uuid=claim_uuid,
-            evidence_uuid=evidence_uuid,
-        )
+            ClaimEvidence.objects.update_or_create(
+                claim=claim,
+                evidence=evidence,
+            )
+        except ClaimEvidence.DoesNotExist:
+            print(f"could not find claim uuid:{row["claim_uuid"]}")
+        except Evidence.DoesNotExist:
+            print(f"could not find evidence uuid:{row["evidence_uuid"]}")
 
 
 def run():
@@ -198,4 +216,3 @@ def run():
     load_csv_evidence()
     load_csv_claims()
     load_csv_claim_evidence()
-
