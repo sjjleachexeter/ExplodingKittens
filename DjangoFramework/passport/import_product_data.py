@@ -14,14 +14,14 @@ from passport.models import (
 )
 
 # define csv file locations
-csv_products = "data/products.csv"
-csv_ingredients = "data/ingredients.csv"
-csv_product_ingredients = "data/product_ingredients.csv"
-csv_nodes = "data/nodes.csv"
-csv_stages = "data/stages.csv"
-csv_evidence = "data/evidence.csv"
-csv_claims = "data/claims.csv"
-csv_claim_evidence = "data/claim_evidence.csv"
+csv_products = "passport/initialData/products.csv"
+csv_ingredients = "passport/initialData/ingredients.csv"
+csv_product_ingredients = "passport/initialData/product_ingredients.csv"
+csv_nodes = "passport/initialData/nodes.csv"
+csv_stages = "passport/initialData/stages.csv"
+csv_evidence = "passport/initialData/evidence.csv"
+csv_claims = "passport/initialData/claims.csv"
+csv_claim_evidence = "passport/initialData/claim_evidence.csv"
 
 # UUIDv5 helpers
 NAMESPACE = uuid.NAMESPACE_URL
@@ -198,3 +198,4 @@ def run():
     load_csv_evidence()
     load_csv_claims()
     load_csv_claim_evidence()
+
