@@ -36,12 +36,14 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "django_extensions",
     "django.contrib.staticfiles",
     "Databases",
     "UI",
     "Users",
     "Scanner",
     "passport",
+    "gamification"
 ]
 
 MIDDLEWARE = [
