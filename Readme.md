@@ -1,11 +1,13 @@
 
 # How to run
-1. run commands:
+1. import data:
+    1. import missions  `python manage.py runscript gamification.import_data`
+2. run commands:
 ```shell
 cd DjangoFramework
 python manage.py runserver
 ```
-2. open page in browser : http://127.0.0.1:8000/
+1. open page in browser : http://127.0.0.1:8000/
 
 
 

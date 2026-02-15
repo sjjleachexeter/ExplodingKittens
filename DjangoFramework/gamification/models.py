@@ -46,7 +46,7 @@ class Quiz(models.Model):
 class QuizAttempt(models.Model):
     id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
     quiz = models.ForeignKey(Quiz, on_delete =models.CASCADE, related_name = "attempts")
-    user = models.ForeignKey(on_delete= models.CASCADE, related_name = "quiz_attempts")
+    user = models.ForeignKey(User, on_delete= models.CASCADE, related_name = "quiz_attempts")
     selected_choice_index = models.PositiveSmallIntegerField()
     is_correct = models.BooleanField(default = False)
     attempted_at = models.DateTimeField(auto_now_add = True)
