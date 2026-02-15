@@ -1,0 +1,30 @@
+
+.mission {
+    outline-style: solid;
+    outline-width: 2px; /* example width */
+    padding: 10px;
+    border-radius: 25px;
+     transition: background-color 0.3s; /* smooth hover effect */
+}
+.mission-hard:hover { background-color: rgba(255, 0, 0, 0.1); }
+.mission-medium:hover { background-color: rgba(255, 255, 0, 0.2); }
+.mission-easy:hover { background-color: rgba(0, 255, 0, 0.1); }
+.mission-hard {
+    outline-color: red;
+}
+
+.mission-medium {
+    outline-color: yellow;
+
+}
+
+.mission-easy {
+    outline-color: green;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

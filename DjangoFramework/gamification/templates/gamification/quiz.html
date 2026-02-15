@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}Passport {% endblock %}
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <body>
+    <h2>{{ quiz_data.question }}</h2>
+    {% for answer in quiz_data.choices %}
+    <button>{{ answer }}</button>
+    {% endfor %}
+
+
+
+
+{% endblock %}
