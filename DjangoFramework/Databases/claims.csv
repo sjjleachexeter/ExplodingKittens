@@ -1,0 +1,15 @@
+﻿claim_uuid,claim_id,product_uuid,stage_uuid,claim_type,statement,missing_evidence
+93471a0a-a7a8-51a3-9b07-bf7e7e8d16fb,4001,2f5aaf4d-f290-52b2-ae38-e6cb07f8ba63,,Vegan,Product is suitable for vegan consumption.,FALSE
+0d5c6a2a-1e57-5d54-8cdd-2e3c703dedc3,4002,d422e9a5-6975-5596-aff5-001b831baae3,,non-gmo-project-verified,This product contains no genetically modified ingredients.,FALSE
+5c4f0f0f-dc86-5a36-b2a2-9f9b84cf4f45,4003,0a15de31-291b-5958-9ae3-df33a8ddc1aa,,Keyhole Scheme,Product meets the official Keyhole criteria for Olive oil.,TRUE
+b50d7087-7df8-5c4f-b9b3-6a60ddc774e3,4004,3002c67f-58b6-5264-8f3c-a18c781119c3,,kosher,Product meets the requirements for kosher.,FALSE
+e1123f8a-2c2c-5e60-96a8-7a6c1f6e2b7b,4005,106f6d0c-6738-5d2e-b830-2995d5247f0b,,kosher,Product meets the requirements for kosher.,FALSE
+c4b25b1a-9d91-59b2-9b8a-8a7b1f4f6c11,4006,106f6d0c-6738-5d2e-b830-2995d5247f0b,,protected_place_of_origin,Product originates from claimed destination completely.,FALSE
+7c8c21b0-2f69-5e5d-8a1b-6f0c1c9b2d3e,4007,0125daac-d72b-5f25-b5d7-22da72fff972,,organic,Product is fully organic according to EU standards.,FALSE
+f9b8cd14-035b-5a96-af26-7ebbe6a817b5,4008,1f89eb52-0405-5468-83f6-bd7582a34797,,5-a-day-logo,Consuming a serving of this product is equivalent to one of your 5 a day,FALSE
+e5ff17f8-25dc-533a-8ccc-6b26762eeaeb,4009,d6623382-73e6-5712-90c2-6cb3e6bd5d5f,,non-gmo-project-verified,This product is non-GMO project verified,FALSE
+f8795e28-cbf7-51b5-97f8-0977f8199331,4010,636141a5-bbc2-5a05-9b79-0bd2f8028c78,,vegan,Product is suitable for vegan consumption.,FALSE
+2da4ac29-1fb7-588f-87eb-cefc624d5e25,4011,540eefd0-a860-56ff-bc37-a12b34e12f8e,,5-a-day-logo,One serving of this product is equivalent to one of your 5 a day,FALSE
+01b4acb9-48bb-50cd-9400-1b37bfac3cdf,4012,1a818840-e58d-5863-a570-867e6940b4f9,,red-tractor,This product is certified to meet Class 1 food standards by Red Tractor.,FALSE
+5e108eb6-1ade-5ca8-88bf-56765631dcdf,4013,d1aaf5c8-8cb6-5320-a000-aecf428b7a1c,,5-a-day-logo,One serving of this product is equivalent to one of your 5 a day.,FALSE
+73a23aa8-aeca-53d2-b2bf-805a2c65344e,4014,8bdb0aa5-c595-5ae2-a847-a05e932417fc,,5-a-day-logo,Consuming a serving of this product is equivalent to one of your 5 a day,FALSE
