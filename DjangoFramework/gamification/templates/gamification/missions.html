@@ -1,5 +1,172 @@
-{% extends "base.html" %} {% block title %}Missions {% endblock %}
+{% extends "base.html" %}
+
 {% block content %}
+    <div class="container-fluid px-5 py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold">Missions</h1>
+            <p class="lead text-muted">Help learn through missions and quizzes to master sustainability knowledge.</p>
+        </div>
+
+        <div class="mb-5">
+            <div class="row">
+                <div class="col-lg-9">
+                    <h3 class="text-success mb-3">Easy Missions</h3>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 border-success shadow-sm" style="border-width: 2px;">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">1. First Scan</h5>
+                                    <p class="card-text small flex-grow-1">Scan any product and view its full product
+                                        passport .</p>
+                                    <button class="btn btn-outline-success btn-sm w-100 mb-2 mt-auto">Start Mission
+                                    </button>
+                                    <button class="btn btn-outline-success btn-sm w-100">Take Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 border-success shadow-sm" style="border-width: 2px;">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">2. Multi-Stage</h5>
+                                    <p class="card-text small flex-grow-1">Scan a product that has at least 3 different
+                                        stages.</p>
+                                    <button class="btn btn-outline-success btn-sm w-100 mb-2 mt-auto">Start Mission
+                                    </button>
+                                    <button class="btn btn-outline-success btn-sm w-100">Take Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 border-success shadow-sm" style="border-width: 2px;">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">3. Main Ingredient Origin</h5>
+                                    <p class="card-text small flex-grow-1">Scan a product and identify where the main
+                                        ingredient was sourced or grown.</p>
+                                    <button class="btn btn-outline-success btn-sm w-100 mb-2 mt-auto">Start Mission
+                                    </button>
+                                    <button class="btn btn-outline-success btn-sm w-100">Take Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <h3 class="text-warning mb-3">Medium Missions</h3>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 border-warning shadow-sm" style="border-width: 2px;">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">4. Evidence Match</h5>
+                                    <p class="card-text small flex-grow-1">Scan products with claims such as 'locally
+                                        sourced ' 'Fair Trade' , 'organic'.</p>
+                                    <button class="btn btn-outline-warning btn-sm w-100 mb-2 mt-auto">Start Mission
+                                    </button>
+                                    <button class="btn btn-outline-warning btn-sm w-100">Take Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 border-warning shadow-sm" style="border-width: 2px;">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">5. Missing Evidence</h5>
+                                    <p class="card-text small flex-grow-1">Scan an item and identify what extra evidence
+                                        is
+                                        needed to support a claim.</p>
+                                    <button class="btn btn-outline-warning btn-sm w-100 mb-2 mt-auto">Start Mission
+                                    </button>
+                                    <button class="btn btn-outline-warning btn-sm w-100">Take Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <h3 class="text-danger mb-3">Hard Missions</h3>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 border-danger shadow-sm" style="border-width: 2px;">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">7. Weak Evidence</h5>
+                                    <p class="card-text small flex-grow-1">Scan a product where a major claim is
+                                        supported
+                                        by only one weak document.</p>
+                                    <button class="btn btn-outline-danger btn-sm w-100 mb-2 mt-auto">Start Mission
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-sm w-100">Take Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 border-danger shadow-sm" style="border-width: 2px;">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">8. Wrong Evidence Type</h5>
+                                    <p class="card-text small flex-grow-1">Scan a product with the wrong type of
+                                        evidence.</p>
+                                    <button class="btn btn-outline-danger btn-sm w-100 mb-2 mt-auto">Start Mission
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-sm w-100">Take Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="pt-4 mt-5 border-top">
+                <h2 class="fw-bold mb-4">Relative Value Challenges</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-success shadow-sm" style="border-width: 2px;">
+                            <div class="card-body">
+                                <h5 class="card-title">Value Contribution</h5>
+                                <p class="card-text small">Scan a chocolate bar and analyze its product passport to
+                                    identify
+                                    which stage—from raw cocoa farming to retail—contributes the most value to the final
+                                    product .</p>
+                                <button class="btn btn-outline-success btn-sm w-100 mb-2">Start Mission</button>
+                                <button class="btn btn-outline-success btn-sm w-100">Take Quiz</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-warning shadow-sm" style="border-width: 2px;">
+                            <div class="card-body">
+                                <h5 class="card-title">Stage Ranking</h5>
+                                <p class="card-text small">Examine the production stages of olive oil and rank them from
+                                    highest to lowest value contribution to learn why earlier stages often matter more
+                                    in
+                                    the supply chain. </p>
+                                <button class="btn btn-outline-warning btn-sm w-100 mb-2">Start Mission</button>
+                                <button class="btn btn-outline-warning btn-sm w-100">Take Quiz</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-danger shadow-sm" style="border-width: 2px;">
+                            <div class="card-body">
+                                <h5 class="card-title">Transparency Risk</h5>
+                                <p class="card-text small">Perform a deep-dive analysis on a coffee product to identify
+                                    the
+                                    biggest transparency risk by finding the stage where high value contribution meets
+                                    weak
+                                    evidence </p>
+                                <button class="btn btn-outline-danger btn-sm w-100 mb-2">Start Mission</button>
+                                <button class="btn btn-outline-danger btn-sm w-100">Take Quiz</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}
+
+<!-- start for loading from database
     <h1> Your missions </h1>
     <div class="container">
         {% for mission in missions %}
@@ -16,4 +183,4 @@
     </div>
     {% load static %}
     <link rel="stylesheet" href="{% static 'gamification/style.css' %}">
-{% endblock %}
+-->
