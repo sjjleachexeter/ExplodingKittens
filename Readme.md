@@ -20,7 +20,7 @@
 3. once setup you can log in on the website and visit `/admin` to get the superuser overview of the database
 # how to run docker
 
-1. make sure that you have docker and nginx installed on the system
+1. make sure that you have docker installed on the system
 2. `cd DjangoFramework`
 3. generate ssl keys and cert.
     1. sign you own keys if you don't have a domain:
@@ -34,6 +34,7 @@
    DJANGO_CSRF_TRUSTED_ORIGINS=<your_trusted_origins>
    ```
 5. build and run with `docker compose up --build`
-6. import static data while container is running:
+6. make sure the project database is correct `docker compose exec django-web python manage.py migrate`
+7. import static data while container is running:
     1. import missions  `docker compose exec django-web python manage.py runscript gamification.import_data`
     2. import passports `docker compose exec django-web python manage.py runscript passport.import_product_data`
