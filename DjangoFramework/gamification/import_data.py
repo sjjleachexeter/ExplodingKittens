@@ -22,7 +22,7 @@ def load_csv_missions():
                 "points": row['points'],
                 "start_at": None if pd.isna(row['start_at']) else row['start_at'],
                 "end_at": None if pd.isna(row['end_at']) else row['end_at'],
-                "published": row['published'] == "TRUE",
+                "published": row['published'],
             }
         )
 
