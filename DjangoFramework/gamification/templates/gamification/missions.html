@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block title %}Missions {% endblock %}
+{% block content %}
+    <h1> Your missions </h1>
+    <div class="container">
+        {% for mission in missions %}
+            <div class="mission mission-{{ mission.rules.difficulty }}">
+                <h3>{{ mission.title }}</h3>
+                <p>Quizzes:
+                    {% for quiz in mission.quizzes.all %}
+                        <a href="{% url 'quiz' quiz.quiz_id %}">Quiz {{ forloop.counter }}</a>
+                    {% endfor %}
+                </p>
+                <p>points: {{ mission.points }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'gamification/style.css' %}">
+{% endblock %}
