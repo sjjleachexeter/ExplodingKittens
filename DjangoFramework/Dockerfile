@@ -15,10 +15,10 @@ ENV PYTHONUNBUFFERED=1
 RUN pip install --upgrade pip
 
 # Copy the Django project and install dependencies
-COPY requirements.txt  /app/
+COPY requirements_docker.txt  /app/
 
 # run this command to install all dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements_docker.txt
 
 # Stage 2: Production stage
 FROM python:3.14-slim
