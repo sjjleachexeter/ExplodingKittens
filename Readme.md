@@ -13,7 +13,10 @@ python manage.py runserver
 
 # How to run tests
 1. import dependencies `pip install requirements.txt`
-2. run commands:
+2. import data:
+    1. import missions  `python manage.py runscript gamification.import_data`
+    2. import passports `python manage.py runscript passport.import_product_data`
+3. run commands:
 ```shell
 cd DjangoFramework
 python manage.py test
