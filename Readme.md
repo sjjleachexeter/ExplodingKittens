@@ -11,7 +11,13 @@ python manage.py runserver
 ```
 1. open page in browser : http://127.0.0.1:8000/
 
-
+# How to run tests
+1. import dependencies `pip install requirements.txt`
+2. run commands:
+```shell
+cd DjangoFramework
+python manage.py test
+```
 
 # Notes about accounts current state
 1. Files can be found in `/DjangoFramework/Users`
