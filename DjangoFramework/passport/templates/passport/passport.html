@@ -2,18 +2,84 @@
 {% block content %}
     <!DOCTYPE html>
     <html lang="en">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <body>
     <h1>Passport for product: {{ passport_data.name }}</h1>
     <p>{{ passport_data.description }}</p>
+
+    <!--list of ingredients-->
+    <h2>Ingredients</h2>
+    <ul>
+        {% for ingredient in ingredients %}
+            <li>{{ ingredient.rounded_proportion|floatformat:-2 }}% {{ ingredient.ingredient }} -
+                origin {{ ingredient.origin_country }} </li>
+        {% endfor %}
+
+    </ul>
+    <!-- locations map -->
+    <button type="button" class="collapsible" style="font-size: 20px;">Ingredient Map</button>
+    <div class="content" id="map" style="height: 500px;"></div>
+
+    <!--Product stage timeline-->
+    <h2>Stages</h2>
+    <button type="button" class="collapsible"></button>
+    <div class="content">
+        {% for stage in stages %}
+            <button type="button" class="collapsible" style="font-size: 20px;">{{ forloop.counter }}. {{ stage.stage_name }}</button>
+            <div class="content">
+                <p>{{ stage.date_start }} - {{ stage.date_start }}</p>
+                <p>from <a href="{% url 'node_info_display' stage.from_node.node_id %}">{{ stage.from_node }}</a> to <a
+                        href="{% url 'node_info_display' stage.to_node.node_id %}">{{ stage.to_node }}</a></p>
+                <p>share {{ stage.value_share }}</p>
+                <!--each claim for this stage-->
+                {% for claim in stage.claims.all %}
+                    <button type="button" class="collapsible" style="font-size: 15px;">Claim: {{ claim.get_claim_type_display }}</button>
+                    <div class="content">
+                        <p>{{ claim.statement }}</p>
+                        <ul>
+                            <!--evidence for each claim-->
+                            {% for link in claim.claim_evidence_links.all %}
+                                {% if link.evidence.scope == "stage" %}
+                                    <li>{{ link.evidence.issuer }} on {{ link.evidence.date }}
+                                        - {{ link.evidence.summary }} </li>
+                                {% endif %}
+                            {% empty %}
+                                <li>No evidence linked to this claim.</li>
+
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% empty %}
+                    <p>No claims for this stage.</p>
+
+                {% endfor %}
+
+            </div>
+        {% endfor %}
+    </div>
+
     </body>
     </html>
 
-    <script>
-        var passport = {{ passport_data }};
-    </script>
-
     {% load static %}
     <script src="{% static 'passport/scripts.js' %}"></script>
+    <script src="{% static 'passport/map.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'passport/style.css' %}">
+
+
+
+    <script>
+        // Pass the city and country for map.js
+
+        {% for ingredient in ingredients %}
+            // Add product location to map
+            console.log("{{ ingredient.origin_country }}");
+            addLocation("", "{{ ingredient.origin_country }}", "{{ ingredient.ingredient }}");
+        {% endfor %}
+
+    </script>
+
 
 {% endblock %}

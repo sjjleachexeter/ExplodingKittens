@@ -37,11 +37,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_extensions",
     "Databases",
     "UI",
     "Users",
     "Scanner",
     "passport",
+    "gamification"
 ]
 
 MIDDLEWARE = [

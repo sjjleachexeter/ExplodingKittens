@@ -23,7 +23,7 @@ def missions(request):
     '''
     Display user missions (shows progress etc)
     '''
-    return render(request, 'missions.html')
+    return render(request, 'gamification/missions.html')
 
 def leaderboard(request):
     '''
