@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 import uuid
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator, MinLengthValidator
 
 
 """
@@ -42,7 +42,7 @@ class ProductIngredient(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="composition")
     ingredient = models.ForeignKey(Ingredient, on_delete=models.PROTECT, related_name="used_in")
     proportion = models.DecimalField(max_digits = 5, decimal_places =4,validators = [MinValueValidator(0), MaxValueValidator(1)])
-    origin_country = models.CharField(max_length = 2) # 2 letter country code
+    origin_country = models.CharField(max_length = 2, validators = [MinLengthValidator(2)]) # 2 letter country code
 
     @property
     def rounded_proportion(self):
@@ -65,7 +65,7 @@ class Node(models.Model):
     node_id = models.CharField(max_length = 100, unique=True)
     org_name = models.CharField(max_length = 160)
     role = models.CharField(max_length = 20, choices=NodeRole.choices, default=NodeRole.OTHER)
-    country = models.CharField(max_length = 2) #using 2 letter country codes
+    country = models.CharField(max_length = 2, validators = [MinLengthValidator(2)]) #using 2 letter country codes
     city = models.CharField(max_length = 100, blank=True)
 
     def __str__(self):
