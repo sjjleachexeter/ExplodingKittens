@@ -12,6 +12,10 @@ class Mission(models.Model):
     rules = models.JSONField(default =dict)
     points = models.IntegerField(default = 50)
 
+    description = models.TextField(blank=True)
+    example = models.TextField(blank=True)
+    learning_outcome = models.TextField(blank=True)
+
     start_at = models.DateTimeField(null = True, blank = True)
     end_at =models.DateTimeField(null =True, blank = True)
     published = models.BooleanField(default = False)
