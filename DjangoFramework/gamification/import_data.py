@@ -20,6 +20,11 @@ def load_csv_missions():
                 "title": row['title'],
                 "rules": json.loads(row['rules']),
                 "points": row['points'],
+
+                "description": row['description'],
+                "example": row['example'],
+                "learning_outcome": row['learning_outcome'],
+
                 "start_at": None if pd.isna(row['start_at']) else row['start_at'],
                 "end_at": None if pd.isna(row['end_at']) else row['end_at'],
                 "published": row['published'],
