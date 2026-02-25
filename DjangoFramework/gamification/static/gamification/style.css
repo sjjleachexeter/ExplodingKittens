@@ -1,30 +1,81 @@
 
 .mission {
+    width: 20%;
     outline-style: solid;
-    outline-width: 2px; /* example width */
+    outline-width: 2px;
     padding: 10px;
-    border-radius: 25px;
-     transition: background-color 0.3s; /* smooth hover effect */
+    border-radius: 3px;
+    min-width: 250px;
 }
-.mission-hard:hover { background-color: rgba(255, 0, 0, 0.1); }
-.mission-medium:hover { background-color: rgba(255, 255, 0, 0.2); }
-.mission-easy:hover { background-color: rgba(0, 255, 0, 0.1); }
+
+
 .mission-hard {
-    outline-color: red;
+    outline-color: #dc3545;
 }
 
 .mission-medium {
-    outline-color: yellow;
+    outline-color: #ffc107;
 
 }
 
 .mission-easy {
-    outline-color: green;
+    outline-color: #28a745;
 
 }
 
+.btn {
+    outline-style: solid;
+    outline-width: 2px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: background-color 0.3s; /* smooth hover effect */
+}
+
+.btn-easy {
+    /* #28a745 color */
+    outline-color: #28a745;
+    color: #28a745;
+}
+
+.btn-easy:hover {
+    background-color: #28a745;
+}
+
+.btn-medium {
+    /* #28a745 color */
+    outline-color: #ffc107;
+    color: #ffc107;
+}
+
+.btn-medium:hover {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.btn-hard {
+    /* #28a745 color */
+    outline-color: #dc3545;
+    color: #dc3545;
+}
+
+.btn-hard:hover {
+    background-color: #dc3545;
+}
+
+
 .container {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap: wrap;
+
+    flex-direction: row;
+
+
+    gap: 20px;
+}
+
+.aligned-right {
+    text-align: end;
+
 }
