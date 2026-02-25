@@ -5,6 +5,8 @@ from gamification import views
 urlpatterns = [
     path("", views.missions, name='missions'),
     path("quiz/<str:quiz_id>", views.quiz, name='quiz'),
+    path("start_mission", views.start_mission, name='start_mission'),
+    path("take_quiz", views.take_quiz, name='take_quiz'),
     path("dashboard", views.dashboard, name='dashboard'),
     path("dashboard/edit_mission/<str:mission_id>", views.edit_mission, name='edit_mission'),
     path("dashboard/edit_mission/", views.edit_mission, name='create_mission'),
