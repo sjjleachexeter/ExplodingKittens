@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block title %}Leaderboard {% endblock %}
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <body>
+    <h1>Leaderboard</h1>
+
+
+    <table border="1">
+
+        <thead>
+        <tr>
+            {% for field in fields %}
+                <th>
+
+                    {% if field == sort_by %}
+                        <a href="?sort=-{{ field }}">{{ field|capfirst }}↑</a>
+                    {% elif sort_by == "-"|add:field %}
+                        <a href="?sort={{ field }}">{{ field|capfirst }}↓</a>
+                    {% else %}
+                        <a href="?sort=-{{ field }}">{{ field|capfirst }}</a>
+                    {% endif %}
+
+                </th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in table %}
+            <tr>
+                {% for value in row %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </body>
+
+
+
+{% endblock %}

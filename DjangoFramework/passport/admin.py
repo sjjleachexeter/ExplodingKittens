@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from passport.models import Product, Ingredient, ProductIngredient, Node, Stage, Evidence, Claim, ClaimEvidence
+from passport.models import Product, Ingredient, ProductIngredient, Node, Stage, Evidence, Claim, ClaimEvidence, \
+    ProductScan
 
 
 # Register your models here.
@@ -38,4 +39,8 @@ class ClaimAdmin(admin.ModelAdmin):
 
 @admin.register(ClaimEvidence)
 class ClaimEvidenceAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(ProductScan)
+class ProductScanAdmin(admin.ModelAdmin):
     pass

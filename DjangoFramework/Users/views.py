@@ -5,12 +5,26 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, FormView
 
+from Leaderboard.models import LeaderboardPreferences
+
 
 # Create your views here.
 class AccountsView(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy("home")
+
     template_name = "Users/accounts.html"
+
+    def get_context_data(self, **kwargs):
+        # Get default context from the parent
+        context = super().get_context_data(**kwargs)
+        # add public setting
+        if self.request.user.is_authenticated:
+            public = LeaderboardPreferences.objects.filter(user=self.request.user).first()
+            if public is not None:
+                context['public'] = public.public
+
+        return context
 
 
 class SignupView(FormView):
@@ -32,6 +46,7 @@ class SignupView(FormView):
             print("Authentication failed after signup")
         return super().form_valid(form)
 
+
 class LoginView(CreateView):
     form_class = AuthenticationForm
     success_url = reverse_lazy("login")
@@ -47,3 +62,16 @@ def delete_account(request):
         return redirect('home')
     else:
         return redirect('delete_confirm')
+
+
+@login_required
+def public_account(request):
+    if request.method == "POST":
+        user = request.user
+        preference = user.leaderboard_preference.get_or_create()[0]
+        preference.toggle_public()
+        preference.save()
+
+        return redirect('accounts')
+    else:
+        return redirect('accounts')
