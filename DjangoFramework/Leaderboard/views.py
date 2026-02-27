@@ -26,5 +26,4 @@ def leaderboard(request):
         for row in table
     ]
     # define rows in table
-    print(table)
     return render(request, 'Leaderboard/leaderboard.html', {'table': table, 'fields': fields, 'sort_by': sort_by})

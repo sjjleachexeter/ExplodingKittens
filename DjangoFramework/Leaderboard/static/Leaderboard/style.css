@@ -1,0 +1,76 @@
+/* Title */
+.leaderboard h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: gray;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+/* header */
+thead {
+    background-color: green;
+    text-align: center;
+}
+
+thead th {
+    padding: 12px 10px;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+/* remove link colour */
+a {
+  color: inherit;
+}
+
+tbody tr {
+    text-align: center;
+    /* gap between rows */
+    border-bottom: 1px solid white;
+    /* animation */
+    transition: all 0.1s ease-in-out;
+}
+
+/* every other different background */
+tbody tr:nth-child(even) {
+    background-color: #f8f9fc;
+}
+
+/* slight scale and hover effect */
+tbody tr:hover {
+    background-color: #e3f2fd;
+    transform: scale(1.01);
+}
+
+/* value styling */
+tbody td {
+    padding: 12px 10px;
+
+    color: #333;
+}
+
+/* bronze silver gold */
+tbody tr:first-child {
+    background-color: gold;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(2) {
+    background-color: silver;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(3) {
+    background-color: #cd7f3233;
+    font-weight: bold;
+}
+
+
