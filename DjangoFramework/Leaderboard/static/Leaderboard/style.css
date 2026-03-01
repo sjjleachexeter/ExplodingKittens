@@ -26,9 +26,10 @@ thead th {
     font-size: 0.85rem;
     letter-spacing: 1px;
 }
+
 /* remove link colour */
 a {
-  color: inherit;
+    color: inherit;
 }
 
 tbody tr {
@@ -38,6 +39,7 @@ tbody tr {
     /* animation */
     transition: all 0.1s ease-in-out;
 }
+
 
 /* every other different background */
 tbody tr:nth-child(even) {
@@ -53,16 +55,9 @@ tbody tr:hover {
 /* value styling */
 tbody td {
     padding: 12px 10px;
-
     color: #333;
 }
-
-/* bronze silver gold */
-tbody tr:first-child {
-    background-color: gold;
-    font-weight: bold;
-}
-
+/* bronze and sliver rows */
 tbody tr:nth-child(2) {
     background-color: silver;
     font-weight: bold;
@@ -71,6 +66,28 @@ tbody tr:nth-child(2) {
 tbody tr:nth-child(3) {
     background-color: #cd7f3233;
     font-weight: bold;
+}
+
+
+/* highlight users row */
+tbody tr.user {
+    background-color: #007bff;
+    outline: solid green 2px;
+    border: solid green 2px;;
+ color: white;
+}
+
+tbody tr.user td {
+
+    font-weight: bold;
+    padding: 20px 14px;
+}
+
+/* gold row after user highlight so this still get it if they are in first */
+tbody tr:first-child {
+    background-color: gold;
+    font-weight: bold;
+    color: #333;
 }
 
 

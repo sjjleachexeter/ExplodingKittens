@@ -11,29 +11,41 @@
 
         <thead>
         <tr>
-            {% for field in fields %}
+            <th>Position</th>
+            {% for field, name in fields.items %}
                 <th>
-
                     {% if field == sort_by %}
-                        <a href="?sort=-{{ field }}">{{ field|capfirst }}↑</a>
+                        <a href="?sort=-{{ field }}">{{ name|capfirst }}↑</a>
                     {% elif sort_by == "-"|add:field %}
-                        <a href="?sort={{ field }}">{{ field|capfirst }}↓</a>
+                        <a href="?sort={{ field }}">{{ name|capfirst }}↓</a>
                     {% else %}
-                        <a href="?sort=-{{ field }}">{{ field|capfirst }}</a>
+                        <a href="?sort=-{{ field }}">{{ name|capfirst }}</a>
                     {% endif %}
-
                 </th>
             {% endfor %}
         </tr>
         </thead>
         <tbody>
         {% for row in table %}
-            <tr>
+            <!--highlight row if it's the logged-in user-->
+            <tr {% if forloop.counter == user_position %}class="user"{% endif %}>
+                <!--Position number of row-->
+                <td>{{ forloop.counter }}</td>
+                <!--column for each bit of data in row-->
                 {% for value in row %}
                     <td>{{ value }}</td>
                 {% endfor %}
             </tr>
         {% endfor %}
+        <!--if users position is too low to be in the leader board add it to the bottom-->
+        {% if leaderboard_length < user_position %}
+            <tr class="user">
+             <td>{{ user_position }}</td>
+            {% for value in user_row %}
+                <td>{{ value }}</td>
+            {% endfor %}
+            </tr>
+        {% endif %}
         </tbody>
     </table>
     </body>
