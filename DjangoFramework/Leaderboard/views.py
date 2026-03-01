@@ -1,9 +1,10 @@
 from django.contrib.auth.models import User
-from django.db.models import Count, Window, F
+from django.db.models import Count, Window, F, Q
 from django.db.models.functions import RowNumber
 from django.forms import model_to_dict
 from django.http import Http404
 from django.shortcuts import render
+from django.template.context_processors import request
 
 from Users.models import Level
 from passport.models import ProductScan
@@ -28,7 +29,7 @@ def leaderboard(request):
     # add user total scans for the table
     table = table.annotate(scans = Count("user__scans"))
     # remove private users and sort in correct order
-    table = table.filter(user__leaderboard_preference__public=True).order_by(sort_by)
+    table = table.filter( Q(user__leaderboard_preference__public=True) | Q(user=request.user)).order_by(sort_by)
 
     # get the row of the current user
     user_row, user_position = None , None
