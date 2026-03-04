@@ -29,7 +29,11 @@ def leaderboard(request):
     # add user total scans for the table
     table = table.annotate(scans = Count("user__scans"))
     # remove private users and sort in correct order
-    table = table.filter( Q(user__leaderboard_preference__public=True) | Q(user=request.user)).order_by(sort_by)
+    if request.user.is_authenticated:
+        #keep the current user even if they are private only they see there place on the leaderboard
+        table = table.filter( Q(user__leaderboard_preference__public=True) | Q(user=request.user)).order_by(sort_by)
+    else:
+        table = table.filter(user__leaderboard_preference__public=True).order_by(sort_by)
 
     # get the row of the current user
     user_row, user_position = None , None
