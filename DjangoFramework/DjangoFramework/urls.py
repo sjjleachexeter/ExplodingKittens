@@ -24,6 +24,7 @@ urlpatterns = [
     path("accounts/", include("Users.urls")),
     path("passport/", include("passport.urls")),
     path("missions/", include("gamification.urls")),
+    path("leaderboard/", include("Leaderboard.urls")),
     path("", include("UI.urls"))
 
 ]
