@@ -59,6 +59,12 @@ class ProductIngredientForm(ModelForm):
         fields = ['ingredient', 'proportion', 'origin_country']
 
 
+class StageForm(ModelForm):
+    class Meta:
+        model = Stage
+        fields = ['stage_name', 'from_node', 'to_node', 'value_share', 'date_start', 'date_end']
+
+
 IngredientFormSet = inlineformset_factory(
     Product,
     ProductIngredient,
@@ -67,26 +73,42 @@ IngredientFormSet = inlineformset_factory(
     can_delete=True
 )
 
+StageFormSet = inlineformset_factory(
+    Product,
+    Stage,
+    form=StageForm,
+    extra=1,
+    can_delete=True,
+)
+
 
 @permission_required("passport.ProductAdmin")
 def create_passport(request):
+    # check for delete post
+    if request.method == "POST" and 'form-delete' in request.POST:
+        # don't save anything and just go back home
+        return redirect('home')
     if request.method == "POST":
         product_form = ProductForm(request.POST)
         ingredient_formset = IngredientFormSet(request.POST)
+        stage_formset = StageFormSet(request.POST)
 
-
-
-        if product_form.is_valid() and ingredient_formset.is_valid():
+        if product_form.is_valid() and ingredient_formset.is_valid() and stage_formset.is_valid():
             # load product
             product = product_form.save(commit=False)
             # add product_id (same as qr_token)
             product.product_id = product.qr_token
             product.save()
+            saved_product = Product.objects.get(product_id=product.qr_token)
 
-
-
-            ingredient_formset.instance = Product.objects.get(product_id=product.qr_token)
+            ingredient_formset.instance = saved_product
             ingredient_formset.save()
+
+            stage_formset.instance = saved_product
+            for (i, form) in enumerate(stage_formset.forms):
+                form.instance.stage_id = form.instance.id
+                form.instance.sequence = i
+            stage_formset.save()
 
             return redirect(
                 reverse('passport_display', kwargs={'product_id': product.qr_token})
@@ -101,34 +123,51 @@ def create_passport(request):
     else:
         product_form = ProductForm()
         ingredient_formset = IngredientFormSet()
-        return render(request, "passport/edit_passport.html", {"product_form": product_form, "ingredient_formset": ingredient_formset})
+        stage_formset = StageFormSet()
+        return render(request, "passport/edit_passport.html", {
+            "product_form": product_form,
+            "ingredient_formset": ingredient_formset,
+            "stage_formset": stage_formset
+        })
 
 
 @permission_required("passport.ProductAdmin")
 def edit_passport(request, product_id):
     product = Product.objects.get(product_id=product_id)
-
+    # check for delete post
+    if request.method == "POST" and 'form-delete' in request.POST:
+        # remove product from database
+        product.delete()
+        return redirect('home')
+    # see if there is the form is valid and if so save the updated product
     if request.method == "POST":
-
         product_form = EditProductForm(request.POST, instance=product)
         ingredient_formset = IngredientFormSet(request.POST, instance=product)
+        stage_formset = StageFormSet(request.POST, instance=product)
 
-        if product_form.is_valid() and ingredient_formset.is_valid():
+        if product_form.is_valid() and ingredient_formset.is_valid() and stage_formset.is_valid():
             product_form.save()
 
             ingredient_formset.instance = product
             ingredient_formset.save()
+
+            stage_formset.instance = product
+            for (i, form) in enumerate(stage_formset.forms):
+                form.instance.stage_id = form.instance.id
+                form.instance.sequence = i
+            stage_formset.save()
 
             return redirect(
                 reverse('passport_display', kwargs={'product_id': product.qr_token})
             )
 
     else:
-
         product_form = EditProductForm(instance=product)
         ingredient_formset = IngredientFormSet(instance=product)
+        stage_formset = StageFormSet(instance=product)
 
     return render(request, "passport/edit_passport.html", {
         "product_form": product_form,
-        "ingredient_formset": ingredient_formset
+        "ingredient_formset": ingredient_formset,
+        "stage_formset": stage_formset
     })

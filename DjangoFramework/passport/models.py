@@ -87,6 +87,9 @@ class Stage(models.Model):
     date_start = models.DateField(null=True, blank=True)
     date_end = models.DateField(null=True, blank=True)
 
+    class Meta:
+        ordering = ['sequence']
+
 
 class EvidenceScope(models.TextChoices):
     PRODUCT = "product", "Product"
