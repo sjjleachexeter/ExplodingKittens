@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}Passport{% endblock %}
+
+{% block content %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <h3>Product Form</h3>
+        {{ product_form.as_p }}
+
+        {{ ingredient_formset.management_form }}
+
+        <div id="ingredient_formset">
+            {% for form in ingredient_formset %}
+                <div class="form-row">
+                    {{ form.as_p }}
+                    <button type="button" class="remove-form">Remove</button>
+                </div>
+            {% endfor %}
+        </div>
+
+        <button type="button" id="add-form">Add Ingredient</button>
+        <br><br>
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <script>
+        $(function () {
+            let formIdx = {{ ingredient_formset.total_form_count }};
+            let totalForms = $("#id_{{ ingredient_formset.prefix }}-TOTAL_FORMS");
+
+            $("#add-form").click(function () {
+                // copy an existing form for the fields then reset them
+                let newForm = $("#ingredient_formset .form-row:last").clone(true);
+                newForm.find(":input").each(function () {
+                    let name = $(this).attr("name");
+
+                    if (name) {
+                        let newName = name.replace(/-\d+-/, "-" + formIdx + "-");
+                        let newId = "id_" + newName;
+                        $(this).attr({
+                            "name": newName,
+                            "id": newId,
+                        }).val("");
+                    }
+                });
+                //make sure it is visible
+                newForm.show();
+                //add this new form
+                $("#ingredient_formset").append(newForm);
+                //increase form count
+                formIdx++;
+                totalForms.val(formIdx);
+
+
+            });
+
+
+            $("#ingredient_formset").on("click", ".remove-form", function () {
+                let visibleForms = $("#ingredient_formset .form-row:visible");
+                let row = $(this).closest(".form-row");
+
+
+                // If this is the last visible form
+                if (visibleForms.length === 1) {
+
+                    // reset all inputs
+                    row.find("input, select, textarea").each(function () {
+
+                        if ($(this).attr("type") === "checkbox") {
+                            $(this).prop("checked", false);
+                        } else {
+                            $(this).val("");
+                        }
+
+                    });
+
+                    return;
+                }
+                let deleteInput = row.find("input[name$='-DELETE']");
+                if (deleteInput.length) {
+                    deleteInput.prop("checked", true);
+                    row.hide();
+                } else {
+                    row.remove();
+                }
+
+            });
+
+        });
+
+    </script>
+
+    <style>
+        input[name$="-DELETE"] {
+            display: none;
+        }
+
+        label[for$="-DELETE"] {
+            display: none;
+        }
+    </style>
+
+{% endblock %}
