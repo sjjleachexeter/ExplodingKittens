@@ -1,8 +1,13 @@
 from django.forms import ModelForm, inlineformset_factory, BaseInlineFormSet, formset_factory
 from numpy.ma.core import product
 
-from passport.models import Product, ProductIngredient, Stage, Claim, Evidence, ClaimEvidence
+from passport.models import Product, ProductIngredient, Stage, Claim, Evidence, ClaimEvidence, Node
 
+
+class NodeForm(ModelForm):
+    class Meta:
+        model = Node
+        fields = ['org_name', 'role', 'country', 'city']
 
 class ProductForm(ModelForm):
     class Meta:

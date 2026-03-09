@@ -1,8 +1,8 @@
 {% extends "base.html"%} {% block title %}Home {% endblock %}
 {% block content %}
 
-{% if user.is_authenticated %}
-<h3> Welcome, {{user.username}}!</h3>
+    {% if user.is_authenticated %}
+        <h3> Welcome, {{ user.username }}!</h3>
 
 {% if request.user.role.get.type == "MANAGER"%}
     <h3>You are a Manager of this software</h3>
@@ -14,9 +14,12 @@
 
 
 <!--add passport creation features if admin-->
-    {% if perms.ProductAdmin.access_admin %}
-      <p><a href="{% url 'create_passport'  %}">Create Product Passport</a></p>
-    {% endif %}
+        {% if perms.ProductAdmin.access_admin %}
+            <br><br><br>
+            <h3> Admin Panel </h3>
+            <p><a href="{% url 'create_passport' %}">Create Product Passport</a></p>
+            <p><a href="{% url 'create_node' %}">Create Node</a></p>
+        {% endif %}
 
 {% else %}
 <h1 class="above-the-fold">Know your Impact</h1>

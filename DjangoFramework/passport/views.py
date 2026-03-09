@@ -5,7 +5,8 @@ from django.http.response import Http404
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
-from passport.forms import ProductForm, IngredientFormSet, StageFormSet, EditProductForm, ClaimFormSet, EvidenceFormSet
+from passport.forms import ProductForm, IngredientFormSet, StageFormSet, EditProductForm, ClaimFormSet, EvidenceFormSet, \
+    NodeForm
 from passport.models import Product, ProductIngredient, Stage, Node
 
 
@@ -40,6 +41,32 @@ def display_node_info(request, node_id=-1):
 
     except Node.DoesNotExist:
         raise Http404("Node not found")
+
+
+@permission_required("passport.ProductAdmin")
+def create_node(request, node_id = None):
+    try:
+        node = Node.objects.get(node_id=node_id)
+    except Node.DoesNotExist:
+        node = None
+    if request.method == "POST" and 'form-delete' in request.POST:
+        node.delete()
+        return redirect('home')
+    if request.method == "POST":
+        node_form = NodeForm(request.POST)
+
+        if node_form.is_valid():
+            node_form.instance.node_id = node_form.instance.id
+            node_form.save()
+
+            return redirect(
+                reverse('node_info_display', kwargs={'node_id': node_form.instance.node_id})
+            )
+    else :
+
+        node_form = NodeForm(instance = node)
+
+    return render(request,"passport/edit_node.html", {"node_form": node_form})
 
 
 @permission_required("passport.ProductAdmin")
@@ -113,7 +140,7 @@ def edit_passport(request, product_id):
             ingredient_formset.save()
 
             stage_formset.instance = product
-            for (i,form) in enumerate(stage_formset.forms):
+            for (i, form) in enumerate(stage_formset.forms):
                 form.instance.stage_id = form.instance.id
                 form.instance.sequence = i
             stage_formset.save()
@@ -157,11 +184,9 @@ def edit_claims(request, product_id):
                         evidence.stage = claim.instance.stage
                         evidence.scope = "stage"
                         evidence.save()
-                else :
+                else:
                     claim.instance.missing_evidence = True
                     claim.save()
-
-
 
             claims_form.save()
 

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Passport{% endblock %}
+
+{% block content %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <h3>Node Form</h3>
+
+        {{ node_form.as_p }}
+
+
+
+        <br><br>
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <!-- Delete product button -->
+    <br><br>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="form-delete" value="1">
+        <button type="submit">Delete Node</button>
+    </form>
+
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'passport/edit_passport.css' %}">
+
+
+{% endblock %}
