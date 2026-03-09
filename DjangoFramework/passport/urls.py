@@ -9,5 +9,7 @@ urlpatterns = [
 
     path("create_passport", views.create_passport, name="create_passport"),
     path("edit_passport/<int:product_id>", views.edit_passport, name="edit_passport"),
+    path("edit_claims/<int:product_id>", views.edit_claims, name="edit_claims"),
+    path("edit_evidence/<int:product_id>", views.edit_evidence, name="edit_evidence"),
 
 ]

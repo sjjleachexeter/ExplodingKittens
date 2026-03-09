@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Passport{% endblock %}
+
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <!-- Product Evidence -->
+        <h3>Claim Evidence</h3>
+
+        {{ evidences_form.management_form }}
+        <div id="evidences_form">
+            {% for form in evidences_form %}
+                <div class="form-row">
+                    {{ form.as_p }}
+                    <button type="button" class="remove-form">Remove</button>
+                </div>
+            {% endfor %}
+        </div>
+        <button type="button" class="add-form-btn" data-target="#evidences_form"
+                data-prefix="{{ evidences_form.prefix }}">Add Evidence
+        </button>
+
+        <br><br>
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+    {% load static %}
+    <script src="{% static 'passport/formset_controls.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'passport/edit_passport.css' %}">
+
+    <script>
+        setupFormset("#evidences_form", "{{ evidences_form.prefix }}", {{ evidences_form.total_form_count }});
+    </script>
+
+
+
+{% endblock %}

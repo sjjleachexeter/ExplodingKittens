@@ -9,10 +9,11 @@
         {% csrf_token %}
 
         <h3>Product Form</h3>
-        <!-- General product options-->
+        <!-- General product options -->
         {{ product_form.as_p }}
 
-        <!-- Product Ingredients-->
+        <!-- Product Ingredients -->
+        <h3>Ingredients</h3>
         {{ ingredient_formset.management_form }}
         <div id="ingredient_formset">
             {% for form in ingredient_formset %}
@@ -22,10 +23,12 @@
                 </div>
             {% endfor %}
         </div>
+        <button type="button" class="add-form-btn" data-target="#ingredient_formset"
+                data-prefix="{{ ingredient_formset.prefix }}">Add Ingredient
+        </button>
 
-        <button type="button" id="add-ingredient-form">Add Ingredient</button>
-
-        <!-- Product Stages-->
+        <!-- Product Stages -->
+        <h3>Stages</h3>
         {{ stage_formset.management_form }}
         <div id="stage_formset">
             {% for form in stage_formset %}
@@ -35,14 +38,16 @@
                 </div>
             {% endfor %}
         </div>
-        <button type="button" id="add-stage-form">Add Stage</button>
+        <button type="button" class="add-form-btn" data-target="#stage_formset"
+                data-prefix="{{ stage_formset.prefix }}">Add Stage
+        </button>
 
         <br><br>
         <button type="submit">Submit</button>
 
     </form>
 
-    <!-- delete product button -->
+    <!-- Delete product button -->
     <br><br>
     <form method="POST">
         {% csrf_token %}
@@ -50,140 +55,18 @@
         <button type="submit">Delete Product</button>
     </form>
 
+
+    {% load static %}
+    <script src="{% static 'passport/formset_controls.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'passport/edit_passport.css' %}">
+
     <script>
-        $(function () {
-            //values about ingredients
-            let ingredient_formIdx = {{ ingredient_formset.total_form_count }};
-            let total_ingredient_forms = $("#id_{{ ingredient_formset.prefix }}-TOTAL_FORMS");
-            //values about stages
-            let stage_formIdx = {{ stage_formset.total_form_count }};
-            let total_stage_forms = $("#id_{{ stage_formset.prefix }}-TOTAL_FORMS");
 
-            $("#add-ingredient-form").click(function () {
-                // copy an existing form for the fields then reset them
-                let newForm = $("#ingredient_formset .form-row:last").clone(true);
-                newForm.find(":input").each(function () {
-                    let name = $(this).attr("name");
-
-                    if (name) {
-                        let newName = name.replace(/-\d+-/, "-" + ingredient_formIdx + "-");
-                        let newId = "id_" + newName;
-                        $(this).attr({
-                            "name": newName,
-                            "id": newId,
-                        }).val("");
-                    }
-                });
-                //make sure it is visible
-                newForm.show();
-                //add this new form
-                $("#ingredient_formset").append(newForm);
-                //increase form count
-                ingredient_formIdx++;
-                total_ingredient_forms.val(ingredient_formIdx);
-
-
-            });
-
-
-            $("#ingredient_formset").on("click", ".remove-form", function () {
-                let visibleForms = $("#ingredient_formset .form-row:visible");
-                let row = $(this).closest(".form-row");
-
-
-                // If this is the last visible form
-                if (visibleForms.length === 1) {
-
-                    // reset all inputs
-                    row.find("input, select, textarea").each(function () {
-
-                        if ($(this).attr("type") === "checkbox") {
-                            $(this).prop("checked", false);
-                        } else {
-                            $(this).val("");
-                        }
-
-                    });
-
-                    return;
-                }
-                let deleteInput = row.find("input[name$='-DELETE']");
-                if (deleteInput.length) {
-                    deleteInput.prop("checked", true);
-                    row.hide();
-                } else {
-                    row.remove();
-                }
-
-            });
-
-            $("#add-stage-form").click(function () {
-                // copy an existing form for the fields then reset them
-                let newForm = $("#stage_formset .form-row:last").clone(true);
-                newForm.find(":input").each(function () {
-                    let name = $(this).attr("name");
-
-                    if (name) {
-                        let newName = name.replace(/-\d+-/, "-" + stage_formIdx + "-");
-                        let newId = "id_" + newName;
-                        $(this).attr({
-                            "name": newName,
-                            "id": newId,
-                        }).val("");
-                    }
-                });
-                //make sure it is visible
-                newForm.show();
-                //add this new form
-                $("#stage_formset").append(newForm);
-                //increase form count
-                stage_formIdx++;
-                total_stage_forms.val(stage_formIdx);
-
-
-            });
-
-
-            $("#stage_formset").on("click", ".remove-form", function () {
-                let visibleForms = $("#stage_formset .form-row:visible");
-                let row = $(this).closest(".form-row");
-
-
-                // If this is the last visible form
-                if (visibleForms.length === 1) {
-                    // reset all inputs
-                    row.find("input, select, textarea").each(function () {
-                        if ($(this).attr("type") === "checkbox") {
-                            $(this).prop("checked", false);
-                        } else {
-                            $(this).val("");
-                        }
-                    });
-
-                    return;
-                }
-                let deleteInput = row.find("input[name$='-DELETE']");
-                if (deleteInput.length) {
-                    deleteInput.prop("checked", true);
-                    row.hide();
-                } else {
-                    row.remove();
-                }
-
-            });
-
-        });
+        setupFormset("#ingredient_formset", "{{ ingredient_formset.prefix }}", {{ ingredient_formset.total_form_count }});
+        setupFormset("#stage_formset", "{{ stage_formset.prefix }}", {{ stage_formset.total_form_count }});
 
     </script>
 
-    <style>
-        input[name$="-DELETE"] {
-            display: none;
-        }
 
-        label[for$="-DELETE"] {
-            display: none;
-        }
-    </style>
 
 {% endblock %}

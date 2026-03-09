@@ -27,7 +27,8 @@
     <button type="button" class="collapsible"></button>
     <div class="content">
         {% for stage in stages %}
-            <button type="button" class="collapsible" style="font-size: 20px;">{{ forloop.counter }}. {{ stage.stage_name }}</button>
+            <button type="button" class="collapsible"
+                    style="font-size: 20px;">{{ forloop.counter }}. {{ stage.stage_name }}</button>
             <div class="content">
                 <p>{{ stage.date_start }} - {{ stage.date_start }}</p>
                 <p>from <a href="{% url 'node_info_display' stage.from_node.node_id %}">{{ stage.from_node }}</a> to <a
@@ -35,7 +36,8 @@
                 <p>share {{ stage.value_share }}</p>
                 <!--each claim for this stage-->
                 {% for claim in stage.claims.all %}
-                    <button type="button" class="collapsible" style="font-size: 15px;">Claim: {{ claim.get_claim_type_display }}</button>
+                    <button type="button" class="collapsible" style="font-size: 15px;">
+                        Claim: {{ claim.get_claim_type_display }}</button>
                     <div class="content">
                         <p>{{ claim.statement }}</p>
                         <ul>
@@ -45,13 +47,13 @@
                                     <li>{{ link.evidence.issuer }} on {{ link.evidence.date }}
                                         - {{ link.evidence.summary }} </li>
                                 {% endif %}
-                            {% empty %}
+                                {% empty %}
                                 <li>No evidence linked to this claim.</li>
 
                             {% endfor %}
                         </ul>
                     </div>
-                {% empty %}
+                    {% empty %}
                     <p>No claims for this stage.</p>
 
                 {% endfor %}
@@ -60,10 +62,16 @@
         {% endfor %}
     </div>
 
-   <!--add edit button for admins-->
+    <!--add edit button for admins-->
     {% if perms.ProductAdmin.access_admin %}
-      <p><a href="{% url 'edit_passport' product_id %}">Edit Product Passport</a></p>
+        <br>        <br>        <br>
+
+        <h3>Product Admin Options</h3>
+        <p><a href="{% url 'edit_passport' product_id %}">Edit Product Passport</a></p>
+        <p><a href="{% url 'edit_evidence' product_id %}">Edit Product Evidence</a></p>
+        <p><a href="{% url 'edit_claims' product_id %}">Edit Product Claims</a></p>
     {% endif %}
+
 
     </body>
     </html>

@@ -13,6 +13,10 @@
 {% endif %}
 
 
+<!--add passport creation features if admin-->
+    {% if perms.ProductAdmin.access_admin %}
+      <p><a href="{% url 'create_passport'  %}">Create Product Passport</a></p>
+    {% endif %}
 
 {% else %}
 <h1 class="above-the-fold">Know your Impact</h1>

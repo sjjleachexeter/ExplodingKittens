@@ -90,6 +90,9 @@ class Stage(models.Model):
     class Meta:
         ordering = ['sequence']
 
+    def __str__(self):
+        return self.stage_name
+
 
 class EvidenceScope(models.TextChoices):
     PRODUCT = "product", "Product"
@@ -113,6 +116,9 @@ class Evidence(models.Model):
     #file = models.FileField(null=True, blank = True)
     #link_reference = models.URLField(blank=True)
 
+    def __str__(self):
+        return self.summary
+
 class ClaimType(models.TextChoices):
     ORGANIC ="organic", "Organic"
     LOCAL = "locally_sourced", "Locally sourced"
@@ -133,6 +139,10 @@ class Claim(models.Model):
     statement = models.CharField(max_length = 300)
 
     missing_evidence = models.BooleanField(default = False)
+    evidence = models.ManyToManyField(Evidence, through="ClaimEvidence" , blank=True)
+
+    def __str__(self):
+        return self.statement
 
 class ClaimEvidence(models.Model):
     id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable =False)

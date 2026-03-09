@@ -1,0 +1,85 @@
+
+/* Hide Django DELETE inputs/labels */
+input[name$="-DELETE"],
+label[for$="-DELETE"] {
+    display: none;
+}
+
+/* General form styling */
+form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Make headings standout */
+h3 {
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+
+/* add box around each row on the form to tell them apart */
+.form-row {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+}
+
+/* Buttons */
+button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+/* Green Add buttons */
+.add-form-btn {
+    background-color: #28a745;
+    color: white;
+    margin-top: 5px;
+}
+
+.add-form-btn:hover {
+    background-color: #218838;
+}
+
+/* Red Remove buttons */
+.remove-form {
+    background-color: #dc3545;
+    color: white;
+    margin-top: 5px;
+}
+
+.remove-form:hover {
+    background-color: #c82333;
+}
+
+/* Blue Submit & Delete buttons */
+form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    margin-top: 15px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0069d9;
+}
+
+/* Spacing between forms */
+#ingredient_formset, #stage_formset {
+    margin-bottom: 20px;
+}
+
+

@@ -5,7 +5,8 @@ from django.http.response import Http404
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
-from passport.models import Product, ProductIngredient, Ingredient, Stage, Node
+from passport.forms import ProductForm, IngredientFormSet, StageFormSet, EditProductForm, ClaimFormSet, EvidenceFormSet
+from passport.models import Product, ProductIngredient, Stage, Node
 
 
 # Create your views here.
@@ -41,47 +42,6 @@ def display_node_info(request, node_id=-1):
         raise Http404("Node not found")
 
 
-class ProductForm(ModelForm):
-    class Meta:
-        model = Product
-        fields = ['name', 'category', 'description', 'qr_token']
-
-
-class EditProductForm(ModelForm):
-    class Meta:
-        model = Product
-        fields = ['name', 'category', 'description']
-
-
-class ProductIngredientForm(ModelForm):
-    class Meta:
-        model = ProductIngredient
-        fields = ['ingredient', 'proportion', 'origin_country']
-
-
-class StageForm(ModelForm):
-    class Meta:
-        model = Stage
-        fields = ['stage_name', 'from_node', 'to_node', 'value_share', 'date_start', 'date_end']
-
-
-IngredientFormSet = inlineformset_factory(
-    Product,
-    ProductIngredient,
-    form=ProductIngredientForm,
-    extra=1,
-    can_delete=True
-)
-
-StageFormSet = inlineformset_factory(
-    Product,
-    Stage,
-    form=StageForm,
-    extra=1,
-    can_delete=True,
-)
-
-
 @permission_required("passport.ProductAdmin")
 def create_passport(request):
     # check for delete post
@@ -110,6 +70,7 @@ def create_passport(request):
                 form.instance.sequence = i
             stage_formset.save()
 
+            # send user to product on success
             return redirect(
                 reverse('passport_display', kwargs={'product_id': product.qr_token})
             )
@@ -152,11 +113,12 @@ def edit_passport(request, product_id):
             ingredient_formset.save()
 
             stage_formset.instance = product
-            for (i, form) in enumerate(stage_formset.forms):
+            for (i,form) in enumerate(stage_formset.forms):
                 form.instance.stage_id = form.instance.id
                 form.instance.sequence = i
             stage_formset.save()
 
+            # send user to product on success
             return redirect(
                 reverse('passport_display', kwargs={'product_id': product.qr_token})
             )
@@ -171,3 +133,74 @@ def edit_passport(request, product_id):
         "ingredient_formset": ingredient_formset,
         "stage_formset": stage_formset
     })
+
+
+@permission_required("passport.ProductAdmin")
+def edit_claims(request, product_id):
+    product = Product.objects.get(product_id=product_id)
+    # check for delete post
+
+    # see if there is the form is valid and if so save the updated product
+    if request.method == "POST":
+        claims_form = ClaimFormSet(request.POST, instance=product)
+
+        if claims_form.is_valid():
+            claims_form.instance = product
+            # use default ids
+            for claim in claims_form.forms:
+                claim.instance.claim_id = claim.instance.id
+                # update evidence to be linked to the same stage as the claim
+                if len(claim.instance.claim_evidence_links.all()) != 0:
+                    for link in claim.instance.claim_evidence_links.all():
+                        evidence = link.evidence
+                        evidence.stage_id = claim.instance.stage_id
+                        evidence.stage = claim.instance.stage
+                        evidence.scope = "stage"
+                        evidence.save()
+                else :
+                    claim.instance.missing_evidence = True
+                    claim.save()
+
+
+
+            claims_form.save()
+
+            # send user to product on success
+            return redirect(
+                reverse('passport_display', kwargs={'product_id': product.qr_token})
+            )
+
+    else:
+        # create formset for claims about the product
+        claims_form = ClaimFormSet(instance=product)
+
+    return render(request, "passport/edit_claims.html", {"claims_form": claims_form})
+
+
+@permission_required("passport.ProductAdmin")
+def edit_evidence(request, product_id):
+    product = Product.objects.get(product_id=product_id)
+    # check for delete post
+
+    # see if there is the form is valid and if so save the updated product
+    if request.method == "POST":
+        evidences_form = EvidenceFormSet(request.POST, instance=product)
+
+        if evidences_form.is_valid():
+            evidences_form.instance = product
+            # use default ids and set scope
+            for form in evidences_form.forms:
+                form.instance.evidence_id = form.instance.id
+
+            evidences_form.save()
+
+            # send user to product on success
+            return redirect(
+                reverse('passport_display', kwargs={'product_id': product.qr_token})
+            )
+
+    else:
+        # create formset for claims about the product
+        evidences_form = EvidenceFormSet(instance=product)
+
+    return render(request, "passport/edit_evidence.html", {"evidences_form": evidences_form})
