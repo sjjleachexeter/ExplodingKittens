@@ -50,7 +50,8 @@ def create_node(request, node_id = None):
     except Node.DoesNotExist:
         node = None
     if request.method == "POST" and 'form-delete' in request.POST:
-        node.delete()
+        if node is not None:
+            node.delete()
         return redirect('home')
     if request.method == "POST":
         node_form = NodeForm(request.POST)
