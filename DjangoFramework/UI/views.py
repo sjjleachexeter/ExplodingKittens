@@ -25,12 +25,6 @@ def missions(request):
     '''
     return render(request, 'gamification/missions.html')
 
-def leaderboard(request):
-    '''
-    Show leaderboard with user position (based on user points)
-    '''
-    return render(request, 'leaderboard.html')
-
 def profile(request):
     '''
     Allow user to adjust personal & account settings

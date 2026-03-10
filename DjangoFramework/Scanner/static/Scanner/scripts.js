@@ -26,13 +26,11 @@ function toggle_scanner_view() {
 }
 
 function onScanSuccess(decodedText) {
+    // Fill the barcode input
+    document.getElementById("barcode").value = decodedText;
 
-    window.location.href = `/passport/${decodedText}`;
+    // Submit the form automatically
+    document.getElementById("barcode_form").submit();
+
 
 }
-
-function goSearch() {
-    const code = document.getElementById('manuel_code').value;
-    window.location.href = `/passport/${code}`;
-}
-

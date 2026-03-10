@@ -1,11 +1,11 @@
-mission_id,title,rules,points,start_at,end_at,published
-M001,First Scan,"{""type"": ""FIRST_SCAN"", ""difficulty"": ""easy""}",50,,,TRUE
-M002,Multi-Stage,"{""type"": ""MIN_STAGES"", ""difficulty"": ""easy"", ""min_stages"": 3}",60,,,TRUE
-M003,Main Ingredient Origin,"{""type"": ""MAIN_INGREDIENT_ORIGIN"", ""difficulty"": ""easy""}",70,,,TRUE
-M004,Evidence Match,"{""type"": ""EVIDENCE_RANKING"", ""difficulty"": ""medium"", ""claim_type"": ""fairtrade""}",120,,,TRUE
-M005,Missing Evidence,"{""type"": ""MISSING_EVIDENCE"", ""difficulty"": ""medium""}",120,,,TRUE
-M006,Weak Evidence,"{""type"": ""WEAK_EVIDENCE"", ""difficulty"": ""hard""}",160,,,TRUE
-M007,Wrong Evidence Type,"{""type"": ""WRONG_EVIDENCE_TYPE"", ""difficulty"": ""hard""}",160,,,TRUE
-M008,Relative Value (Most Value),"{""type"": ""VALUE_MAX_STAGE"", ""difficulty"": ""easy""}",70,,,TRUE
-M009,Relative Value (Rank Stages),"{""type"": ""VALUE_RANK_STAGES"", ""difficulty"": ""medium""}",120,,,TRUE
-M010,Value + Evidence Transparency Risk,"{""type"": ""VALUE_EVIDENCE_RISK"", ""difficulty"": ""hard""}",180,,,TRUE
+mission_id,title,description,example,learning_outcome,rules,points,start_at,end_at,published
+M001,First Scan,Complete your first product scan and open the passport view.,Scan any barcode in the demo list and view the product passport page.,Understand what a product passport contains and where transparency information appears.,"{""type"": ""FIRST_SCAN"", ""difficulty"": ""easy""}",50,,,TRUE
+M002,Multi-Stage,Find a product that has multiple supply chain stages (at least 3).,Open a product passport and check that it lists 3+ stages in the timeline.,Recognise that products pass through multiple organisations/steps before reaching consumers.,"{""type"": ""MIN_STAGES"", ""difficulty"": ""easy"", ""min_stages"": 3}",60,,,TRUE
+M003,Main Ingredient Origin,Identify the origin country of the main ingredient (highest proportion) in a product.,"For a chocolate product, identify where the main ingredient originated.",Learn to interpret ingredient composition and connect it to sourcing/ethical impact.,"{""type"": ""MAIN_INGREDIENT_ORIGIN"", ""difficulty"": ""easy""}",70,,,TRUE
+M004,Evidence Match,Choose the strongest evidence to support an ethical claim,Pick the best evidence ordering: audit report vs supplier statement vs company webpage.,Understand that not all evidence is equal; independent third party evidence is stronger.,"{""type"": ""EVIDENCE_RANKING"", ""difficulty"": ""medium"", ""claim_type"": ""fairtrade""}",120,,,TRUE
+M005,Missing Evidence,Spot a claim that has missing or insufficient evidence attached.,A product says 'organic' but has no certificate/audit attached in the evidence section.,Learn to identify unsupported claims and the importance of verification.,"{""type"": ""MISSING_EVIDENCE"", ""difficulty"": ""medium""}",120,,,TRUE
+M006,Weak Evidence,Detect when a claim is supported only by weak evidence ,A sustainability claim is backed only by a supplier statement without third party verification.,Learn why independent checks (audits/certifications) reduce greenwashing risk.,"{""type"": ""WEAK_EVIDENCE"", ""difficulty"": ""hard""}",160,,,TRUE
+M007,Wrong Evidence Type,Identify evidence that is the wrong type for a specific claim.,Using shipping manifests or batch records to 'prove' an organic claim (wrong evidence).,Understand evidence relevance: different claims require specific proof types.,"{""type"": ""WRONG_EVIDENCE_TYPE"", ""difficulty"": ""hard""}",160,,,TRUE
+M008,Relative Value (Most Value),Find which stage contributes the most value to a product.,"On a passport, compare stage value shares and pick the highest one.",Learn how value is distributed across a supply chain and why that affects transparency priorities.,"{""type"": ""VALUE_MAX_STAGE"", ""difficulty"": ""easy""}",70,,,TRUE
+M009,Relative Value (Rank Stages),Rank stages from highest to lowest value contribution.,"Given stage values like 30%, 25%, 20%, 15%, 10%, order the stage names correctly.",Build intuition for where value creation happens and how to interpret value share information.,"{""type"": ""VALUE_RANK_STAGES"", ""difficulty"": ""medium""}",120,,,TRUE
+M010,Value + Evidence Transparency Risk,Identify the biggest transparency risk: high value contribution but weak evidence support.,Stage A has the highest value share but only a supplier statement; flag it as highest risk.,Learn to prioritise investigation: focus on high-impact stages with weak verification.,"{""type"": ""VALUE_EVIDENCE_RISK"", ""difficulty"": ""hard""}",180,,,TRUE

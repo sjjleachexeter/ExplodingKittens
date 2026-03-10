@@ -1,4 +1,4 @@
-{% extends "base.html"%} {% block title %}Sign Up {% endblock %}
+{% extends "base.html" %} {% block title %}Sign Up {% endblock %}
 {% block content %}
     {% if user.is_authenticated %}
 
@@ -8,9 +8,18 @@
             {% csrf_token %}
             <button type="submit">Log Out</button>
         </form>
-         <form action="{% url 'delete_account' %}" method="post">
+        <form action="{% url 'delete_account' %}" method="post">
             {% csrf_token %}
             <button type="submit">Delete account</button>
+        </form>
+
+        <form action="{% url 'public_account' %}" method="post">
+            {% csrf_token %}
+            <label>
+                <input type="checkbox" name="enabled" onchange="this.form.submit()"
+                       {% if public %}checked{% endif %}>
+            Public profile
+            </label>
         </form>
 
     {% else %}
