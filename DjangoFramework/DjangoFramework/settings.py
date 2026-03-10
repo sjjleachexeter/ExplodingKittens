@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     "Users",
     "Scanner",
     "passport",
-    "gamification"
+    "gamification",
+    "Leaderboard",
 ]
 USE_WHITENOISE = os.getenv("USE_WHITENOISE", "False") == "True"
 MIDDLEWARE = [
