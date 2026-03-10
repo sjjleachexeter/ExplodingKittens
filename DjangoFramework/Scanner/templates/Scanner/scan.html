@@ -21,6 +21,12 @@
 <input type="search" id="manuel_code" name="manuel code" >
 <button onclick="goSearch()">Find Product</button>
 
+{% if request.user.type == "PASSPORT_ADMIN" or request.user.type == "MANAGER"%}
+    <h3>Want to add to the passport? Click to add:</h3>
+    <button href="{% url 'editor' %}">Manual Editor</button>
+{%endif%}
+
+
 
 {% load static %}
 <script src="{% static 'Scanner/scripts.js' %}"></script>

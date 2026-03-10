@@ -8,3 +8,9 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, "Scanner/scan.html")
+
+def manual_editor(request):
+    '''
+    Will display the manual editor for the product passport
+    '''
+    return render(request, 'editor.html')

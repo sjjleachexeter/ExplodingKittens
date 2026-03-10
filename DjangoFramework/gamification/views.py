@@ -32,3 +32,9 @@ def quiz(request, quiz_id):
             return render(request, 'gamification/quiz_does_not_exist.html')
 
     return render(request, 'gamification/login_to_view.html')
+
+def edits(request):
+    '''
+    Will display the manual editor for the product passport
+    '''
+    return render(request, 'game_editor.html')
