@@ -2,9 +2,36 @@
 {% block content %} 
 
 {% if user.is_authenticated %}
+<body style="background-color:darkseagreen;">
 <h3> Welcome, {{user.username}}!</h3>
 
+<div class="card mb-3">
+    <h5> Your Profile </h5>
+    Level: {{ level }} ({{points}} points)<br>
+    Leaderboard rank: #123 <br>
+    Badges: 🛡️🏵️🏅
+</div>
 
+<div class="card mb-3">
+    <h5> Your Activity </h5>
+    Missions Done: {{ missions_done }} <br>
+    Quizzes Attempted: {{ quizzes_attempted }} <br>
+    Products Scanned: {{ products_scanned }} <br>
+</div>
+
+<div class="card mb-3">
+    <h5> Current Missions </h5>
+    <ul>
+        <li> Mission 1 </li>
+        <li> Mission 2 </li>
+        <li> Mission 3 </li>
+    </ul>
+</div>
+<button class="btn btn-secondary" margin-left="auto">Continue scanning!</button> <br>
+Last Scan: {{ last_scan }} <br>
+
+<button> Developer dashboard </button>
+</body>
 
 {% else %}
 <p>You are not logged in</p>
