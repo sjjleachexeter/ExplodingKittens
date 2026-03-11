@@ -9,32 +9,34 @@ def home(request):
     Homepage for application
     Fetch user info from database and pass as context to display level, stats, etc.
     '''
-    try:
-        level = Level.objects.get(user=request.user).level
-        points = Level.objects.get(user=request.user).points
-    except Exception as e:
-        level = None
-        print(e)
-        traceback.print_exc()
-    missions_done = MissionProgress.objects.filter(
-        user=request.user, 
-        completed_at__isnull=False
-    ).count()
-    quizzes_attempted = QuizAttempt.objects.filter(user=request.user).count()
-    products_scanned = ProductScan.objects.filter(user=request.user).count()
-    try:
-        last_scan = ProductScan.objects.filter(user=request.user).select_related('product').last()
-    except:
-        last_scan = None
-    context = {
-        'level': level,
-        'points': points,
-        'missions_done': missions_done,
-        'quizzes_attempted': quizzes_attempted,
-        'products_scanned': products_scanned,
-        'last_scan': last_scan,
-    }
-    return render(request, 'home.html', context)
+    if request.user.is_authenticated:
+        try:
+            level = Level.objects.get(user=request.user).level
+            points = Level.objects.get(user=request.user).points
+        except Exception as e:
+            level = None
+            print(e)
+            traceback.print_exc()
+        missions_done = MissionProgress.objects.filter(
+            user=request.user, 
+            completed_at__isnull=False
+        ).count()
+        quizzes_attempted = QuizAttempt.objects.filter(user=request.user).count()
+        products_scanned = ProductScan.objects.filter(user=request.user).count()
+        try:
+            last_scan = ProductScan.objects.filter(user=request.user).select_related('product').last()
+        except:
+            last_scan = None
+        context = {
+            'level': level,
+            'points': points,
+            'missions_done': missions_done,
+            'quizzes_attempted': quizzes_attempted,
+            'products_scanned': products_scanned,
+            'last_scan': last_scan,
+        }
+        return render(request, 'home.html', context)
+    return render(request, 'home.html')
 
 def scan(request):
     '''
