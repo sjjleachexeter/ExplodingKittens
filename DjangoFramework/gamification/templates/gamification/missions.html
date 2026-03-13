@@ -165,7 +165,7 @@
 
     </div>
 
-{% if request.user.role.get.type == "GAMES_ADMIN" or request.user.role.get.type == "MANAGER"%}
+{% if request.user.role.type == "GAMES_ADMIN" or request.user.role.type == "MANAGER"%}
     <h3>Want to add to a quiz? Click to add:</h3>
     <button href="{% url 'edits' %}">Manual Editor</button>
 {%endif%}

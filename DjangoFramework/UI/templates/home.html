@@ -4,17 +4,17 @@
     {% if user.is_authenticated %}
         <h3> Welcome, {{ user.username }}!</h3>
 
-        {% if request.user.role.get.type == "MANAGER" %}
+        {% if request.user.role.type == "MANAGER" %}
             <h3>You are a Manager of this software</h3>
-        {% elif request.user.role.get.type == "GAMES_ADMIN" %}
+        {% elif request.user.role.type == "GAMES_ADMIN" %}
             <h3>You are a Games Admin of this software</h3>
-        {% elif request.user.role.get.type == "PASSPORT_ADMIN" %}
+        {% elif request.user.role.type == "PASSPORT_ADMIN" %}
             <h3>You are a Product Passport Admin of this software</h3>
         {% endif %}
 
 
         <!--add passport creation features if admin-->
-        {% if request.user.role.get.type == "PASSPORT_ADMIN" or  request.user.role.get.type == "MANAGER" %}
+        {% if request.user.role.type == "PASSPORT_ADMIN" or  request.user.role.type == "MANAGER" %}
             <br><br><br>
             <h3>Passport Admin Panel </h3>
             <p><a href="{% url 'create_passport' %}">Create Product Passport</a></p>

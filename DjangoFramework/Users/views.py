@@ -24,9 +24,13 @@ class AccountsView(CreateView):
         context = super().get_context_data(**kwargs)
         # add public setting
         if self.request.user.is_authenticated:
-            public = LeaderboardPreferences.objects.filter(user=self.request.user).first()
-            if public is not None:
+            try :
+                public = self.request.user.leaderboard_preference
+
                 context['public'] = public.public
+            except LeaderboardPreferences.DoesNotExist:
+                LeaderboardPreferences.objects.update_or_create(user=self.request.user)
+                context['public'] = False
 
         return context
 
@@ -81,7 +85,7 @@ def logout_account(request):
 def public_account(request):
     if request.method == "POST":
         user = request.user
-        preference = user.leaderboard_preference.get_or_create()[0]
+        preference = user.leaderboard_preference
         preference.toggle_public()
         preference.save()
 

@@ -63,7 +63,7 @@
     </div>
 
     <!--add edit button for admins-->
-    {% if user.role.get.type == "PASSPORT_ADMIN" or user.role.get.type == "MANAGER"%}
+    {% if user.role.type == "PASSPORT_ADMIN" or user.role.type == "MANAGER"%}
         <br>        <br>        <br>
         <h3>Product Admin Options</h3>
         <p><a href="{% url 'edit_passport' product_id %}">Edit Product Passport</a></p>
