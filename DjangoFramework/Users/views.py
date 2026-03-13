@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, FormView
+from Users.models import Level, Types
 
 from Leaderboard.models import LeaderboardPreferences
 
@@ -42,6 +43,8 @@ class SignupView(FormView):
         if authenticated_user is not None:
             login(self.request, authenticated_user)
             print(f"User logged in: {self.request.user}")
+            Level.objects.update_or_create(user = authenticated_user)
+            Types.objects.update_or_create(user = authenticated_user)
         else:
             print("Authentication failed after signup")
         return super().form_valid(form)
@@ -63,6 +66,13 @@ def delete_account(request):
     else:
         return redirect('delete_confirm')
 
+@login_required
+def logout_account(request):
+    if request.method == "POST":
+        logout(request)
+        return redirect('home')
+    else:
+        return redirect('logout_confirm')
 
 @login_required
 def public_account(request):
