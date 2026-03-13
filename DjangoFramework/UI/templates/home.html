@@ -1,5 +1,5 @@
 {% extends "base.html"%} {% block title %}Home {% endblock %}
-{% block content %} 
+{% block content %}
 
 {% if user.is_authenticated %}
 <h3> Welcome, {{user.username}}!</h3>
@@ -15,9 +15,16 @@
 
 
 {% else %}
+<h1 class="above-the-fold">Know your Impact</h1>
+<h4>Your purchases make a difference</h4>
+<h4>Coffee farmers often live just above the poverty line</h4>
+<h4>The UK wastes ~9.5 million tonnes of food a year.<br>That's 79 thousand double decker buses.</h4>
 <p>You are not logged in</p>
-<a href="{% url 'login' %}">Log In</a>
-<a href="{% url 'signup' %}">Signup</a>
+
+
+
+<a href="{% url 'login' %}" class="btn btn-primary">Log In</a></button>
+<a href="{% url 'signup' %}" class="btn btn-secondary">Signup</a></button>
 {% endif %}
 
 {% endblock %}
