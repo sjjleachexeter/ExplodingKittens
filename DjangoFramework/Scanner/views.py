@@ -36,3 +36,11 @@ def load_passport(request):
         return redirect(reverse('passport_display', kwargs={'product_id': barcode}))
     else:
         raise Http404("Node not found")
+
+
+
+def manual_editor(request):
+    '''
+    Will display the manual editor for the product passport
+    '''
+    return render(request, 'editor.html')

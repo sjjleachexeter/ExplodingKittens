@@ -164,6 +164,14 @@
 
 
     </div>
+
+{% if request.user.type == "GAMES_ADMIN" or request.user.type == "MANAGER"%}
+    <h3>Want to add to a quiz? Click to add:</h3>
+    <button href="{% url 'edits' %}">Manual Editor</button>
+{%endif%}
+
+    
+
 {% endblock %}
 
 <!-- start for loading from database
