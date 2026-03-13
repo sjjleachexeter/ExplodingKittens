@@ -1,31 +1,39 @@
-{% extends "base.html"%} {% block title %}Home {% endblock %}
+{% extends "base.html" %} {% block title %}Home {% endblock %}
 {% block content %}
 
-{% if user.is_authenticated %}
-<h3> Welcome, {{user.username}}!</h3>
+    {% if user.is_authenticated %}
+        <h3> Welcome, {{ user.username }}!</h3>
 
-{% if request.user.role.get.type == "MANAGER"%}
-    <h3>You are a Manager of this software</h3>
-{% elif request.user.role.get.type == "GAMES_ADMIN"%}
-    <h3>You are a Games Admin of this software</h3>
-{% elif request.user.role.get.type == "PASSPORT_ADMIN"%}
-    <h3>You are a Product Passport Admin of this software</h3>
-{% endif %}
-
-
-
-{% else %}
-<h1 class="above-the-fold">Know your Impact</h1>
-<h4>Your purchases make a difference</h4>
-<h4>Coffee farmers often live just above the poverty line</h4>
-<h4>The UK wastes ~9.5 million tonnes of food a year.<br>That's 79 thousand double decker buses.</h4>
-<p>You are not logged in</p>
+        {% if request.user.role.get.type == "MANAGER" %}
+            <h3>You are a Manager of this software</h3>
+        {% elif request.user.role.get.type == "GAMES_ADMIN" %}
+            <h3>You are a Games Admin of this software</h3>
+        {% elif request.user.role.get.type == "PASSPORT_ADMIN" %}
+            <h3>You are a Product Passport Admin of this software</h3>
+        {% endif %}
 
 
+        <!--add passport creation features if admin-->
+        {% if request.user.role.get.type == "PASSPORT_ADMIN" or  request.user.role.get.type == "MANAGER" %}
+            <br><br><br>
+            <h3> Admin Panel </h3>
+            <p><a href="{% url 'create_passport' %}">Create Product Passport</a></p>
+            <p><a href="{% url 'create_node' %}">Create Node</a></p>
+            <p><a href="{% url 'create_ingredient' %}">Create Ingredient</a></p>
+        {% endif %}
 
-<a href="{% url 'login' %}" class="btn btn-primary">Log In</a></button>
-<a href="{% url 'signup' %}" class="btn btn-secondary">Signup</a></button>
-{% endif %}
+    {% else %}
+        <h1 class="above-the-fold">Know your Impact</h1>
+        <h4>Your purchases make a difference</h4>
+        <h4>Coffee farmers often live just above the poverty line</h4>
+        <h4>The UK wastes ~9.5 million tonnes of food a year.<br>That's 79 thousand double decker buses.</h4>
+        <p>You are not logged in</p>
+
+
+
+        <a href="{% url 'login' %}" class="btn btn-primary">Log In</a></button>
+        <a href="{% url 'signup' %}" class="btn btn-secondary">Signup</a></button>
+    {% endif %}
 
 {% endblock %}
 

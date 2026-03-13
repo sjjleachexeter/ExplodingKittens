@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Passport{% endblock %}
+
+{% block content %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <h3>Product Form</h3>
+        <!-- General product options -->
+        {{ product_form.as_p }}
+
+        <!-- Product Ingredients -->
+        <h3>Ingredients</h3>
+        {{ ingredient_formset.management_form }}
+        <div id="ingredient_formset">
+            {% for form in ingredient_formset %}
+                <div class="form-row">
+                    {{ form.as_p }}
+                    <button type="button" class="remove-form">Remove</button>
+                </div>
+            {% endfor %}
+        </div>
+        <button type="button" class="add-form-btn" data-target="#ingredient_formset"
+                data-prefix="{{ ingredient_formset.prefix }}">Add Ingredient
+        </button>
+
+        <!-- Product Stages -->
+        <h3>Stages</h3>
+        {{ stage_formset.management_form }}
+        <div id="stage_formset">
+            {% for form in stage_formset %}
+                <div class="form-row">
+                    {{ form.as_p }}
+                    <button type="button" class="remove-form">Remove</button>
+                </div>
+            {% endfor %}
+        </div>
+        <button type="button" class="add-form-btn" data-target="#stage_formset"
+                data-prefix="{{ stage_formset.prefix }}">Add Stage
+        </button>
+
+        <br><br>
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <!-- Delete product button -->
+    <br><br>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="form-delete" value="1">
+        <button type="submit">Delete Product</button>
+    </form>
+
+
+    {% load static %}
+    <script src="{% static 'passport/formset_controls.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'passport/edit_passport.css' %}">
+
+    <script>
+        setupFormset("#ingredient_formset", "{{ ingredient_formset.prefix }}", {{ ingredient_formset.total_form_count }});
+        setupFormset("#stage_formset", "{{ stage_formset.prefix }}", {{ stage_formset.total_form_count }});
+    </script>
+
+
+
+{% endblock %}

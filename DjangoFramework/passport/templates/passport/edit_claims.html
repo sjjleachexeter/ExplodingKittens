@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Passport{% endblock %}
+
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <!-- Product Claims -->
+        <h3>Product Claims</h3>
+
+        {{ claims_form.management_form }}
+        <div id="claims_form">
+            {% for form in claims_form %}
+                <div class="form-row">
+                    {{ form.as_p }}
+                    <button type="button" class="remove-form">Remove</button>
+                </div>
+            {% endfor %}
+        </div>
+        <button type="button" class="add-form-btn" data-target="#claims_form"
+                data-prefix="{{ claims_form.prefix }}">Add Claim
+        </button>
+
+        <br><br>
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+    {% load static %}
+    <script src="{% static 'passport/formset_controls.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'passport/edit_passport.css' %}">
+
+    <script>
+        setupFormset("#claims_form", "{{ claims_form.prefix }}", {{ claims_form.total_form_count }});
+    </script>
+
+
+
+{% endblock %}

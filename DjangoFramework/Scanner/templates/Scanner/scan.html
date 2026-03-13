@@ -25,10 +25,7 @@
 
     </form>
 
-{% if request.user.type == "PASSPORT_ADMIN" or request.user.type == "MANAGER"%}
-    <h3>Want to add to the passport? Click to add:</h3>
-    <button href="{% url 'editor' %}">Manual Editor</button>
-{%endif%}
+
 
 {% if user.is_authenticated %}
     <h3>You are level {{request.user.current_level.get.level}}</h3>
@@ -39,9 +36,6 @@
     {% load static %}
     <script src="{% static 'Scanner/scripts.js' %}"></script>
 
-
-    {% if user.is_authenticated %}
-    <h3>You are Level {{user.get("level")}}</h3>
         
 
 

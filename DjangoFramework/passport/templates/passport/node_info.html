@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <body>
     <h1>{{ node.org_name }}</h1>
     <p>role: {{ node.role }}</p>
     <p>located in {{ node.city }} in {{ node.country }}</p>
@@ -13,22 +12,24 @@
     <div id="map" style="height: 500px;"></div>
 
 
-    </body>
-
-    </html>
+    <!--add edit button for admins-->
+    {% if user.role.get.type == "PASSPORT_ADMIN" or user.role.get.type == "MANAGER"%}
+        <br>        <br>        <br>
+         <p><a href="{% url 'edit_node' node.node_id %}">Edit Node</a></p>
+    {% endif %}
 
     {% load static %}
     <script src="{% static 'passport/map.js' %}"></script>
 
 
-     <script>
+    <script>
         // Pass the city and country for map.js
         const city = "{{ node.city }}";
         const country = "{{ node.country }}";
 
 
         // Lookup the location and add marker
-        addLocation(city, country,"");
+        addLocation(city, country, "");
     </script>
 
 {% endblock %}
