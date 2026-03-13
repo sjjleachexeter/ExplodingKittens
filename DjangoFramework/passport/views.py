@@ -6,8 +6,8 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from passport.forms import ProductForm, IngredientFormSet, StageFormSet, EditProductForm, ClaimFormSet, EvidenceFormSet, \
-    NodeForm
-from passport.models import Product, ProductIngredient, Stage, Node
+    NodeForm, IngredientForm
+from passport.models import Product, ProductIngredient, Stage, Node, Ingredient
 
 
 # Create your views here.
@@ -44,10 +44,10 @@ def display_node_info(request, node_id=-1):
 
 
 @login_required
-def create_node(request, node_id = None):
-    #makesure the user has the correct permissions
-    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type!= "PASSPORT_ADMIN":
-        raise Http404("Node not found")
+def create_node(request, node_id=None):
+    # make sure the user has the correct permissions
+    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type != "PASSPORT_ADMIN":
+        raise Http404("Unauthorised user")
     try:
         node = Node.objects.get(node_id=node_id)
     except Node.DoesNotExist:
@@ -66,18 +66,46 @@ def create_node(request, node_id = None):
             return redirect(
                 reverse('node_info_display', kwargs={'node_id': node_form.instance.node_id})
             )
-    else :
+    else:
 
-        node_form = NodeForm(instance = node)
+        node_form = NodeForm(instance=node)
 
-    return render(request,"passport/edit_node.html", {"node_form": node_form})
+    return render(request, "passport/edit_node.html", {"node_form": node_form})
+
+
+@login_required
+def create_ingredient(request, ingredient_id=None):
+    # make sure the user has the correct permissions
+    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type != "PASSPORT_ADMIN":
+        raise Http404("ingredient not found")
+    try:
+        ingredient = Ingredient.objects.get(ingredient_id=ingredient_id)
+    except Ingredient.DoesNotExist:
+        ingredient = None
+    if request.method == "POST" and 'form-delete' in request.POST:
+        if ingredient is not None:
+            ingredient.delete()
+        return redirect('home')
+    if request.method == "POST":
+        ingredient_form = IngredientForm(request.POST)
+
+        if ingredient_form.is_valid():
+            ingredient_form.instance.ingredient_id = ingredient_form.instance.id
+            ingredient_form.save()
+
+            return redirect('home')
+    else:
+
+        ingredient_form = IngredientForm(instance=ingredient)
+
+    return render(request, "passport/edit_ingredient.html", {"ingredient_form": ingredient_form})
 
 
 @login_required
 def create_passport(request):
-    #makesure the user has the correct permissions
-    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type!= "PASSPORT_ADMIN":
-        raise Http404("Node not found")
+    # make sure the user has the correct permissions
+    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type != "PASSPORT_ADMIN":
+        raise Http404("Unauthorised user")
     # check for delete post
     if request.method == "POST" and 'form-delete' in request.POST:
         # don't save anything and just go back home
@@ -128,9 +156,9 @@ def create_passport(request):
 
 @login_required
 def edit_passport(request, product_id):
-    #makesure the user has the correct permissions
-    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type!= "PASSPORT_ADMIN":
-        raise Http404("Node not found")
+    # make sure the user has the correct permissions
+    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type != "PASSPORT_ADMIN":
+        raise Http404("Unauthorised user")
     product = Product.objects.get(product_id=product_id)
     # check for delete post
     if request.method == "POST" and 'form-delete' in request.POST:
@@ -174,9 +202,9 @@ def edit_passport(request, product_id):
 
 @login_required
 def edit_claims(request, product_id):
-    #makesure the user has the correct permissions
-    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type!= "PASSPORT_ADMIN":
-        raise Http404("Node not found")
+    # make sure the user has the correct permissions
+    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type != "PASSPORT_ADMIN":
+        raise Http404("Unauthorised user")
     product = Product.objects.get(product_id=product_id)
     # check for delete post
 
@@ -217,9 +245,9 @@ def edit_claims(request, product_id):
 
 @login_required
 def edit_evidence(request, product_id):
-    #makesure the user has the correct permissions
-    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type!= "PASSPORT_ADMIN":
-        raise Http404("Node not found")
+    # make sure the user has the correct permissions
+    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type != "PASSPORT_ADMIN":
+        raise Http404("Unauthorised user")
 
     product = Product.objects.get(product_id=product_id)
     # check for delete post
