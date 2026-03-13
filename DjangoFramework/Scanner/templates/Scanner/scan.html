@@ -1,33 +1,36 @@
 {% extends "base.html" %} {% block title %}Scan {% endblock %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="https://unpkg.com/html5-qrcode"></script>
-    <title>Scan a Barcode</title>
-</head>
-<body>
-<div class="container">
-    <h3>Scan a product:</h3>
-    <button onclick="toggle_scanner_view()">Scan Barcode</button>
-    <div id="scanner_view" style="display: none">
-        <div id="reader"></div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <script src="https://unpkg.com/html5-qrcode"></script>
+        <title>Scan a Barcode</title>
+    </head>
+    <body>
+    <div class="container">
+        <h3>Scan a product:</h3>
+        <button onclick="toggle_scanner_view()">Scan Barcode</button>
+        <div id="scanner_view" style="display: none">
+            <div id="reader"></div>
+        </div>
     </div>
-</div>
 
 
-<!--Not working? Enter Manually (needs validation)-->
- <label for="manuel_code">Not working? Enter Manually:</label>
-<input type="search" id="manuel_code" name="manuel code" >
-<button onclick="goSearch()">Find Product</button>
+    <!--Not working? Enter Manually (needs validation)-->
+    <form action="{% url 'load_passport' %}" method="post" id="barcode_form">
+        {% csrf_token %}
+        <label for="barcode">Not working? Enter Manually:</label>
+        <input type="text" id="barcode" name="barcode">
+        <button type="submit">Find Product</button>
+
+    </form>
 
 
-{% load static %}
-<script src="{% static 'Scanner/scripts.js' %}"></script>
+    {% load static %}
+    <script src="{% static 'Scanner/scripts.js' %}"></script>
 
 
-
-</body>
-</html>
+    </body>
+    </html>
 
 {% endblock %}
