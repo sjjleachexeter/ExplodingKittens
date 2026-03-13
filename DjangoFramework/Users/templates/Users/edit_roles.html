@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Home {% endblock %}
+
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+
+        <h3>Update User Roles</h3>
+
+        {{ role_form.as_p }}
+
+        <br><br>
+        <button type="submit">Submit</button>
+
+    </form>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'passport/edit_passport.css' %}">
+
+
+{% endblock %}

@@ -5,6 +5,7 @@ from django.http.response import Http404
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
+from Users.decorators import passport_edit_required
 from passport.forms import ProductForm, IngredientFormSet, StageFormSet, EditProductForm, ClaimFormSet, EvidenceFormSet, \
     NodeForm, IngredientForm
 from passport.models import Product, ProductIngredient, Stage, Node, Ingredient
@@ -43,11 +44,8 @@ def display_node_info(request, node_id=-1):
         raise Http404("Node not found")
 
 
-@login_required
+@passport_edit_required
 def create_node(request, node_id=None):
-    # make sure the user has the correct permissions
-    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type != "PASSPORT_ADMIN":
-        raise Http404("Unauthorised user")
     try:
         node = Node.objects.get(node_id=node_id)
     except Node.DoesNotExist:
@@ -73,11 +71,8 @@ def create_node(request, node_id=None):
     return render(request, "passport/edit_node.html", {"node_form": node_form})
 
 
-@login_required
+@passport_edit_required
 def create_ingredient(request, ingredient_id=None):
-    # make sure the user has the correct permissions
-    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type != "PASSPORT_ADMIN":
-        raise Http404("ingredient not found")
     try:
         ingredient = Ingredient.objects.get(ingredient_id=ingredient_id)
     except Ingredient.DoesNotExist:
@@ -101,11 +96,8 @@ def create_ingredient(request, ingredient_id=None):
     return render(request, "passport/edit_ingredient.html", {"ingredient_form": ingredient_form})
 
 
-@login_required
+@passport_edit_required
 def create_passport(request):
-    # make sure the user has the correct permissions
-    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type != "PASSPORT_ADMIN":
-        raise Http404("Unauthorised user")
     # check for delete post
     if request.method == "POST" and 'form-delete' in request.POST:
         # don't save anything and just go back home
@@ -154,11 +146,8 @@ def create_passport(request):
         })
 
 
-@login_required
+@passport_edit_required
 def edit_passport(request, product_id):
-    # make sure the user has the correct permissions
-    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type != "PASSPORT_ADMIN":
-        raise Http404("Unauthorised user")
     product = Product.objects.get(product_id=product_id)
     # check for delete post
     if request.method == "POST" and 'form-delete' in request.POST:
@@ -200,11 +189,8 @@ def edit_passport(request, product_id):
     })
 
 
-@login_required
+@passport_edit_required
 def edit_claims(request, product_id):
-    # make sure the user has the correct permissions
-    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type != "PASSPORT_ADMIN":
-        raise Http404("Unauthorised user")
     product = Product.objects.get(product_id=product_id)
     # check for delete post
 
@@ -243,12 +229,8 @@ def edit_claims(request, product_id):
     return render(request, "passport/edit_claims.html", {"claims_form": claims_form})
 
 
-@login_required
+@passport_edit_required
 def edit_evidence(request, product_id):
-    # make sure the user has the correct permissions
-    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type != "PASSPORT_ADMIN":
-        raise Http404("Unauthorised user")
-
     product = Product.objects.get(product_id=product_id)
     # check for delete post
 

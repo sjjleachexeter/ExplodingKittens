@@ -1,9 +1,12 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
+from django.forms import ModelForm
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, FormView
+
+from Users.decorators import superuser_required
 from Users.models import Level, Types
 
 from Leaderboard.models import LeaderboardPreferences
@@ -85,3 +88,27 @@ def public_account(request):
         return redirect('accounts')
     else:
         return redirect('accounts')
+
+
+class RoleForm(ModelForm):
+    class Meta:
+        model = Types
+        fields = ['user','type']
+
+
+@superuser_required
+def edit_roles(request):
+    if request.method == "POST":
+        role_form = RoleForm(request.POST)
+
+        if role_form.is_valid():
+            role_form.save()
+
+            # send user home on success
+            return redirect('home')
+
+    else:
+        # create form to edit roles
+        role_form = RoleForm()
+
+    return render(request, "Users/edit_roles.html", {"role_form": role_form})

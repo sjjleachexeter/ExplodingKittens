@@ -16,10 +16,17 @@
         <!--add passport creation features if admin-->
         {% if request.user.role.get.type == "PASSPORT_ADMIN" or  request.user.role.get.type == "MANAGER" %}
             <br><br><br>
-            <h3> Admin Panel </h3>
+            <h3>Passport Admin Panel </h3>
             <p><a href="{% url 'create_passport' %}">Create Product Passport</a></p>
             <p><a href="{% url 'create_node' %}">Create Node</a></p>
             <p><a href="{% url 'create_ingredient' %}">Create Ingredient</a></p>
+        {% endif %}
+
+        <!-- add role admin feature for super users-->
+        {% if request.user.is_superuser %}
+            <br><br><br>
+            <h3>Super User Panel </h3>
+            <p><a href="{% url 'edit_roles' %}">Edit User Roles</a></p>
         {% endif %}
 
     {% else %}
