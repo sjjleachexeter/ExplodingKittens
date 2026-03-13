@@ -35,15 +35,7 @@ def leaderboard(request):
     if request.user.is_authenticated:
         user_row = table.filter(user=request.user).get()
         # find the user_position of the user row in the sorted table
-        field = sort_by.lstrip('-')
-        is_desc = sort_by.startswith('-')
-        value = getattr(user_row, field)
-        if is_desc:
-            user_position = table.filter(**{f"{field}__gt": value}).count() + 1
-        else:
-            user_position = table.filter(**{f"{field}__lt": value}).count() + 1
-        # convert the users row into the same format as the rest
-        user_row = [getattr(user_row, field) for field in fields]
+        user_position = list(table).index(user_row) +1
 
     # convert into better format for the template
     table = [
