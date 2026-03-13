@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from django.forms import ModelForm
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
@@ -103,16 +104,24 @@ class RoleForm(ModelForm):
 @superuser_required
 def edit_roles(request):
     if request.method == "POST":
-        role_form = RoleForm(request.POST)
+        # Get the user from the POST data
+        user_id = request.POST.get('user')
+        user = User.objects.get(id=user_id)
 
+        # Check if a Types instance already exists for this user
+        try:
+            role_instance = Types.objects.get(user=user)
+        except Types.DoesNotExist:
+            role_instance = None
+
+        # create form with existing instance
+        role_form = RoleForm(request.POST, instance=role_instance)
+
+        #update and return home is valid
         if role_form.is_valid():
             role_form.save()
-
-            # send user home on success
             return redirect('home')
-
     else:
-        # create form to edit roles
         role_form = RoleForm()
 
     return render(request, "Users/edit_roles.html", {"role_form": role_form})
