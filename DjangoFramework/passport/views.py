@@ -1,5 +1,5 @@
 from django.contrib.auth import forms
-from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.decorators import permission_required, login_required
 from django.forms import ModelForm, modelformset_factory, inlineformset_factory
 from django.http.response import Http404
 from django.shortcuts import render, redirect
@@ -43,8 +43,11 @@ def display_node_info(request, node_id=-1):
         raise Http404("Node not found")
 
 
-@permission_required("passport.ProductAdmin")
+@login_required
 def create_node(request, node_id = None):
+    #makesure the user has the correct permissions
+    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type!= "PASSPORT_ADMIN":
+        raise Http404("Node not found")
     try:
         node = Node.objects.get(node_id=node_id)
     except Node.DoesNotExist:
@@ -70,8 +73,11 @@ def create_node(request, node_id = None):
     return render(request,"passport/edit_node.html", {"node_form": node_form})
 
 
-@permission_required("passport.ProductAdmin")
+@login_required
 def create_passport(request):
+    #makesure the user has the correct permissions
+    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type!= "PASSPORT_ADMIN":
+        raise Http404("Node not found")
     # check for delete post
     if request.method == "POST" and 'form-delete' in request.POST:
         # don't save anything and just go back home
@@ -120,8 +126,11 @@ def create_passport(request):
         })
 
 
-@permission_required("passport.ProductAdmin")
+@login_required
 def edit_passport(request, product_id):
+    #makesure the user has the correct permissions
+    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type!= "PASSPORT_ADMIN":
+        raise Http404("Node not found")
     product = Product.objects.get(product_id=product_id)
     # check for delete post
     if request.method == "POST" and 'form-delete' in request.POST:
@@ -163,8 +172,11 @@ def edit_passport(request, product_id):
     })
 
 
-@permission_required("passport.ProductAdmin")
+@login_required
 def edit_claims(request, product_id):
+    #makesure the user has the correct permissions
+    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type!= "PASSPORT_ADMIN":
+        raise Http404("Node not found")
     product = Product.objects.get(product_id=product_id)
     # check for delete post
 
@@ -203,8 +215,12 @@ def edit_claims(request, product_id):
     return render(request, "passport/edit_claims.html", {"claims_form": claims_form})
 
 
-@permission_required("passport.ProductAdmin")
+@login_required
 def edit_evidence(request, product_id):
+    #makesure the user has the correct permissions
+    if request.user.role.get().type != "PASSPORT_ADMIN" and request.user.role.get().type!= "PASSPORT_ADMIN":
+        raise Http404("Node not found")
+
     product = Product.objects.get(product_id=product_id)
     # check for delete post
 
