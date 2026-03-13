@@ -36,6 +36,11 @@
     <script src="{% static 'Scanner/scripts.js' %}"></script>
 
 
+    {% if user.is_authenticated %}
+    <h3>You are Level {{user.get("level")}}</h3>
+        
+
+
     </body>
     </html>
 
