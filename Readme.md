@@ -34,7 +34,6 @@
    DJANGO_CSRF_TRUSTED_ORIGINS=<your_trusted_origins>
    ```
 5. build and run with `docker compose up --build`
-6. make sure the project database is correct `docker compose exec django-web python manage.py migrate`
-7. import static data while container is running:
+6. import static data while container is running:
     1. import missions  `docker compose exec django-web python manage.py runscript gamification.import_data`
     2. import passports `docker compose exec django-web python manage.py runscript passport.import_product_data`

@@ -47,5 +47,5 @@ USER appuser
 # Expose the application port
 EXPOSE 8000
 
-# Start the application using Gunicorn
-CMD ["sh", "-c", "python manage.py collectstatic --noinput && gunicorn --bind 0.0.0.0:8000 --workers 3 DjangoFramework.wsgi:application"]
+# Start the application using Gunicorn. and collect static aswell as making sure the database it uptodate
+CMD ["sh", "-c", "python manage.py collectstatic --noinput && python manage.py migrate && gunicorn --bind 0.0.0.0:8000 --workers 3 DjangoFramework.wsgi:application"]
