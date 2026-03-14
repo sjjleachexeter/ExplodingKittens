@@ -57,6 +57,12 @@ body {
     filter: brightness(105%);
 }
 
+.standouttext {
+    background-color: rgba(191, 200, 173, 0.7); 
+    border-radius: 30px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
 
 
 
