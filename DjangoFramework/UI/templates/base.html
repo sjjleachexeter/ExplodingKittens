@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <style>
@@ -31,7 +33,7 @@
       {% endblock %}
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  rel="stylesheet" />
-    <link rel="stylesheet" href="static/css/themes.css"/>
+    <link rel="stylesheet" href="{% static 'css/themes.css' %}">
   </head>
   <body>
     <!-- Desktop versions display title & navigation options on a navbar at the top.  -->
@@ -66,7 +68,7 @@
 
     <!-- Mobile versions only display app title & link to privacy statement at top -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light d-lg-none">
-      <div class="container d-flex justify-content-between align-items-center"
+      <div class="container d-flex justify-content-between align-items-center"></div>
       <a class="navbar-brand" href="#"><h4>FoodForThought</h4></a>
       <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> -->
       <ul class="navbar-nav ml-auto">

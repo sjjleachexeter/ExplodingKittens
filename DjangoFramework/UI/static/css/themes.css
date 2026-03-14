@@ -1,4 +1,149 @@
-.above-the-fold{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: large;
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+/*###################*/
+/*general styling */
+/*###################*/
+
+html, body {
+    height: 100%;
+    margin: 0;
 }
+
+body {
+    /*dealing with the background image*/
+    background-image: url("/static/images/pexels-fox-58267-1172675.jpg");
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(4px);
+    /*dealing with default text*/
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #BFC8AD !important /*to override the default*/;
+}
+
+.navbar-light {
+        background-color: #BFC8AD !important;
+}
+
+.fullyinthecentre {
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    height: 70vh;
+}
+
+.above-the-fold {
+    font-family: "Arizonia", cursive;
+    font-size: 8vw;
+    color: #545775;
+    padding: 5vh;
+    /*padding top doesn't work, it extents the box*/
+    margin-top: 10vh;
+    text-shadow: 2px 2px #261C15;
+
+    /*blurred semi transparent background box for the main home page text*/
+    background-color: rgba(191, 200, 173, 0.7); /*tricky, had to use rgba to specify transparency*/
+    border-radius: 30px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+
+    /*animation*/
+    transition: transform 0.25s ease-in-out;
+}
+
+.above-the-fold:hover {
+    transform: scale(1.05);
+    filter: brightness(105%);
+}
+
+
+
+
+/*default heading styling*/
+h1,h2,h3,h4 {
+    margin: 5px 5px;
+    padding: 10px 10px;
+}
+
+/*###################*/
+/*animating cycling facts DO NOT TOUCH MY PRECIOUS HELD TOGETHER WITH HOPES AND DREAMS*/
+/*###################*/
+
+.transitioning-facts {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5vw !important;
+    color: #BFC8AD;
+    text-shadow: 2px 2px #261C15;
+    position: relative;
+    text-align: center;
+    padding: 5vh;
+    margin: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transitioning-facts h4 {
+    width: 100%;
+    opacity: 0;
+    animation: transitioning-text 15s infinite;
+    position: absolute;
+    font-size: inherit;
+}
+
+.transitioning-facts h4:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.transitioning-facts h4:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.transitioning-facts h4:nth-child(3) {
+    animation-delay: 10s;
+}
+
+@keyframes transitioning-text {
+    5%, 30% {
+    opacity: 1;  
+  }
+    31%, 100% {
+    opacity: 0;  
+  }
+}
+
+
+/*###################*/
+/*styling the buttons*/
+/*###################*/
+.btn {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family:'Times New Roman', Times, serif;
+  transition: transform 0.25s ease-in-out;
+}
+
+.btn-primary {
+    background-color: #261C15;
+    border-color: #BFC8AD;
+}
+
+.btn-secondary {
+    background-color: #BFC8AD;
+    border-color: #261C15;
+}
+
+.btn-primary:hover {
+    background-color: #261C15;
+    transform: scale(1.2);
+    filter: brightness(110%);
+}
+
+.btn-secondary:hover {
+    background-color: #BFC8AD;
+    transform: scale(1.2);
+    filter: brightness(110%);
+}
+
