@@ -126,7 +126,7 @@ def create_passport(request):
 
             # send user to product on success
             return redirect(
-                reverse('passport_display', kwargs={'product_id': product.qr_token})
+                reverse('passport_display', kwargs={'product_id': product.product_id})
             )
 
         # return the form if it's wrong
@@ -174,7 +174,7 @@ def edit_passport(request, product_id):
 
             # send user to product on success
             return redirect(
-                reverse('passport_display', kwargs={'product_id': product.qr_token})
+                reverse('passport_display', kwargs={'product_id': product.product_id})
             )
 
     else:
@@ -213,13 +213,13 @@ def edit_claims(request, product_id):
                         evidence.save()
                 else:
                     claim.instance.missing_evidence = True
-                    claim.save()
+
 
             claims_form.save()
 
             # send user to product on success
             return redirect(
-                reverse('passport_display', kwargs={'product_id': product.qr_token})
+                reverse('passport_display', kwargs={'product_id': product.product_id})
             )
 
     else:
@@ -248,7 +248,7 @@ def edit_evidence(request, product_id):
 
             # send user to product on success
             return redirect(
-                reverse('passport_display', kwargs={'product_id': product.qr_token})
+                reverse('passport_display', kwargs={'product_id': product.product_id})
             )
 
     else:
