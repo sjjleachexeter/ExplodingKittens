@@ -2,6 +2,8 @@
 {% block content %}
 
     <h3> Welcome, {{ user.username }} to the gamekeeper dashboard</h3>
+
+
     <h4> Active Mission</h4>
     {% if active_missions.all %}
         <table>
@@ -27,6 +29,8 @@
     {% else %}
         <p>No Published Missions</p>
     {% endif %}
+
+
     <h4> Unpublished Missions</h4>
     {% if unpublished_missions.all %}
         <table>
@@ -51,8 +55,37 @@
         <p>No unpublished missions</p>
     {% endif %}
 
-    <h4>Create New Missions</h4>
-    <a href="{% url 'create_mission' %}">Create New</a>
+
+    <h4> Quiz's</h4>
+    {% if unpublished_missions.all %}
+        <table>
+        <thead>
+        <tr>
+            <th>Quiz</th>
+            <th>Attempts</th>
+            <th>Correct</th>
+            <th>Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for quiz in quizs %}
+            <tr>
+                <td>{{ quiz }}</td>
+                <td>{{ quiz.attempts_count }}</td>
+                <td>{{ quiz.correct }}</td>
+                <td><a href="{% url 'edit_quiz' quiz.id %}">Edit Quiz</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>No unpublished missions</p>
+    {% endif %}
+
+
+    <h4>Create New</h4>
+    <a href="{% url 'create_mission' %}">Create New Mission</a>
+    <a href="{% url 'create_quiz' %}">Create New Quiz</a>
 
 
 {% endblock %}

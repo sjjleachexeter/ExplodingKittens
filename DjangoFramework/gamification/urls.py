@@ -9,5 +9,7 @@ urlpatterns = [
     path("dashboard/edit_mission/<str:mission_id>", views.edit_mission, name='edit_mission'),
     path("dashboard/edit_mission/", views.edit_mission, name='create_mission'),
     path("dashboard/publish_mission/<str:mission_id>", views.publish_mission, name='publish_mission'),
+    path("dashboard/edit_quiz/<str:quiz_id>", views.edit_quiz, name='edit_quiz'),
+    path("dashboard/edit_quiz/", views.edit_quiz, name='create_quiz'),
 
 ]
