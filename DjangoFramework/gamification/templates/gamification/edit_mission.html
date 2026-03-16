@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Home {% endblock %}
+
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+
+        <h3>Edit mission</h3>
+
+        {{ mission_form.as_p }}
+
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Delete mission button -->
+    <br><br>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="form-delete" value="1">
+        <button type="submit">Delete Mission</button>
+    </form>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'passport/edit_passport.css' %}">
+
+
+{% endblock %}
