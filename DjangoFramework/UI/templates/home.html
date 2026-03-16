@@ -26,6 +26,12 @@
                     <p><a href="{% url 'create_ingredient' %}">Create Ingredient</a></p>
                 {% endif %}
 
+                 <!-- add dashboard link if game_admin users-->
+                 {% if request.user.role.type == "GAMES_ADMIN" or  request.user.role.type == "MANAGER" %}
+                     <h3>Game Admin Panel </h3>
+                    <p><a href="{% url 'dashboard' %}">Game Admin Dashboard</a></p>
+                 {% endif %}
+
                 <!-- add role admin feature for super users-->
                 {% if request.user.is_superuser %}
                     <br><br><br>

@@ -89,7 +89,7 @@ def edit_mission(request, mission_id=None):
         if 'form-delete' in request.POST:
             if mission is not None:
                 mission.delete()
-                return redirect('dashboard')
+            return redirect('dashboard')
 
         # create form with existing instance
         mission_form = MissionForm(request.POST, instance=mission)
@@ -117,7 +117,7 @@ def edit_quiz(request, quiz_id=None):
         if 'form-delete' in request.POST:
             if quiz_editing is not None:
                 quiz_editing.delete()
-                return redirect('dashboard')
+            return redirect('dashboard')
 
         # create form with existing instance
         quiz_form = QuizForm(request.POST, instance=quiz_editing)
