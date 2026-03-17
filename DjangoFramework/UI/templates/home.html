@@ -36,18 +36,29 @@
 
             <!--main home page text goes here-->
             {% else %}
+                <!--intro-->
                 <h1 class="above-the-fold">Know your Impact</h1>
                 <div class="transitioning-facts">
                     <h4>Your purchases make a difference</h4>
                     <h4>Coffee farmers often live just above the poverty line</h4>
                     <h4>The UK wastes ~9.5 million tonnes of food a year.<br>That's 79 thousand double decker buses.</h4>
                 </div>
+                <!--login section-->
                 <p>You are not logged in</p>
-
-
-
                 <a href="{% url 'login' %}" class="btn btn-primary">Log In</a></button>
                 <a href="{% url 'signup' %}" class="btn btn-secondary">Signup</a></button>
+                <br>
+                <br>
+                <!--collage-->
+                <div class="grid">
+                    <div class="grid-1"></div>
+                    <div class="grid-2"></div>
+                    <div class="grid-3"></div>
+                    <div class="grid-4"></div>
+                    <div class="grid-5"></div>
+                    <div class="grid-6"></div>
+                </div>
+                <hr>
             {% endif %}
         </div>
 

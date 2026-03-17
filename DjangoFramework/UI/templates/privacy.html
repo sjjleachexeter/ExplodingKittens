@@ -1,6 +1,73 @@
 {% extends "base.html"%} {% block title %}Privacy {% endblock %}
 {% block content %} 
 
-<p> The Privacy Page </p>
 
+<div class="privacypage">
+    <h3>Our Privacy Policy</h3>
+    <p>We understand that your privacy and the security of your personal information is extremely important. This policy sets out what we do with your personal information, what we do to keep it secure, along with your rights in relation to the personal information we hold about you.</p>
+    
+    <p>If you wish to avoid too much detail we have summarised everything briefly below:</p>
+    
+    <ul class="privacybulletpoints">
+        <li>Your personal information/data is classed as both your username and password.</li>
+        <li>We take advantage of Django’s automatic hashing system so that your personal information stays personal.</li>
+        <li>Your data is only used to track points and levels.</li>
+        <li>You possess a number of rights over how we handle your personal information which are seen below.</li>
+        <li>This website is not intended for children nor do we knowingly ascertain any child’s data.</li>
+    </ul>
+
+    <p>These points are expanded upon further below.</p>
+
+    <hr>
+
+    <h3>What personal data do we possess?</h3>
+    <p>The answer to that is simply only the information that you explicitly give us! This is limited to only your username and password. 
+        While in many cases this is not usually classified as personal data (due to the intended anonymity of a username), 
+        it is nevertheless important to us that we protect it as if it were. 
+        This is because we recognise that many individuals (whether intentionally or not) plant personal information within their usernames and passwords. 
+        The latter of which is likely being shared across multiple sites. Hence why we have pledged to protect as meticulously as we do.</p>
+
+    <hr>
+
+    <h3>How do we protect your data?</h3>
+    <p>Fortunately the language we use, Django, encrypts and hashes the data for us. 
+        This is done automatically through their PBKDF2 algorithm and SHA256 hash. 
+        It is known to be secure and takes significant time to decrypt and break. 
+        Moreover our data controller is in charge of ensuring that the data is kept safe and users are cared for.</p>
+
+    <hr>
+
+    <h3>How do we use your data?</h3>
+    <p>It is important to us that you know that we only ask for what is called "necessary data”. 
+        This is because we don’t want anything but for you to start saving the planet one item at a time. 
+        We only use this data in order to ensure that you sign into the right account and not someone else’s. 
+        We only keep your username and password so that you can feel safe knowing it is you who is scanning those fairtrade bananas and playing those quizzes.</p>
+    
+    <hr>
+
+    <h3>Your rights</h3>
+    <p>Many rights that you have are outlined in the UK GDPR and we will mention the relevant ones here. 
+        Firstly since we do not keep anything but your username and password, we have no extra data to give to you! 
+        For this reason we have intentionally not asked for your email for account recovery in order that your anonymity and protection is ensured. 
+        Another right you possess is to rectify errors which is why we allow you to change passwords at any point, 
+        granting you immediate clarity on your own information. 
+        Another right you have is to reject how we process your data. 
+        This is exemplified in the fact that you may, at any point, choose to toggle whether your account is public or not. 
+        Finally you have the right to be forgotten, 
+        this simply means at any point you have the right to remove your data from our system using our “delete account” button.</p>
+
+    <hr>
+
+    <h3>Our Aim and Audience</h3>
+    <p>Our aim of global restoration begins in the individual's basket. 
+        However we recognize that this aim has no generalized population, no race, no ethnicity, no sex nor age. 
+        This is why we do not care to ask for this kind of data as we believe that caring for our world is not restricted by any populous demographic. 
+        That being said, we do not desire or indeed knowingly collect any data for any child. 
+        We understand that our website cannot stop a child from using it, 
+        however collecting data that would check a user’s age would breach the anonymity that we strive for.</p>
+
+    <hr>
+    <hr>
+
+</div>
 {% endblock %}
