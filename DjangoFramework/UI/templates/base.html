@@ -3,8 +3,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <style>
+    html, body {
+      height: auto;
+    }
     body {
       padding-bottom: 60px;
+    }
+    .bottom-nav {
+      position: static;
+      bottom: 0;
+      left: 0;
+      width: 100%;
     }
     .bottom-nav a {
       font-size: 1.5rem; /* bigger emoji/icons */
@@ -16,7 +25,7 @@
       justify-content: space-around;
       align-items: center;
       flex-wrap: nowrap;
-      width: 100vw;
+      width: 100%;
       padding: 0;
       margin: 0;
     }
@@ -83,7 +92,7 @@
     <div class="container">{% block content %} {% endblock %}</div> 
 
     <!-- Mobile versions display navigation at the bottom -->
-    <nav class="navbar navbar-light bg-light fixed-bottom d-lg-none bottom-nav">
+    <nav class="navbar navbar-light bg-light d-lg-none bottom-nav">
       <div class="container-fluid">
         <a href="{% url 'home' %}" class="nav-link text-center" title="Home" aria-label="home page">🏠</a>
         <a href="{% url 'missions' %}" class="nav-link text-center" title="Missions" aria-label="view missions">🎯</a>

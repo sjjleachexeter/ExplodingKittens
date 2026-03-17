@@ -3,10 +3,6 @@
 /*general styling */
 /*###################*/
 
-html, body {
-    height: 100%;
-    margin: 0;
-}
 
 body {
     /*dealing with the background image*/
@@ -24,7 +20,7 @@ body {
 }
 
 .navbar-light {
-        background-color: #90b494 !important;
+    background-color: #90b494 !important;  
 }
 
 .fullyinthecentre {
@@ -41,7 +37,6 @@ body {
     padding: 5vh;
     /*padding top doesn't work, it extents the box*/
     margin-top: 10vh;
-    text-shadow: 2px 2px #261C15;
     
 
     /*blurred semi transparent background box for the main home page text*/
@@ -97,6 +92,7 @@ h1,h2,h3,h4 {
     height: 100%;
     grid-gap: 10px;
     padding-bottom: 10vh;
+    margin-bottom: 20px !important;
 }
 
 .grid div {
@@ -165,13 +161,13 @@ h1,h2,h3,h4 {
 
 .transitioning-facts {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1.5vw !important;
+    font-size: 2.5vw !important;
     color: #BFC8AD;
     text-shadow: 2px 2px #261C15;
     position: relative;
     text-align: center;
     padding: 5vh;
-    margin: 10px 10px;
+    margin: 7vh 7vh;
     display: flex;
     justify-content: center;
     align-items: center;
