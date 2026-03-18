@@ -167,7 +167,7 @@
 
 {% if request.user.role.type == "GAMES_ADMIN" or request.user.role.type == "MANAGER"%}
     <h3>Want to add to a quiz? Click to add:</h3>
-    <button href="{% url 'edits' %}">Manual Editor</button>
+    <button><a href="{% url 'dashboard' %}">Game Keeper Dashboard</a></button>
 {%endif%}
 
     

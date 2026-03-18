@@ -1,0 +1,39 @@
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+/* header */
+thead {
+    background-color: green;
+    text-align: center;
+}
+
+thead th {
+    padding: 12px 10px;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* every other different background */
+tbody tr:nth-child(even) {
+    background-color: #c1caec;
+}
+
+tbody tr {
+    text-align: center;
+    /* gap between rows */
+    border-bottom: 1px solid white;
+    /* animation */
+    transition: all 0.1s ease-in-out;
+}
+
+h4 {
+    font-weight: 600;
+      padding: 12px 10px;
+     text-decoration-line: underline;
+}

@@ -44,7 +44,10 @@ class Quiz(models.Model):
     explanation = models.TextField(blank=True)
 
     def __str__(self):
-        return self.quiz_id
+        if len(self.question) > 20:
+            return self.quiz_id[:5]+ ":" + self.question[:20] + "..."
+        else:
+            return self.question
 
 
 class QuizAttempt(models.Model):

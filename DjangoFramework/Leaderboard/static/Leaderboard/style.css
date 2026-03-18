@@ -43,7 +43,7 @@ tbody tr {
 
 /* every other different background */
 tbody tr:nth-child(even) {
-    background-color: #f8f9fc;
+    background-color: #c1caec;
 }
 
 /* slight scale and hover effect */
