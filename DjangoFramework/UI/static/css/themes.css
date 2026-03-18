@@ -9,7 +9,7 @@ body {
     background-color:aliceblue;
     background-position: center;
     background-size: cover;
-    backdrop-filter: blur(4px);
+    /*backdrop-filter: blur(4px); - Removed due to causing navbar position issues*/
     /*dealing with default text*/
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
@@ -27,7 +27,7 @@ body {
     justify-content: center;
     align-content: center;
     text-align: center;
-    height: 70vh;
+    min-height: 70vh;
 }
 
 .above-the-fold {

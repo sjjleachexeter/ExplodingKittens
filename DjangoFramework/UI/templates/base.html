@@ -10,7 +10,7 @@
       padding-bottom: 60px;
     }
     .bottom-nav {
-      position: static;
+      position: fixed !important;
       bottom: 0;
       left: 0;
       width: 100%;
@@ -31,6 +31,13 @@
     }
     .bottom-nav .nav-link {
       padding: 0; /* remove Bootstrap padding */
+    }
+    .top-nav-mobile {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
     }
   </style>
   <head>
@@ -76,7 +83,7 @@
     </nav>
 
     <!-- Mobile versions only display app title & link to privacy statement at top -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light d-lg-none">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-lg-none top-nav-mobile">
       <div class="container d-flex justify-content-between align-items-center"></div>
       <a class="navbar-brand" href="#"><h4>FoodForThought</h4></a>
       <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> -->
@@ -87,6 +94,7 @@
       </ul>
     </div>
     </nav>
+    <div class="d-lg-none" style="height: 60px;"></div>
 
     <!-- Main content-->
     <div class="container">{% block content %} {% endblock %}</div> 
