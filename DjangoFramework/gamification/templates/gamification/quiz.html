@@ -1,15 +1,45 @@
-{% extends "base.html" %} {% block title %}Passport {% endblock %}
+{% extends "base.html" %}
+
+{% block title %}Quiz - {{ quiz_data.quiz_id }}{% endblock %}
+
 {% block content %}
-    <!DOCTYPE html>
-    <html lang="en">
+    <div class="container mt-4">
+        <h2>{{ quiz_data.question }}</h2>
+        <hr>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert
+                {% if message.tags == 'success' %}alert-success
+                {% elif message.tags == 'error' %}alert-danger
+                {% elif message.tags == 'warning' %}alert-warning
+                {% else %}alert-info
+                {% endif %}">
 
-    <body>
-    <h2>{{ quiz_data.question }}</h2>
-    {% for answer in quiz_data.choices %}
-    <button>{{ answer }}</button>
-    {% endfor %}
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <form action="{% url 'submit_answer' quiz_data.quiz_id %}" method="post">
+            {% csrf_token %}
+            <div class="d-grid gap-2 col-6">
+                {% for answer in quiz_data.choices %}
+                    <button type="submit"
+                            name="choice_index"
+                            value="{{ forloop.counter0 }}"
+                            class="btn btn-outline-primary text-start">
+                        {{ answer }}
+                    </button>
+                {% endfor %}
+            </div>
+        </form>
+    </div>
 
-
-
-
+    <style>
+        /* Optional: simple styling to make the quiz look cleaner */
+        .btn-outline-primary {
+            margin-bottom: 10px;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+    </style>
 {% endblock %}

@@ -1,20 +1,26 @@
-import json
-
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.db.models import Prefetch
+from django.http import Http404
 from django.db.models import Count, Q
-from django.forms import ModelForm
 from django.shortcuts import render, redirect
 
 from Users.decorators import game_manager_required
-from gamification.models import Mission, MissionProgress, Quiz
-from gamification.templates.gamification.forms import MissionForm, QuizForm
+from Users.models import Level
+from gamification.forms import MissionForm, QuizForm
+from gamification.models import Mission, MissionProgress, Quiz, QuizAttempt
 
 
 # Create your views here.
 
-
 def missions(request):
     if request.user.is_authenticated:
-        available_missions = Mission.objects.filter(published=True)
+        available_missions = Mission.objects.filter(published=True).prefetch_related(
+            Prefetch(
+                "progress",  # related_name from MissionProgress
+                queryset=MissionProgress.objects.filter(user=request.user),
+                to_attr="user_progress"
+            ))
         progress = MissionProgress.objects.filter(user=request.user)
 
         context = {'missions': available_missions, 'progress': progress}
@@ -23,6 +29,7 @@ def missions(request):
     return render(request, 'gamification/login_to_view.html')
 
 
+@login_required
 def quiz(request, quiz_id):
     if request.user.is_authenticated:
         try:
@@ -35,6 +42,87 @@ def quiz(request, quiz_id):
             return render(request, 'gamification/quiz_does_not_exist.html')
 
     return render(request, 'gamification/login_to_view.html')
+
+
+@login_required
+def start_mission(request):
+    if request.method == "POST":
+        user = request.user
+        mission_id = request.POST['mission_id']
+        # see if the mission is already in progress
+
+        if not Mission.objects.filter(id=mission_id, published=True).exists() or MissionProgress.objects.filter(
+                user=user, mission_id=mission_id).exists():
+            # this is an invalid request
+            raise Http404("Invalid mission request")
+
+        MissionProgress.objects.create(user=user, mission_id=mission_id)
+        return redirect(missions)
+    return None
+
+
+@login_required
+def take_quiz(request):
+    if request.method == "POST":
+        user = request.user
+        mission_id = request.POST['mission_id']
+        if not Mission.objects.filter(id=mission_id, published=True).exists():
+            # this is an invalid request
+            raise Http404("Invalid mission request")
+        # find quiz for the user to complete that they have not gotten right
+        mission = Mission.objects.filter(id=mission_id, published=True).get()
+        test = Quiz.objects.filter(mission=mission)
+        for available_quiz in test:
+            if available_quiz.attempts.filter(user=user, is_correct=True).exists():
+                continue
+            return redirect("quiz", quiz_id=available_quiz.quiz_id)
+
+        # there are no more quiz's for the user to take
+        raise Http404("No quiz's available")
+    return None
+
+
+@login_required
+def submit_answer(request, quiz_id):
+    if request.method == "POST":
+        quiz_data = Quiz.objects.get(quiz_id=quiz_id)
+
+        try:
+            selected_index = int(request.POST.get('choice_index'))
+        except (TypeError, ValueError):
+            return redirect('missions')
+
+        is_correct = (selected_index == quiz_data.correct_choice_index)
+
+        # Record the attempt
+        QuizAttempt.objects.create(
+            quiz=quiz_data,
+            user=request.user,
+            selected_choice_index=selected_index,
+            is_correct=is_correct
+        )
+
+        if is_correct:
+            # 1. Update Mission Progress
+            progress = MissionProgress.objects.filter(user=request.user, mission=quiz_data.mission).first()
+
+            # Only award XP if they haven't earned points for this mission yet
+            if progress and progress.points_awarded == 0:
+                progress.points_awarded = quiz_data.mission.points
+                progress.save()
+
+                # 2. Update the Profile XP & Level
+                profile, created = Level.objects.get_or_create(user=request.user)
+                profile.points += quiz_data.mission.points
+                profile.update_level()
+
+            messages.success(request, "Correct! Mission accomplished.")
+        else:
+            # Add an error message (Red)
+            messages.error(request, "Incorrect answer. Please try again!")
+            return redirect('quiz', quiz_id=quiz_id)
+
+    return redirect('missions')
 
 
 @game_manager_required

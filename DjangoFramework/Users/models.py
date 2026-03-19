@@ -1,16 +1,24 @@
 import uuid
 from django.contrib.auth.models import User
 from django.db import models
+
+
 # Create your models here.
 
 class Level(models.Model):
-    id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
-    user = models.OneToOneField(User, on_delete= models.CASCADE, related_name = "current_level")
-    level = models.IntegerField(default=0)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="current_level")
+    level = models.IntegerField(default=1)
     points = models.IntegerField(default=0)
 
     def __str__(self):
         return str(f"{self.user} - Level {self.level}")
+
+    def update_level(self):
+        self.level = (self.points // 100) + 1
+        self.save()
+
+
 # request.user.current_level.level
 
 class Types(models.Model):
@@ -20,8 +28,9 @@ class Types(models.Model):
         PASSPORT_ADMIN = "PASSPORT_ADMIN", "Passport_admin"
         GEN_USER = "GEN_USER", "Gen_user"
 
-    type = models.CharField(max_length=20, choices = Roles.choices, default = Roles.GEN_USER)
-    user = models.OneToOneField(User, on_delete= models.CASCADE, related_name = "role")
+    type = models.CharField(max_length=20, choices=Roles.choices, default=Roles.GEN_USER)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="role")
+
     def __str__(self):
         return str(f"{self.user} - {self.type}")
 # request.user.role.type
