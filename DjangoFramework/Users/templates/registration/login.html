@@ -1,5 +1,6 @@
 {% extends "base.html"%} {% block title %}Log In {% endblock %}
 {% block content %}
+
 <h2>Log In</h2>
 <form method = "post">
     {% csrf_token %} <!-- prevents attacks that cause unwanted changes of state-->

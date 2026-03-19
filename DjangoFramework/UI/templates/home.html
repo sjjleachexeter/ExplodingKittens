@@ -7,6 +7,8 @@
         <div class="fullyinthecentre">
             {% if user.is_authenticated %}
 
+            <img src="static/images/man_digging.png" />
+            
             <div class="standouttext">
 
                 <h3> Welcome, {{ user.username }}!</h3>
@@ -27,8 +29,18 @@
                             Products Scanned: {{ products_scanned }} <br>
                             Last Scan: {{ last_scan }}<br>
                          </p>
-                        </div>
+                        
                     </div>
+                    <progress id="mission_progress"
+                              value="{{ mission.user_progress.0.points_awarded }}" max="{{ mission.points }}"> 
+                        {{ mission.user_progress.0.points_awarded }}pts
+                    </progress>
+            
+            </div>
+
+                    <br>
+                    <br>
+                    <br>
                     <a href="{% url 'Scanner' %}" class="btn btn-secondary">Continue scanning!</a> 
                 {% endif %}
 
@@ -81,7 +93,6 @@
                     <div class="grid-6"></div>
                 </div>
 
-                <br>
                 <br>
                 <br>
 

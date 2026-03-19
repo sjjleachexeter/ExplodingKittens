@@ -1,0 +1,46 @@
+/*###################*/
+/*styling the buttons*/
+/*###################*/
+.btn {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family:'Times New Roman', Times, serif;
+  transition: transform 0.25s ease-in-out;
+}
+
+.btn-primary {
+    background-color: #261C15;
+    border-color: #BFC8AD;
+}
+
+.btn-secondary {
+    background-color: #90b494;
+    border-color: #261C15;
+}
+
+.btn-primary:hover {
+    background-color: #261C15;
+    transform: scale(1.2);
+    filter: brightness(110%);
+}
+
+.btn-secondary:hover {
+    background-color: #BFC8AD;
+    transform: scale(1.2);
+    filter: brightness(110%);
+}
+
+
+/*###################*/
+/*progress bars*/
+/*###################*/
+
+.progress {
+    height: 20px;
+
+}
+
+.progress-bar {
+    color:#90b494;
+}

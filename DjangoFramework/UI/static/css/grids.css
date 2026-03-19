@@ -1,0 +1,164 @@
+/*###################*/
+/*collages*/
+/*###################*/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-auto-rows: 100px;
+    width: 100%;
+    height: 100%;
+    grid-gap: 10px;
+    padding-bottom: 10vh;
+    margin-bottom: 20px !important;
+}
+
+.grid div {
+    transition: transform 0.25s ease-in-out;
+
+}
+
+.grid div:hover {
+    transform: scale(1.01);
+    filter: brightness(105%);
+}
+
+
+.grid-1 {
+    background-image: url("/static/images/coffeefarming.jpg");
+    background-size: cover;
+    background-position: center;
+    grid-column: span 4;
+    grid-row: span 3;
+}
+
+.grid-2 {
+    background-image: url("/static/images/deforestation.jpg");
+    background-size: cover;
+    background-position: center;
+    grid-column: span 2;
+    grid-row: span 4;
+}
+
+.grid-3 {
+    background-image: url("/static/images/freshproduce.jpg");
+    background-size: cover;
+    background-position: center;
+    grid-column: span 3;
+    grid-row: span 3;
+}
+.grid-4 {
+    background-image: url("/static/images/landfill.jpg");
+    background-size: cover;
+    background-position: center;
+    grid-column: span 1;
+    grid-row: span 4;
+}
+.grid-5 {
+    background-image: url("/static/images/ricefields.jpg");
+    background-size: cover;
+    background-position: center;
+    grid-column: span 2;
+    grid-row: span 3;
+
+}
+.grid-6 {
+    background-image: url("/static/images/ship.jpg");
+    background-size: cover;
+    background-position: center;
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+.secondgrid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: auto;
+    align-items: stretch;
+    grid-gap: 10px;
+    margin-bottom: 20px !important;
+    background-color: rgb(194, 217, 237);
+    background-size: cover;
+    margin: 2vh 5vh;
+    border: 5px;
+    border-color: #545775;
+
+}
+
+.secondgrid-1 {
+    background-image: url("/static/images/farmer.jpg");
+    background-size: cover !important;
+    background-position: 30% 60%;
+}
+
+.secondgrid-2 {
+
+}
+
+.thirdgrid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: auto;
+    align-items: stretch;
+    grid-gap: 10px;
+    margin-bottom: 20px !important;
+    background-color: rgb(194, 217, 237);
+    background-size: cover;
+    margin: 2vh 5vh;
+    border: 5px;
+    border-color: #545775;
+
+}
+
+.thirdgrid-1 {
+    
+}
+
+.thirdgrid-2 {
+    background-image: url("/static/images/melting_ice.jpg");
+    background-size: cover !important;
+    background-position: 30% 60%;
+}
+
+.grid_login {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 100px;
+    width: 100%;
+    height: 100vh;
+    grid-gap: 10px;
+    padding-bottom: 10vh;
+    margin-top: 100px !important;
+}
+
+.grid_login-1 {
+    background-image: url("/static/images/Nature_1.jpg");
+    background-size: cover;
+    background-position: center;
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.grid_login-2 {
+    background-image: url("/static/images/Nature_2.jpg");
+    background-size: cover;
+    background-position: center;
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.grid_login-3 {
+    background-image: url("/static/images/Nature_3.jpg");
+    background-size: cover;
+    background-position: center;
+    grid-column: span 1;
+    grid-row: span 4;
+}
+
+.grid_login div {
+    transition: transform 0.25s ease-in-out;
+
+}
+.grid_login div:hover {
+    transform: scale(1.01);
+    filter: brightness(105%);
+}
