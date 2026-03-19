@@ -7,8 +7,7 @@ from django.shortcuts import render, redirect
 
 from Users.decorators import game_manager_required
 from Users.models import Level
-from gamification.models import Mission, MissionProgress, Quiz
-from gamification.templates.gamification.forms import MissionForm, QuizForm
+from gamification.forms import MissionForm, QuizForm
 from gamification.models import Mission, MissionProgress, Quiz, QuizAttempt
 
 
