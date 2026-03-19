@@ -1,6 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert
+                {% if message.tags == 'success' %}alert-success
+                {% elif message.tags == 'error' %}alert-danger
+                {% elif message.tags == 'warning' %}alert-warning
+                {% else %}alert-info
+                {% endif %}">
+
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
     <div class="container">
         <div class="text-center w-100">
             <h1 class="display-4 fw-bold">Missions</h1>
@@ -11,11 +24,11 @@
             <div class="mission mission-{{ mission.rules.difficulty }}">
                 <h5>{{ mission.title }}</h5>
                 <p class="card-text small flex-grow-1">{{ mission.description }}</p>
-                
+
                 {% if mission.user_progress.0 %}
                     <label for="mission_progress">Mission progress:</label>
                     <progress id="mission_progress"
-                              value="{{ mission.user_progress.0.points_awarded }}" max="{{ mission.points }}"> 
+                              value="{{ mission.user_progress.0.points_awarded }}" max="{{ mission.points }}">
                         {{ mission.user_progress.0.points_awarded }}pts
                     </progress>
 
@@ -27,7 +40,9 @@
                         <form action="{% url 'take_quiz' %}" method="post" class="mt-2">
                             {% csrf_token %}
                             <input type="hidden" name="mission_id" value="{{ mission.id }}">
-                            <button type="submit" class="btn btn-{{ mission.rules.difficulty }} btn-sm w-100">Take Quiz</button>
+                            <button type="submit" class="btn btn-{{ mission.rules.difficulty }} btn-sm w-100">Take
+                                Quiz
+                            </button>
                         </form>
                     {% endif %}
 
@@ -35,7 +50,9 @@
                     <form action="{% url 'start_mission' %}" method="post" class="mt-2">
                         {% csrf_token %}
                         <input type="hidden" name="mission_id" value="{{ mission.id }}">
-                        <button type="submit" class="btn btn-{{ mission.rules.difficulty }} btn-sm w-100">Start Mission</button>
+                        <button type="submit" class="btn btn-{{ mission.rules.difficulty }} btn-sm w-100">Start
+                            Mission
+                        </button>
                     </form>
                 {% endif %}
 
@@ -43,6 +60,11 @@
             </div>
         {% endfor %}
     </div>
+
+    {% if request.user.role.type == "GAMES_ADMIN" or request.user.role.type == "MANAGER" %}
+        <h3>Want to add to a quiz? Click to add:</h3>
+        <button><a href="{% url 'dashboard' %}">Game Keeper Dashboard</a></button>
+    {% endif %}
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'gamification/style.css' %}">

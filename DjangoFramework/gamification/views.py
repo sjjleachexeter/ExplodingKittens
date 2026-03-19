@@ -1,20 +1,15 @@
-import json
-from http.client import responses
-
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.contrib.messages.constants import SUCCESS
-from django.core.checks import messages
 from django.db.models import Prefetch
-from django.http import JsonResponse, HttpResponse, Http404
-from django.shortcuts import render, redirect
+from django.http import Http404
 from django.db.models import Count, Q
-from django.forms import ModelForm
 from django.shortcuts import render, redirect
 
 from Users.decorators import game_manager_required
+from Users.models import Level
 from gamification.models import Mission, MissionProgress, Quiz
 from gamification.templates.gamification.forms import MissionForm, QuizForm
-from gamification.models import Mission, MissionProgress, Quiz, QuizAttempt, Profile
+from gamification.models import Mission, MissionProgress, Quiz, QuizAttempt
 
 
 # Create your views here.
@@ -33,6 +28,7 @@ def missions(request):
         return render(request, 'gamification/missions.html', context)
 
     return render(request, 'gamification/login_to_view.html')
+
 
 @login_required
 def quiz(request, quiz_id):
@@ -71,7 +67,6 @@ def take_quiz(request):
     if request.method == "POST":
         user = request.user
         mission_id = request.POST['mission_id']
-        print("help")
         if not Mission.objects.filter(id=mission_id, published=True).exists():
             # this is an invalid request
             raise Http404("Invalid mission request")
@@ -87,6 +82,7 @@ def take_quiz(request):
         raise Http404("No quiz's available")
     return None
 
+
 @login_required
 def submit_answer(request, quiz_id):
     if request.method == "POST":
@@ -99,7 +95,7 @@ def submit_answer(request, quiz_id):
 
         is_correct = (selected_index == quiz_data.correct_choice_index)
 
-        #Record the attempt
+        # Record the attempt
         QuizAttempt.objects.create(
             quiz=quiz_data,
             user=request.user,
@@ -117,60 +113,17 @@ def submit_answer(request, quiz_id):
                 progress.save()
 
                 # 2. Update the Profile XP & Level
-                profile, created = Profile.objects.get_or_create(user=request.user)
-                profile.total_xp += quiz_data.mission.points
+                profile, created = Level.objects.get_or_create(user=request.user)
+                profile.points += quiz_data.mission.points
                 profile.update_level()
 
             messages.success(request, "Correct! Mission accomplished.")
         else:
             # Add an error message (Red)
             messages.error(request, "Incorrect answer. Please try again!")
-            return redirect('quiz' , quiz_id=quiz_id)
+            return redirect('quiz', quiz_id=quiz_id)
 
     return redirect('missions')
-
-def leaderboard(request):
-    #Define the fields the template expects
-    fields = {
-        'user__username': 'Username',
-        'level': 'Level',
-        'total_xp': 'XP'
-    }
-
-    #Get the sorting preference from the URL
-    sort_by = request.GET.get('sort', '-total_xp')
-
-    #Get all profiles sorted correctly
-    all_profiles = Profile.objects.select_related('user').order_by(sort_by)
-
-    #Create the 'table'
-    table_data = []
-    user_position = None
-    user_row = None
-
-    for index, profile in enumerate(all_profiles):
-        row = [profile.user.username, profile.level, profile.total_xp]
-
-        # Only add the top 10 to the main table
-        if index < 10:
-            table_data.append(row)
-
-        # Track the logged-in user's position
-        if request.user.is_authenticated and profile.user == request.user:
-            user_position = index + 1
-            user_row = row
-
-    context = {
-        'fields': fields,
-        'sort_by': sort_by,
-        'table': table_data,
-        'user_position': user_position,
-        'user_row': user_row,
-        'leaderboard_length': len(table_data)
-    }
-
-    return render(request, 'leaderboard/leaderboard.html', context)
-
 
 
 @game_manager_required

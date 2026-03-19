@@ -28,28 +28,4 @@ class Migration(migrations.Migration):
             name="learning_outcome",
             field=models.TextField(blank=True),
         ),
-        migrations.CreateModel(
-            name="Profile",
-            fields=[
-                (
-                    "id",
-                    models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
-                ("total_xp", models.PositiveIntegerField(default=0)),
-                ("level", models.PositiveIntegerField(default=1)),
-                (
-                    "user",
-                    models.OneToOneField(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        related_name="profile",
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
-            ],
-        ),
     ]

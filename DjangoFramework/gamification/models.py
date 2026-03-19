@@ -49,15 +49,3 @@ class QuizAttempt(models.Model):
     selected_choice_index = models.PositiveSmallIntegerField()
     is_correct = models.BooleanField(default=False)
     attempted_at = models.DateTimeField(auto_now_add=True)
-
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
-    total_xp = models.PositiveIntegerField(default=0)
-    level = models.PositiveIntegerField(default=1)
-
-    def __str__(self):
-        return f"{self.user.username} - Level {self.level}"
-
-    def update_level(self):
-        self.level = (self.total_xp // 100) + 1
-        self.save()
