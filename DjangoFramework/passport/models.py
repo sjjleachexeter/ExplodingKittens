@@ -127,7 +127,6 @@ class ClaimType(models.TextChoices):
     OTHER = "other", "Other"
 
 
-
 class Claim(models.Model):
     id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
     claim_id = models.CharField(max_length = 100, unique=True)

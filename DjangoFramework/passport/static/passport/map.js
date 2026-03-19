@@ -25,6 +25,7 @@ async function geocode(city, country) {
 async function addLocation(city, country,label) {
     geocode(city, country).then(coords => {
         if (coords) {
+              console.log("hi",coords);
             var marker = L.marker(coords)
                 .addTo(map)
                 .bindPopup(`<b>${city}(${country})</b><br>${label}`)
@@ -35,5 +36,24 @@ async function addLocation(city, country,label) {
             console.warn("Could not find location");
         }
     });
+}
+
+
+async function addCountry(lat, lng, country, label) {
+      const c = [lat, lng]
+
+    console.log(c);
+
+    if (c) {
+        const converted = c;
+            var marker = L.marker(converted)
+                .addTo(map)
+                .bindPopup(`<b>(${country})</b><br>${label}`)
+                .openPopup();
+            allMarkers.addLayer(marker);
+             map.fitBounds(allMarkers.getBounds(), { padding: [50, 50] });
+        } else {
+            console.warn("Could not find location");
+        }
 }
 

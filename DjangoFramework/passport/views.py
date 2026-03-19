@@ -1,5 +1,6 @@
 from django.contrib.auth import forms
 from django.contrib.auth.decorators import permission_required, login_required
+from django.db.models import Sum, Value
 from django.forms import ModelForm, modelformset_factory, inlineformset_factory
 from django.http.response import Http404
 from django.shortcuts import render, redirect
@@ -8,7 +9,9 @@ from django.urls import reverse
 from Users.decorators import passport_edit_required
 from passport.forms import ProductForm, IngredientFormSet, StageFormSet, EditProductForm, ClaimFormSet, EvidenceFormSet, \
     NodeForm, IngredientForm
-from passport.models import Product, ProductIngredient, Stage, Node, Ingredient
+from passport.models import Product, ProductIngredient, Stage, Node, Ingredient, Claim, ClaimType
+from math import radians, cos, sin, asin, sqrt
+from countryinfo import CountryInfo
 
 
 # Create your views here.
@@ -18,15 +21,91 @@ def return_to_scanner(request):
     return response
 
 
+def haversine(pos1, pos2):
+    """
+    Calculate the great circle distance in kilometers between two points
+    on the earth (specified in decimal degrees)
+    """
+    # convert decimal degrees to radians
+    lon1, lat1, lon2, lat2 = map(radians, [pos1[0], pos1[1], pos2[0], pos2[1]])
+
+    # haversine formula
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+    a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+    c = 2 * asin(sqrt(a))
+    r = 6371  # Radius of earth in kilometers.
+    return c * r
+
+
+def distance_between_country_codes(code_1, code_2="uk"):
+    pos1 = CountryInfo(code_1).latlng()
+    pos2 = CountryInfo(code_2).latlng()
+    return haversine(pos1, pos2)
+
+
+def rate_product_distance(product: Product) -> str:
+    """
+    Gives a rating of how far the ingredients in a product have traveled
+    """
+    weighted_distance = 0
+
+    for ingredient in product.composition.all():
+        try:
+            weighted_distance += distance_between_country_codes(ingredient.origin_country) * float(
+                ingredient.proportion)
+        except:
+            pass
+
+    print(weighted_distance)
+    if weighted_distance == 0:
+        return "Very Low"
+    elif weighted_distance < 1000:
+        return "Low"
+    elif weighted_distance < 2000:
+        return "Medium"
+    else:
+        return "High"
+
+
 def display_passport(request, product_id=-1):
     # try to load product
     try:
         product = Product.objects.get(product_id=product_id)
         ingredients = ProductIngredient.objects.filter(product_id=product.id).select_related('ingredient').order_by(
             '-proportion')
+        for item in ingredients:
+            country = item.origin_country
+            try:
+                [lat, lng] = CountryInfo(country).latlng()
+                item.lat = lat
+                item.lng = lng
+            except:
+                item.location = None
         stages = Stage.objects.filter(product=product.id).order_by('sequence')
 
-        context = {'product_id': product_id, 'passport_data': product, "ingredients": ingredients, "stages": stages}
+        # get c02 rating of product
+        rating = rate_product_distance(product)
+        # get overall claims of the product
+        claims_data = (
+            Claim.objects.filter(product_id=product.id)
+            .exclude(claim_type="other")
+            .values("claim_type")
+            .annotate(total_value=Sum("stage__value_share"))
+        )
+        claims_combined = [
+            {
+                "type": item["claim_type"],
+                "label": ClaimType(item["claim_type"]).label,
+                "rating": "Very" if item["total_value"] > 0.70 else "Low",
+                "percentage": int(item["total_value"] * 100),
+            }
+            for item in claims_data
+        ]
+
+
+        context = {'product_id': product_id, 'passport_data': product, "ingredients": ingredients, "stages": stages,
+                   "rating": rating, "claims_combined":claims_combined}
         return render(request, "passport/passport.html", context)
     except Product.DoesNotExist:
         # show error page if product does not exist
@@ -213,7 +292,6 @@ def edit_claims(request, product_id):
                         evidence.save()
                 else:
                     claim.instance.missing_evidence = True
-
 
             claims_form.save()
 

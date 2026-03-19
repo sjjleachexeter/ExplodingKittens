@@ -1,25 +1,56 @@
- /* Style the button that is used to open and close the collapsible content */
+/* Style the button that is used to open and close the collapsible content */
 .collapsible {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 30px;
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 30px;
 }
 
-.active.collapsible,.collapsible:hover {
-  background-color: #ccc;
+.active.collapsible, .collapsible:hover {
+    background-color: #ccc;
 }
 
 /* auto hide collapsed content*/
 .content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
 }
 
+
+/* ratings css*/
+.ratings {
+    display: inline-flex;
+}
+
+.rating-box {
+    padding: 24px;
+    margin: 20px;
+    border-radius: 12px;
+
+}
+
+.rating-Very{
+    background-color: rgba(68, 209, 50, 0.74);
+    box-shadow: 0 4px 15px rgba(68, 209, 50, 0.74);
+}
+.rating-Low {
+    background-color: rgba(51, 115, 58, 0.83);
+    box-shadow: 0 4px 15px rgba(51, 115, 58, 0.83);
+}
+
+.rating-Medium {
+    background-color: rgba(213, 137, 25, 0.82);
+    box-shadow: 0 4px 15px rgba(221, 69, 15, 0.82);
+}
+
+.rating-High {
+    background-color: rgba(220, 28, 28, 0.82);
+    box-shadow: 0 4px 15px rgba(220, 28, 28, 0.82);
+}
