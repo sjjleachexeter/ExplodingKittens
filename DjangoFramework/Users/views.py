@@ -51,8 +51,6 @@ class SignupView(FormView):
         if authenticated_user is not None:
             login(self.request, authenticated_user)
             print(f"User logged in: {self.request.user}")
-            Level.objects.update_or_create(user = authenticated_user)
-            Types.objects.update_or_create(user = authenticated_user)
         else:
             print("Authentication failed after signup")
         return super().form_valid(form)
