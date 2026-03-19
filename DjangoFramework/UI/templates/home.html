@@ -6,6 +6,9 @@
 
         <div class="fullyinthecentre">
             {% if user.is_authenticated %}
+
+            <div class="standouttext">
+
                 <h3> Welcome, {{ user.username }}!</h3>
 
                 {% if request.user.role.type == "MANAGER" %}
@@ -14,6 +17,19 @@
                     <h3>You are a Games Admin of this software</h3>
                 {% elif request.user.role.type == "PASSPORT_ADMIN" %}
                     <h3>You are a Product Passport Admin of this software</h3>
+                {% else %}
+                    <!-- For a regular user -->
+                    <div>
+                        <p> 
+                            Level: {{ level }} ({{points}} points)<br>
+                            Missions Done: {{ missions_done }} <br>
+                            Quizzes Attempted: {{ quizzes_attempted }} <br>
+                            Products Scanned: {{ products_scanned }} <br>
+                            Last Scan: {{ last_scan }}<br>
+                         </p>
+                        </div>
+                    </div>
+                    <a href="{% url 'Scanner' %}" class="btn btn-secondary">Continue scanning!</a> 
                 {% endif %}
 
 
