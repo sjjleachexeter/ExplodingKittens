@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "gamification/base.html" %}
 
 {% block content %}
     <div class="container">
@@ -7,33 +7,39 @@
             <p class="lead text-muted">Help learn through missions and quizzes to master sustainability knowledge.</p>
         </div>
 
-
         {% for mission in missions %}
             <div class="mission mission-{{ mission.rules.difficulty }}">
                 <h5>{{ mission.title }}</h5>
                 <p class="card-text small flex-grow-1">{{ mission.description }}</p>
+                
                 {% if mission.user_progress.0 %}
                     <label for="mission_progress">Mission progress:</label>
                     <progress id="mission_progress"
-                              value={{ mission.user_progress.0.points_awarded }} max={{ mission.points }}> {{ mission.user_progress.0.points_awarded }}pts
+                              value="{{ mission.user_progress.0.points_awarded }}" max="{{ mission.points }}"> 
+                        {{ mission.user_progress.0.points_awarded }}pts
                     </progress>
+
+                    {% if mission.user_progress.0.points_awarded >= mission.points %}
+                        <div class="mt-2 text-center">
+                            <span class="badge bg-success w-100 p-2">Quiz Complete!</span>
+                        </div>
+                    {% else %}
+                        <form action="{% url 'take_quiz' %}" method="post" class="mt-2">
+                            {% csrf_token %}
+                            <input type="hidden" name="mission_id" value="{{ mission.id }}">
+                            <button type="submit" class="btn btn-{{ mission.rules.difficulty }} btn-sm w-100">Take Quiz</button>
+                        </form>
+                    {% endif %}
+
                 {% else %}
-                    <form action="{% url 'start_mission' %}" method="post">
+                    <form action="{% url 'start_mission' %}" method="post" class="mt-2">
                         {% csrf_token %}
                         <input type="hidden" name="mission_id" value="{{ mission.id }}">
-                        <button class="btn btn-{{ mission.rules.difficulty }}  btn-sm mb-2 mt-auto">Start Mission
-                        </button>
+                        <button type="submit" class="btn btn-{{ mission.rules.difficulty }} btn-sm w-100">Start Mission</button>
                     </form>
                 {% endif %}
 
-                <form action="{% url 'take_quiz' %}" method="post">
-                    {% csrf_token %}
-                    <input type="hidden" name="mission_id" value="{{ mission.id }}">
-                    <button class="btn btn-{{ mission.rules.difficulty }} btn-sm ">Take Quiz</button>
-                </form>
-
-
-                <p class="aligned-right">points: {{ mission.points }}</p>
+                <p class="aligned-right mt-2">points: {{ mission.points }}</p>
             </div>
         {% endfor %}
     </div>
@@ -41,4 +47,3 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'gamification/style.css' %}">
 {% endblock %}
-

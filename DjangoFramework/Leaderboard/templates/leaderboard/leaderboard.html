@@ -1,0 +1,50 @@
+{% extends "gamification/base.html" %} 
+
+{% block title %}Leaderboard{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Leaderboard</h1>
+
+    <table class="table table-hover table-bordered shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>Position</th>
+                {% for field, name in fields.items %}
+                    <th>
+                        {% if field == sort_by %}
+                            <a href="?sort=-{{ field }}" class="text-white text-decoration-none">{{ name|capfirst }} ↑</a>
+                        {% elif sort_by == "-"|add:field %}
+                            <a href="?sort={{ field }}" class="text-white text-decoration-none">{{ name|capfirst }} ↓</a>
+                        {% else %}
+                            <a href="?sort=-{{ field }}" class="text-white text-decoration-none">{{ name|capfirst }}</a>
+                        {% endif %}
+                    </th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table %}
+                <tr {% if forloop.counter == user_position %}class="table-primary fw-bold"{% endif %}>
+                    <td>{{ forloop.counter }}</td>
+                    {% for value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+
+            {% if user_position > 10 %}
+                <tr class="table-info fw-bold">
+                    <td>{{ user_position }}</td>
+                    {% for value in user_row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'Leaderboard/style.css' %}">
+{% endblock %}

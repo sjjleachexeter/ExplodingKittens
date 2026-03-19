@@ -14,10 +14,10 @@ from django.shortcuts import render, redirect
 from Users.decorators import game_manager_required
 from gamification.models import Mission, MissionProgress, Quiz
 from gamification.templates.gamification.forms import MissionForm, QuizForm
+from gamification.models import Mission, MissionProgress, Quiz, QuizAttempt, Profile
 
 
 # Create your views here.
-
 
 def missions(request):
     if request.user.is_authenticated:
@@ -28,7 +28,6 @@ def missions(request):
                 to_attr="user_progress"
             ))
         progress = MissionProgress.objects.filter(user=request.user)
-
 
         context = {'missions': available_missions, 'progress': progress}
         return render(request, 'gamification/missions.html', context)
@@ -87,6 +86,92 @@ def take_quiz(request):
         # there are no more quiz's for the user to take
         raise Http404("No quiz's available")
     return None
+
+@login_required
+def submit_answer(request, quiz_id):
+    if request.method == "POST":
+        quiz_data = Quiz.objects.get(quiz_id=quiz_id)
+
+        try:
+            selected_index = int(request.POST.get('choice_index'))
+        except (TypeError, ValueError):
+            return redirect('missions')
+
+        is_correct = (selected_index == quiz_data.correct_choice_index)
+
+        #Record the attempt
+        QuizAttempt.objects.create(
+            quiz=quiz_data,
+            user=request.user,
+            selected_choice_index=selected_index,
+            is_correct=is_correct
+        )
+
+        if is_correct:
+            # 1. Update Mission Progress
+            progress = MissionProgress.objects.filter(user=request.user, mission=quiz_data.mission).first()
+
+            # Only award XP if they haven't earned points for this mission yet
+            if progress and progress.points_awarded == 0:
+                progress.points_awarded = quiz_data.mission.points
+                progress.save()
+
+                # 2. Update the Profile XP & Level
+                profile, created = Profile.objects.get_or_create(user=request.user)
+                profile.total_xp += quiz_data.mission.points
+                profile.update_level()
+
+            messages.success(request, "Correct! Mission accomplished.")
+        else:
+            # Add an error message (Red)
+            messages.error(request, "Incorrect answer. Please try again!")
+            return redirect('quiz' , quiz_id=quiz_id)
+
+    return redirect('missions')
+
+def leaderboard(request):
+    #Define the fields the template expects
+    fields = {
+        'user__username': 'Username',
+        'level': 'Level',
+        'total_xp': 'XP'
+    }
+
+    #Get the sorting preference from the URL
+    sort_by = request.GET.get('sort', '-total_xp')
+
+    #Get all profiles sorted correctly
+    all_profiles = Profile.objects.select_related('user').order_by(sort_by)
+
+    #Create the 'table'
+    table_data = []
+    user_position = None
+    user_row = None
+
+    for index, profile in enumerate(all_profiles):
+        row = [profile.user.username, profile.level, profile.total_xp]
+
+        # Only add the top 10 to the main table
+        if index < 10:
+            table_data.append(row)
+
+        # Track the logged-in user's position
+        if request.user.is_authenticated and profile.user == request.user:
+            user_position = index + 1
+            user_row = row
+
+    context = {
+        'fields': fields,
+        'sort_by': sort_by,
+        'table': table_data,
+        'user_position': user_position,
+        'user_row': user_row,
+        'leaderboard_length': len(table_data)
+    }
+
+    return render(request, 'leaderboard/leaderboard.html', context)
+
+
 
 @game_manager_required
 def dashboard(request):
