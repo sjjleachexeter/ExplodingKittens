@@ -1,11 +1,11 @@
 {% extends "base.html" %} {% block title %}Passport {% endblock %}
 {% block content %}
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <body>
-    <h1>Login to view your missions</h1>
-    <a href="{% url 'accounts' %}">Login</a>
-
-
+    <br>
+    <h1>Log in to view your missions</h1>
+    <br>
+    <br>
+    <br>
+    <p>You are not logged in.</p>
+    <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
+    <a href="{% url 'signup' %}"class="btn btn-secondary">Signup</a>
 {% endblock %}
