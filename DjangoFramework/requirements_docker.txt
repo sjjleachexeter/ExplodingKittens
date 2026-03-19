@@ -3,3 +3,4 @@ django-extensions
 pandas
 gunicorn
 whitenoise
+countryinfo
