@@ -7,7 +7,12 @@
         <div class="fullyinthecentre">
             {% if user.is_authenticated %}
 
-            <img src="static/images/man_digging.png" />
+            <div id="greeting-container">
+                <p id="greeting-text">Good Morning</p>
+            </div>
+            <script src="static/javascript/greeting.js"></script>
+
+            <img src="static/images/flower.png" style="transform: rotate(90deg);width: clamp(150px, 25vw, 200px); margin-top: 0px; margin-bottom: 20px;"/>
             
             <div class="standouttext">
 

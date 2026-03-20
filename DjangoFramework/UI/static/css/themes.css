@@ -25,7 +25,7 @@ body {
 
 .fullyinthecentre {
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -74,8 +74,18 @@ body {
     list-style-position: inside;
 }
 
+/*for the post login homepage time dependent greeting*/
+#greeting-container {
+    text-align: center;
+    margin: 0vw 0vw;
+    padding-bottom: 0px;
+}
 
-
+#greeting-text {
+    font-family: 'Times New Roman', Times, serif;
+    color: #545775;
+    font-size: clamp(50px, 5vw, 100px);;
+}
 
 /*default heading styling*/
 h1,h2,h3,h4 {
@@ -102,8 +112,13 @@ h1,h2,h3,h4 {
     padding: 5vh;
     margin: 7vh 7vh;
     display: flex;
+    flex-direction: row !important;
     justify-content: center;
     align-items: center;
+
+    /*to counter-act the bug which occured when fully in the centre flex direction was set to column*/
+    min-height: 1.5em;
+    width:80vw;
 }
 
 .transitioning-facts h4 {

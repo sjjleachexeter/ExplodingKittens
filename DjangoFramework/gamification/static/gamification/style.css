@@ -6,20 +6,37 @@
     padding: 10px;
     border-radius: 3px;
     min-width: 250px;
+
+    /*to control internal box centered*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+/*DO NOT TOUCH this keeps the buttons centred in the missions*/
+.mission form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 
 .mission-hard {
     outline-color: #dc3545;
+    background-image: linear-gradient(to bottom right, aliceblue, #dc3545);
 }
 
 .mission-medium {
     outline-color: #ffc107;
+    background-image: linear-gradient(to bottom right, aliceblue, #ffc107);
 
 }
 
 .mission-easy {
     outline-color: #28a745;
+    background-image: linear-gradient(to bottom right, aliceblue, #28a745);
 
 }
 
@@ -35,8 +52,8 @@
 
 .btn-easy {
     /* #28a745 color */
-    outline-color: #28a745;
-    color: #28a745;
+    outline-color: #000000;
+    color: #000000;
 }
 
 .btn-easy:hover {
@@ -45,19 +62,18 @@
 
 .btn-medium {
     /* #28a745 color */
-    outline-color: #ffc107;
-    color: #ffc107;
+    outline-color: #000000;
+    color: #000000;
 }
 
 .btn-medium:hover {
     background-color: #ffc107;
-    color: #212529;
 }
 
 .btn-hard {
     /* #28a745 color */
-    outline-color: #dc3545;
-    color: #dc3545;
+    outline-color: #000000;
+    color: #000000;
 }
 
 .btn-hard:hover {
@@ -74,6 +90,8 @@
 
     gap: 20px;
 }
+
+
 
 .aligned-right {
     text-align: end;
