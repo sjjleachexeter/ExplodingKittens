@@ -2,10 +2,8 @@
 {% block content %}
     {% if user.is_authenticated %}
         <br>
-        <h4>Welcome, {{ user.username }}!</h4>
 
         <h3 style="color:#545775;">Welcome {{ user.username }}!</h3>
-        <p><a href="{% url 'password_change' %}">Password Change</a></p>
 
         <hr>
 
@@ -34,10 +32,7 @@
 
 
     {% else %}
-        <h3>You are not logged in</h3>
-        <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
-        <a href="{% url 'signup' %}" class="btn btn-secondary">Signup</a>   
-    <br>
+
     <h1>Log in to view your profile</h1>
     <br>
     <br>
