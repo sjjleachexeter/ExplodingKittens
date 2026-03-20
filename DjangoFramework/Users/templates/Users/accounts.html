@@ -1,6 +1,8 @@
 {% extends "base.html" %} {% block title %}Sign Up {% endblock %}
 {% block content %}
     {% if user.is_authenticated %}
+        <br>
+        <h4>Welcome, {{ user.username }}!</h4>
 
         <h3 style="color:#545775;">Welcome {{ user.username }}!</h3>
         <p><a href="{% url 'password_change' %}">Password Change</a></p>
@@ -8,14 +10,18 @@
         <hr>
 
         <form action="{% url 'logout_account' %}" method="post" style="margin-bottom: 0px;">
+        <p><a href="{% url 'password_change' %}">Change Password</a></p>
+        <form action="{% url 'logout_account' %}" method="post">
             {% csrf_token %}
             <button type="submit" class="btn btn-primary">Log Out</button>
         </form>
         <form action="{% url 'delete_account' %}" method="post" style="margin-bottom: 0px;">
+        <br>
+        <form action="{% url 'delete_account' %}" method="post">
             {% csrf_token %}
             <button type="submit" class="btn btn-secondary">Delete account</button>
         </form>
-
+        <br>
         <form action="{% url 'public_account' %}" method="post">
             {% csrf_token %}
             <label>
@@ -25,10 +31,20 @@
             </label>
         </form>
 
+
+
     {% else %}
         <h3>You are not logged in</h3>
         <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
         <a href="{% url 'signup' %}" class="btn btn-secondary">Signup</a>   
+    <br>
+    <h1>Log in to view your profile</h1>
+    <br>
+    <br>
+    <br>
+    <p>You are not logged in.</p>
+    <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
+    <a href="{% url 'signup' %}"class="btn btn-secondary">Signup</a>
 
 
 

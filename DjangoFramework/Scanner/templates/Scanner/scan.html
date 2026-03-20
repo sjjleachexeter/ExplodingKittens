@@ -1,27 +1,31 @@
 {% extends "base.html" %} {% block title %}Scan {% endblock %}
 {% block content %}
-    <!DOCTYPE html>
-    <html lang="en">
     <head>
         <script src="https://unpkg.com/html5-qrcode"></script>
         <title>Scan a Barcode</title>
     </head>
-    <body>
+    <br>
     <div class="container">
         <h2 style="color: #545775;">Scan a product:</h2>
         <button class="btn btn-primary" onclick="toggle_scanner_view()">Scan Barcode</button>
+        <h3>Scan a product:</h3>
         <div id="scanner_view" style="display: none">
             <div id="reader"></div>
         </div>
+        <button id="toggle_scanner_btn" class="btn btn-primary" onclick="toggle_scanner_view()">Scan Barcode</button>
     </div>
+    <br>
 
 
     <!--Not working? Enter Manually (needs validation)-->
-    <form action="{% url 'load_passport' %}" method="post" id="barcode_form">
+    <form action="{% url 'load_passport' %}" method="post" id="barcode_form" style="text-align: center; align-items: center;">
         {% csrf_token %}
-        <label class="standouttext" for="barcode">Not working? Enter Manually:</label>
-        <input type="text" id="barcode" name="barcode">
-        <button class="btn btn-secondary" type="submit">Find Product</button>
+        <div>
+            <label class="standouttext" for="barcode" style="padding: 0% 1%"> Not working? Enter Manually: </label> 
+            <br>
+            <input type="text" id="barcode" name="barcode">
+            <button class="btn-secondary" type="submit">Find Product</button>
+        <div>
 
     </form>
 

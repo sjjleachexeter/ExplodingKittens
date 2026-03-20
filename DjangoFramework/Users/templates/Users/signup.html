@@ -1,15 +1,16 @@
 {% extends "base.html"%} {% block title %}Sign Up {% endblock %}
 {% block content %}
-
+<br>
 <h2>Sign up</h2>
 <div style="justify-content: center; display: flex; align-items: center;">
     <form method = "post" style="text-align: left;">
         {% csrf_token %}
         {{ form }}
         <br>
-        <button class="btn-secondary" type = "submit">Sign Up</button>
+        <div style="text-align: center;"> <!-- centralise button for consistency across pages-->
+        <button class="btn btn-secondary" type = "submit">Sign Up</button>
+        </div>
     </form>
-    
 </div>
 <div class="grid_login">
     <div class="grid_login-1"></div>
