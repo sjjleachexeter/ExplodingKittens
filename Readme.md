@@ -12,7 +12,7 @@
 
 ## How to run tests
 1. setup development environment
-2. from `DjangoFramework` run `python manage.py test`
+2. from `DjangoFramework` run `python -W ignore  manage.py test --buffer`
 
 ## How to create superuser
 1. setup development environment

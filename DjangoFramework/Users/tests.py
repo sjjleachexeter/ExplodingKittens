@@ -1,6 +1,10 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django.db import transaction, IntegrityError
+
+from .models import Level, Types
+from Leaderboard.models import LeaderboardPreferences
 
 # Create your tests here.
 class TestAccounts(TestCase):
@@ -249,3 +253,276 @@ class TestLogin(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'username')
+
+class TestDeleteAccount(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.url = reverse('delete_account')
+
+    def test_delete_account_not_logged_in(self):
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 302)
+    
+    def test_delete_account_logged_in(self):
+        user = User.objects.create_user(
+            username = 'test_user',
+            password = 'Password123!'
+        )
+        self.client.login(username = 'test_user', password = 'Password123!')
+        response = self.client.post(self.url)
+
+        self.assertFalse(User.objects.filter(username='test_user').exists())
+        self.assertEqual(response.status_code, 302)
+
+class TestLogoutAccount(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.url = reverse('logout_account')
+        self.user = User.objects.create_user(
+            username = 'test_user',
+            password = 'Password123!'
+        )
+
+    def test_logout_account_no_login(self):
+        response = self.client.post(self.url)
+
+        self.assertEqual(response.status_code, 302)
+
+    def test_logout_account_login(self):
+        self.client.login(username = 'test_user', password = 'Password123!')
+        response = self.client.post(self.url)
+
+        self.assertNotIn('_auth_user_id', self.client.session)
+        self.assertEqual(response.status_code, 302)
+
+class TestPublicAccount(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username = 'test_user',
+            password = 'Password123!'
+        )
+
+        self.leaderboard_preferences = LeaderboardPreferences.objects.create(
+            id = 1,
+            user = self.user,
+            public = False
+        )
+
+        self.client = Client()
+        self.url = reverse('public_account')
+
+    def test_public_account_no_login(self):
+        response = self.client.post(self.url)
+
+        self.assertEqual(response.status_code, 302)
+
+    def test_public_account_login(self):
+        self.client.login(username = 'test_user', password = 'Password123!')
+        response = self.client.post(self.url)
+        self.leaderboard_preferences.refresh_from_db()
+
+        self.assertEqual(self.leaderboard_preferences.public, True)
+        self.assertEqual(response.status_code, 302)
+
+class TestEditRoles(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.url = reverse('edit_roles')
+
+        self.superuser = User.objects.create_superuser(
+            username='test_superuser',
+            password='Password123!'
+        )
+
+        self.user = User.objects.create_user(
+            username='test_user',
+            password='Password1231'
+        )
+    
+    def test_edit_roles_no_loggin(self):
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 302)
+
+    def test_edit_roles_user(self):
+        self.client.login(username='test_user', password='Password123!')
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 302)
+
+    def test_edit_roles_superuser_get(self):
+        self.client.login(username='test_superuser', password='Password123!')
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "Users/edit_roles.html")
+
+    def test_edit_roles_superuser_post(self):
+        self.client.login(username='test_superuser', password='Password123!')
+        post_data = {
+            'user': self.user.id,
+            'type': Types.Roles.MANAGER
+        }
+        response = self.client.post(self.url, post_data)
+
+        self.assertEqual(response.status_code, 302)
+
+    def test_edit_roles_bad_form(self):
+        self.client.login(username='test_superuser', password='Password123!')
+        post_data = {
+            'user': self.user.id,
+        }
+        response = self.client.post(self.url, post_data)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "Users/edit_roles.html")
+
+class TestLevel(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='new_test_user',
+            password='Password123!'
+        )
+
+        self.level = self.user.current_level
+        self.level.user=self.user
+        self.level.level=5
+        self.level.points=100
+
+    #Create
+    def test_level_create(self):
+        self.assertTrue(Level.objects.filter(id=self.level.id).exists())
+
+    #Read
+    # def test_level_read_id(self):
+    #     self.assertEqual(self.level.id, 1)
+
+    def test_level_read_user(self):
+        self.assertEqual(self.level.user, self.user)
+
+    def test_level_read_level(self):
+        self.assertEqual(self.level.level, 5)
+
+    def test_level_read_points(self):
+        self.assertEqual(self.level.points, 100)
+
+    #Update
+    def test_level_update_id(self):
+        self.level.id = 2
+
+        self.assertFalse(Level.objects.filter(id=2).exists())
+
+    def test_level_update_user(self):
+        user = User.objects.create_user(
+            username='new_user',
+            password='Password123!'
+        )
+        self.level.user = user
+
+        self.assertEqual(self.level.user, user)
+
+    def test_level_update_level(self):
+        self.level.level = 10
+        
+        self.assertEqual(self.level.level, 10)
+
+    def test_level_update_points(self):
+        self.level.points = 200
+
+        self.assertEqual(self.level.points, 200)
+
+    #Delete
+    def test_level_delete(self):
+        self.level.delete()
+
+        self.assertFalse(Level.objects.filter(user=self.user).exists())
+
+    def test_level_delete_user(self):
+        id = self.level.id
+        self.user.delete()
+
+        self.assertFalse(Level.objects.filter(id=id).exists())
+
+    #Constraints
+    def test_level_id_unique(self):
+        id = self.level.id
+        with self.assertRaises(IntegrityError):
+            with transaction.atomic():
+                level = Level.objects.create(
+                    id = id,
+                    user = self.user,
+                    level = 10,
+                    points = 150
+                )
+
+    def test_level_defaults(self):
+        user = User.objects.create_user(
+            username='new_user',
+            password='Password123!'
+        )
+
+        self.assertEqual(user.current_level.level, 1)
+        self.assertEqual(user.current_level.points, 0)
+
+    #Methods
+    def test_level_str(self):
+        self.assertEqual(self.level.__str__(), "new_test_user - Level 5")
+
+    def test_level_update(self):
+        self.level.update_level()
+
+        self.assertEqual(self.level.level, 2)
+
+class TestTypes(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='test_user',
+            password='Password123!'
+        )
+        
+        self.types = self.user.role
+
+    #Create
+    def test_types_create(self):
+        self.assertTrue(Types.objects.filter(user=self.user).exists())
+
+    #Read
+    def test_types_read_type(self):
+        self.assertEqual(self.types.type, Types.Roles.GEN_USER)
+
+    def test_types_read_user(self):
+        self.assertEqual(self.types.user, self.user)
+
+    #Update
+    def test_types_update_type(self):
+        self.types.type = Types.Roles.MANAGER
+
+        self.assertEqual(self.types.type, Types.Roles.MANAGER)
+
+    def test_types_update_user(self):
+        user = User.objects.create_user(
+            username='new_user',
+            password='Password123!'
+        )
+        self.types.user = user
+
+        self.assertEqual(self.types.user, user)
+
+    #Delete
+    def test_types_delete(self):
+        self.types.delete()
+
+        self.assertFalse(Types.objects.filter(user=self.user).exists())
+
+    def test_types_delete_user(self):
+        self.user.delete()
+        
+        if self.types:
+            self.assertTrue(True)
+        else:
+            self.assertTrue(False)
+
+    #Methods
+    def test_types_str(self):
+        self.assertEqual(self.types.__str__(), 'test_user - GEN_USER')

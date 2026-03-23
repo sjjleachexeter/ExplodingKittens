@@ -9,6 +9,7 @@ from decimal import Decimal
 from datetime import datetime
 
 from .models import Product, Ingredient, ProductIngredient, Stage, Ingredient, Node, NodeRole, EvidenceScope, ClaimType, Stage, Evidence, Claim, ClaimEvidence, ProductScan
+from .views import haversine, distance_between_country_codes, rate_product_distance
 
 # Create your tests here.
 
@@ -94,6 +95,61 @@ class TestReturnToScanner(TestCase):
         response = self.client.get(self.return_to_scanner_url)
 
         self.assertEqual(response.status_code, 302)
+
+class TestHaversine(TestCase):
+    def test_haversine_1(self):
+        pos1 = (1,1)
+        pos2 = (1,1)
+        self.assertEqual(haversine(pos1, pos2), 0)
+
+    def test_haversine_2(self):
+        pos1 = (0,0)
+        pos2 = (24,13)
+        self.assertTrue(abs(haversine(pos1, pos2) - 3000) < 25)
+
+    def test_haversine_3(self):
+        pos1 = (-32,78)
+        pos2 = (22,-68)
+        self.assertTrue(abs(haversine(pos1, pos2) - 16600) < 25)
+
+    def test_haversine_4(self):
+        pos1 = (0,0)
+        pos2 = (0,0)
+        self.assertEqual(haversine(pos1, pos2), 0)
+
+class TestDistanceBetweenCountryCodes(TestCase):
+    def test_distance_between_country_codes_1(self):
+        self.assertTrue(abs(distance_between_country_codes('fr') - 1000) < 25)
+
+    def test_distance_between_country_codes_2(self):
+        self.assertTrue(abs(distance_between_country_codes('fr', 'ca') - 10750) < 25)
+
+    def test_distance_between_country_codes_3(self):
+        self.assertEqual(distance_between_country_codes('uk', 'uk'), 0)
+
+class TestRateProductDistance(TestCase):
+    pass
+
+class TestDisplayNodeInfo(TestCase):
+    pass
+
+class TestCreateNode(TestCase):
+    pass
+
+class TestCreateIngredient(TestCase):
+    pass
+
+class TestCreatePassport(TestCase):
+    pass
+
+class TestEditPassport(TestCase):
+    pass
+
+class TestEditClaims(TestCase):
+    pass
+
+class TestEditEvidence(TestCase):
+    pass
 
 #Models
 class TestProduct(TestCase):

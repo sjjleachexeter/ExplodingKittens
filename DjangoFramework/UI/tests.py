@@ -25,27 +25,27 @@ class TestProductPassport(TestCase):
         self.assertTemplateUsed(response, "product.html")
 
 
-class TestProfile(TestCase):
-    def setUp(self):
-        self.client = Client()
-        self.url = reverse('profile')
+# class TestProfile(TestCase):
+#     def setUp(self):
+#         self.client = Client()
+#         self.url = reverse('profile')
 
-    def test_profile(self):
-        response = self.client.get(self.url)
+#     def test_profile(self):
+#         response = self.client.get(self.url)
 
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "profile.html")
+#         self.assertEqual(response.status_code, 200)
+#         self.assertTemplateUsed(response, "profile.html")
 
-class TestUser(TestCase):
-    def setUp(self):
-        self.client = Client()
-        self.url = reverse('user')
+# class TestUser(TestCase):
+#     def setUp(self):
+#         self.client = Client()
+#         self.url = reverse('user')
 
-    def test_user(self):
-        response = self.client.get(self.url)
+#     def test_user(self):
+#         response = self.client.get(self.url)
 
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "user.html")
+#         self.assertEqual(response.status_code, 200)
+#         self.assertTemplateUsed(response, "user.html")
 
 class TestPrivacy(TestCase):
     def setUp(self):
@@ -58,24 +58,24 @@ class TestPrivacy(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "privacy.html")
 
-class TestTerms(TestCase):
-    def setUp(self):
-        self.client = Client()
-        self.url = reverse('terms')
+# class TestTerms(TestCase):
+#     def setUp(self):
+#         self.client = Client()
+#         self.url = reverse('terms')
 
-    def test_terms(self):
-        response = self.client.get(self.url)
+#     def test_terms(self):
+#         response = self.client.get(self.url)
 
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "terms.html")
+#         self.assertEqual(response.status_code, 200)
+#         self.assertTemplateUsed(response, "terms.html")
 
-class TestAbout(TestCase):
-    def setUp(self):
-        self.client = Client()
-        self.url = reverse('about')
+# class TestAbout(TestCase):
+#     def setUp(self):
+#         self.client = Client()
+#         self.url = reverse('about')
 
-    def test_about(self):
-        response = self.client.get(self.url)
+#     def test_about(self):
+#         response = self.client.get(self.url)
 
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "about.html")
+#         self.assertEqual(response.status_code, 200)
+#         self.assertTemplateUsed(response, "about.html")

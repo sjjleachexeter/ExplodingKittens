@@ -100,8 +100,7 @@ class TestQuizView(TestCase):
     def test_quiz_no_login(self):
         response = self.client.get(self.quiz_url)
 
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'gamification/login_to_view.html')
+        self.assertEqual(response.status_code, 302)
 
     def test_quiz_no_quiz(self):
         self.client.force_login(self.user)
@@ -647,8 +646,14 @@ class TestQuizModel(TestCase):
             self.quiz.full_clean()
 
     #Methods
-    def test_quiz_str(self):
-        self.assertEqual(self.quiz.__str__(), 1)
+    def test_quiz_str_1(self):
+        self.assertEqual(self.quiz.__str__(), 'test question')
+
+    def test_quiz_str_2(self):
+        self.quiz.question = 'a' * 30
+        self.quiz.quiz_id = 'b' * 10
+        
+        self.assertEqual(self.quiz.__str__(), 'b'*5 + ':' + 'a'*20 + '...')
 
 class TestQuizAttempt(TestCase):
     def setUp(self):
