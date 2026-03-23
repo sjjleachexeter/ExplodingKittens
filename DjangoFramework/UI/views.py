@@ -13,6 +13,7 @@ def home(request):
         try:
             level = Level.objects.get(user=request.user).level
             points = Level.objects.get(user=request.user).points
+            progress = points % 100
         except Exception as e:
             level = None
             print(e)
@@ -30,6 +31,7 @@ def home(request):
         context = {
             'level': level,
             'points': points,
+            'progress': progress,
             'missions_done': missions_done,
             'quizzes_attempted': quizzes_attempted,
             'products_scanned': products_scanned,
