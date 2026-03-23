@@ -3,7 +3,7 @@
 <br>
 <h2>Log In</h2>
 <div style="justify-content: center; display: flex; align-items: center;">
-    <form method = "post" style="text-align: right;"> <!-- textbox misalignment more noticeable than text misalignment -->
+    <form method = "post" style="text-align: center;">
         {% csrf_token %} <!-- prevents attacks that cause unwanted changes of state-->
         {{ form }}
         <br>

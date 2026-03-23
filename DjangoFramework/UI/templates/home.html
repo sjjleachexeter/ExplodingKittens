@@ -32,13 +32,12 @@
                             Missions Done: {{ missions_done }} <br>
                             Quizzes Attempted: {{ quizzes_attempted }} <br>
                             Products Scanned: {{ products_scanned }} <br>
-                            Last Scan: {{ last_scan }}<br>
+                            Last Scan: {{ last_scan.product.name }}<br>
                          </p>
                         
                     </div>
                     <progress id="mission_progress"
-                              value="{{ mission.user_progress.0.points_awarded }}" max="{{ mission.points }}"> 
-                        {{ mission.user_progress.0.points_awarded }}pts
+                              value="{{ progress  }}" max="100">
                     </progress>
             
             </div>
