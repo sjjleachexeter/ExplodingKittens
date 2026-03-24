@@ -24,7 +24,14 @@ class TestLoadPassport(TestCase):
             username='test_user',
             password='Password123!'
         )
-        self.product = Product.objects.get(qr_token=415668)
+        self.product = Product.objects.create(
+            id=1,
+            product_id=1,
+            name='test',
+            category=1,
+            description='test',
+            qr_token=1
+        )
 
     def test_passport_get(self):
         response = self.client.get(self.url)
@@ -33,7 +40,7 @@ class TestLoadPassport(TestCase):
 
     def test_passport_no_login(self):
         data = {
-            'barcode': 415668
+            'barcode': 1
         }
         response = self.client.post(self.url, data)
 
@@ -42,7 +49,7 @@ class TestLoadPassport(TestCase):
     def test_passport_login(self):
         self.client.login(username='test_user', password='Password123!')
         data = {
-            'barcode': 415668
+            'barcode': 1
         }
         response = self.client.post(self.url, data)
 

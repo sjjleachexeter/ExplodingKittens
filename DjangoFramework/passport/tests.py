@@ -4,12 +4,15 @@ from django.db import IntegrityError, transaction
 from django.core.exceptions import ValidationError
 from django.db.models.deletion import ProtectedError
 from django.contrib.auth.models import User
-from decimal import Decimal
+from django.test import RequestFactory
 
+from decimal import Decimal
 from datetime import datetime
 
+from Users.models import Types
+from .forms import ProductForm, IngredientFormSet, StageFormSet
 from .models import Product, Ingredient, ProductIngredient, Stage, Ingredient, Node, NodeRole, EvidenceScope, ClaimType, Stage, Evidence, Claim, ClaimEvidence, ProductScan
-from .views import haversine, distance_between_country_codes, rate_product_distance
+from .views import haversine, distance_between_country_codes, rate_product_distance, create_node, create_ingredient, create_passport, edit_claims
 
 # Create your tests here.
 
@@ -128,28 +131,321 @@ class TestDistanceBetweenCountryCodes(TestCase):
         self.assertEqual(distance_between_country_codes('uk', 'uk'), 0)
 
 class TestRateProductDistance(TestCase):
-    pass
+    def test_rate_product_distance_1(self):
+        product = Product.objects.create(
+            id=1,
+            product_id=1,
+            name='test',
+            category=1,
+            description='test',
+            qr_token=1
+        )
+
+        ingredient = Ingredient.objects.create(
+            id=1,
+            ingredient_id=1,
+            name='test'
+        )
+
+        product_ingredient = ProductIngredient.objects.create(
+            id=1,
+            product=product,
+            ingredient=ingredient,
+            proportion=1,
+            origin_country='es'
+        )
+
+        self.assertEqual(rate_product_distance(product),'Medium')
+
+    def test_rate_product_distance_2(self):
+        product = Product.objects.create(
+            id=1,
+            product_id=1,
+            name='test',
+            category=1,
+            description='test',
+            qr_token=1
+        )
+
+        ingredient = Ingredient.objects.create(
+            id=1,
+            ingredient_id=1,
+            name='test'
+        )
+
+        product_ingredient = ProductIngredient.objects.create(
+            id=1,
+            product=product,
+            ingredient=ingredient,
+            proportion=1,
+            origin_country='uk'
+        )
+
+        self.assertEqual(rate_product_distance(product),'Very Low')
+
+    def test_rate_product_distance_3(self):
+        product = Product.objects.create(
+            id=1,
+            product_id=1,
+            name='test',
+            category=1,
+            description='test',
+            qr_token=1
+        )
+
+        ingredient = Ingredient.objects.create(
+            id=1,
+            ingredient_id=1,
+            name='test'
+        )
+
+        product_ingredient = ProductIngredient.objects.create(
+            id=1,
+            product=product,
+            ingredient=ingredient,
+            proportion=1,
+            origin_country='ca'
+        )
+
+        self.assertEqual(rate_product_distance(product),'High')
+
+    def test_rate_product_distance_4(self):
+        product = Product.objects.create(
+            id=1,
+            product_id=1,
+            name='test',
+            category=1,
+            description='test',
+            qr_token=1
+        )
+
+        ingredient = Ingredient.objects.create(
+            id=1,
+            ingredient_id=1,
+            name='test'
+        )
+
+        product_ingredient = ProductIngredient.objects.create(
+            id=1,
+            product=product,
+            ingredient=ingredient,
+            proportion=1,
+            origin_country='ie'
+        )
+
+        self.assertEqual(rate_product_distance(product),'Low')
 
 class TestDisplayNodeInfo(TestCase):
-    pass
+    def setUp(self):
+        self.client = Client()
+        self.node = Node.objects.create(
+            id=1,
+            node_id=1,
+            org_name='test',
+            role=NodeRole.ASSEMBLER,
+            country='uk',
+            city='London'
+        )
+        self.url = reverse('node_info_display', args=[1])
+        self.bad_url = reverse('node_info_display', args=[2])
+    
+    def test_display_node_missing_node(self):
+        response = self.client.get(self.bad_url)
+
+        self.assertEqual(response.status_code, 404)
+
+    def test_dsiplay_node(self):
+        response = self.client.get(self.url)
+        
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "passport/node_info.html")
 
 class TestCreateNode(TestCase):
-    pass
+    def setUp(self):
+        self.user = User.objects.create_superuser(
+            username='test_user',
+            password='Password123!'
+        )
+        self.user.role.type = Types.Roles.PASSPORT_ADMIN
+        self.user.role.save()
+        self.user.save()
+        self.client = Client()
+        self.factory = RequestFactory()
+        self.url = reverse('create_node')
+    
+    def test_create_node_no_login(self):
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 302)
+
+    def test_create_node_get(self):
+        self.client.login(username='test_user', password='Password123!')
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "passport/edit_node.html")
+    
+    def test_create_node_post(self):
+        self.client.login(username='test_user', password='Password123!')
+        data = {
+            'org_name': 'testing 12345',
+            'role': NodeRole.DISTRIBUTOR,
+            'country': 'uk',
+            'city': 'London'
+        }
+        response = self.client.post(self.url, data)
+
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(Node.objects.filter(org_name = 'testing 12345').exists())
+    
+    def test_create_node_delete(self):
+        node = Node.objects.create(
+            id = 1,
+            node_id = '1',
+            org_name = 'test',
+            role = NodeRole.FACTORY,
+            country = 'uk',
+            city = 'London'
+        )
+
+        data = {
+            'form-delete': True
+        }
+        request = self.factory.post(self.url, data)
+        request.user = self.user
+        response = create_node(request, node_id='1')
+
+        self.assertEqual(response.status_code, 302)
+        self.assertFalse(Node.objects.filter(node_id='1').exists())
 
 class TestCreateIngredient(TestCase):
-    pass
+    def setUp(self):
+        self.user = User.objects.create_superuser(
+            username='test_user',
+            password='Password123!'
+        )
+        self.user.role.type = Types.Roles.PASSPORT_ADMIN
+        self.user.role.save()
+        self.user.save()
+        self.client = Client()
+        self.factory = RequestFactory()
+        self.url = reverse('create_ingredient')
 
+    def test_create_ingredient_no_login(self):
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 302)
+
+    def test_create_ingredient_get(self):
+        self.client.login(username='test_user', password='Password123!')
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "passport/edit_ingredient.html")
+    
+    def test_create_ingredient_post(self):
+        self.client.login(username='test_user', password='Password123!')
+        data = {
+            'name': 'test'
+        }
+        response = self.client.post(self.url, data)
+
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(Ingredient.objects.filter(name='test').exists())
+
+    def test_create_ingredient_delete(self):
+        ingredient = Ingredient.objects.create(
+            id = 1,
+            ingredient_id = '1',
+            name = 'test'
+        )
+
+        data = {
+            'form-delete': True
+        }
+        request = self.factory.post(self.url, data)
+        request.user = self.user
+        response = create_ingredient(request, ingredient_id='1')
+
+        self.assertEqual(response.status_code, 302)
+        self.assertFalse(Ingredient.objects.filter(ingredient_id='1').exists())
+
+#cant figure out passport
 class TestCreatePassport(TestCase):
-    pass
+    def setUp(self):
+        self.user = User.objects.create_superuser(
+            username='test_user',
+            password='Password123!'
+        )
+        self.user.role.type = Types.Roles.PASSPORT_ADMIN
+        self.user.role.save()
+        self.user.save()
+        self.client = Client()
+        self.factory = RequestFactory()
+        self.url = reverse('create_passport')
 
-class TestEditPassport(TestCase):
-    pass
+    def test_create_passport_no_login(self):
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 302)
+
+    def test_create_passport_get(self):
+        self.client.login(username='test_user', password='Password123!')
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "passport/edit_passport.html")
+
+    def test_create_passport_form_delete(self):
+        product = Product.objects.create(
+            id=1,
+            product_id='1',
+            name='test',
+            category='test',
+            description='test',
+            qr_token=1
+        )
+        self.client.login(username='test_user', password='Password123!')
+        data = {
+            'form-delete': True
+        }
+        response = self.client.post(self.url, data)
+
+        self.assertEqual(response.status_code, 302)
 
 class TestEditClaims(TestCase):
-    pass
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='test_user',
+            password='Password123!'
+        )
+        self.user.save()
+        self.product = Product.objects.create(
+            id=1,
+            product_id='1',
+            name='test',
+            category='test',
+            description='test',
+            qr_token=123
+        )
+        self.product.save()
+        self.user.role.type = Types.Roles.PASSPORT_ADMIN
+        self.user.role.save()
+        self.user.save()
+        self.client = Client()
+        self.url = reverse('edit_claims', args=[self.product.product_id])
 
-class TestEditEvidence(TestCase):
-    pass
+    def test_edit_claims_no_login(self):
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 302)
+
+    def test_edit_claims_get(self):
+        self.client.login(username='test_user', password='Password123!')
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "passport/edit_claims.html")
 
 #Models
 class TestProduct(TestCase):
