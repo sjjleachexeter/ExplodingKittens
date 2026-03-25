@@ -91,8 +91,7 @@ def load_csv_stages():
             from_node_uuid = Node.objects.get(id=(row["from_node"]))
             to_node_uuid = Node.objects.get(id=(row["to_node"]))
 
-            stage_uuid = u5(s(row["stage_id"]) + s(row["sequence"]) + s(row["stage_name"]))
-
+            stage_uuid = row["stage_uuid"]
             Stage.objects.update_or_create(
                 id=stage_uuid,
                 defaults={
@@ -135,9 +134,13 @@ def load_csv_evidence():
     df = pd.read_csv(csv_evidence)
 
     for index, row in df.iterrows():
-        evidence_uuid = u5(s(row["evidence_id"]) + s(row["issuer"]))
+        evidence_uuid = row["evidence_uuid"]
 
-        product = Product.objects.get(id=s(row["product_uuid"]))
+        if not pandas.notnull(row["product_uuid"]):
+            product = None
+        else:
+            product = Product.objects.get(id=s(row["product_uuid"]))
+
 
         if not pandas.notnull(row["stage_uuid"]):
             stage = None

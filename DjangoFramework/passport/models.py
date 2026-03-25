@@ -124,7 +124,23 @@ class ClaimType(models.TextChoices):
     LOCAL = "locally_sourced", "Locally sourced"
     FAIRTRADE = "fairtrade", "Fairtrade"
     RECYCLE = "recycled", "Recycled materials"
+    FIVE_A_DAY = "5-a-day-logo", "5 A day"
+    VEGAN = "vegan", "Vegan"
+    ASC_CERTIFIED = "asc certified", "ASC Certified"
+    CARBON_NEUTRAL_CERTIFIED = "carbon neutral certified", "Carbon Neutral"
+    KOSHER = "kosher", "Kosher"
+    LMSF = "leaf marque sustainable farming", "leaf marque sustainable farming"
+    MSC_CERTIFIED = "msc certified sustainable", "MSC sustainable"
+    NON_GMO = "non-gmo project verified", "Non-gmo verified"
+    PDO_PROTECTED = "pdo protected", "PDO protected"
+    PROTECTED_ORIGIN = "protected_place_of_origin", "Protected origin"
+    RAINFOREST_ALLIANCE = "rainforest alliance certified", "Rainforest alliance certified"
+    RED_TRACTOR = "red tractor assured", "Red Tractor assured"
+    SUSTAINABLE_PALM_OIL = "rspo certified sustainable palm oil", "Sustainable palm oil"
+    SUSTAINABLE_FARMING = "sustainable farming", "Sustainable Farming"
+    UTZ_CERTIFIED = "utz certified", "UTZ certified"
     OTHER = "other", "Other"
+
 
 
 class Claim(models.Model):

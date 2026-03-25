@@ -97,8 +97,8 @@ def display_passport(request, product_id=-1):
             {
                 "type": item["claim_type"],
                 "label": ClaimType(item["claim_type"]).label,
-                "rating": "Very" if item["total_value"] > 0.70 else "Low",
-                "percentage": int(item["total_value"] * 100),
+                "rating": "Very" if item["total_value"] is not None and item["total_value"]  > 0.70 else "Low",
+                "percentage": int(item["total_value"] * 100) if item["total_value"] is not None  else 100,
             }
             for item in claims_data
         ]
