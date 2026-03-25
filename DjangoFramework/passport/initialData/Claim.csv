@@ -1,0 +1,549 @@
+claim_uuid,claim_id,product_uuid,stage_uuid,claim_type,statement,missing_evidence
+93471a0a-a7a8-51a3-9b07-bf7e7e8d16fb,4001,2f5aaf4d-f290-52b2-ae38-e6cb07f8ba63,,Vegan,Product is suitable for vegan consumption.,False
+0d5c6a2a-1e57-5d54-8cdd-2e3c703dedc3,4002,d422e9a5-6975-5596-aff5-001b831baae3,,non-gmo-project-verified,This product contains no genetically modified ingredients.,False
+5c4f0f0f-dc86-5a36-b2a2-9f9b84cf4f45,4003,0a15de31-291b-5958-9ae3-df33a8ddc1aa,,Keyhole Scheme,Product meets the official Keyhole criteria for Olive oil.,True
+b50d7087-7df8-5c4f-b9b3-6a60ddc774e3,4004,3002c67f-58b6-5264-8f3c-a18c781119c3,,kosher,Product meets the requirements for kosher.,False
+e1123f8a-2c2c-5e60-96a8-7a6c1f6e2b7b,4005,106f6d0c-6738-5d2e-b830-2995d5247f0b,,kosher,Product meets the requirements for kosher.,False
+c4b25b1a-9d91-59b2-9b8a-8a7b1f4f6c11,4006,106f6d0c-6738-5d2e-b830-2995d5247f0b,,protected_place_of_origin,Product originates from claimed destination completely.,False
+7c8c21b0-2f69-5e5d-8a1b-6f0c1c9b2d3e,4007,0125daac-d72b-5f25-b5d7-22da72fff972,,organic,Product is fully organic according to EU standards.,False
+f9b8cd14-035b-5a96-af26-7ebbe6a817b5,4008,1f89eb52-0405-5468-83f6-bd7582a34797,,5-a-day-logo,Consuming a serving of this product is equivalent to one of your 5 a day,False
+e5ff17f8-25dc-533a-8ccc-6b26762eeaeb,4009,d6623382-73e6-5712-90c2-6cb3e6bd5d5f,,non-gmo-project-verified,This product is non-GMO project verified,False
+f8795e28-cbf7-51b5-97f8-0977f8199331,4010,636141a5-bbc2-5a05-9b79-0bd2f8028c78,,vegan,Product is suitable for vegan consumption.,False
+2da4ac29-1fb7-588f-87eb-cefc624d5e25,4011,540eefd0-a860-56ff-bc37-a12b34e12f8e,,5-a-day-logo,One serving of this product is equivalent to one of your 5 a day,False
+01b4acb9-48bb-50cd-9400-1b37bfac3cdf,4012,1a818840-e58d-5863-a570-867e6940b4f9,,red-tractor,This product is certified to meet Class 1 food standards by Red Tractor.,False
+5e108eb6-1ade-5ca8-88bf-56765631dcdf,4013,d1aaf5c8-8cb6-5320-a000-aecf428b7a1c,,5-a-day-logo,One serving of this product is equivalent to one of your 5 a day.,False
+73a23aa8-aeca-53d2-b2bf-805a2c65344e,4014,8bdb0aa5-c595-5ae2-a847-a05e932417fc,,5-a-day-logo,Consuming a serving of this product is equivalent to one of your 5 a day,False
+fad6710d-c72b-5de2-a41f-075e7c932623,4015,78405b39-97ea-53d1-b5fe-530d85d69d40,,pdo protected,This product holds Protected Designation of Origin status.,False
+aeeab877-b631-599f-99ad-3c88a1ca9cd8,4016,78405b39-97ea-53d1-b5fe-530d85d69d40,,vegan,This product is suitable for vegans.,False
+a6a7dc7f-098e-5f16-9adb-63932a1f5469,4017,dddbada0-5761-57c9-902c-b60a13e7d9c2,,kosher,This product is kosher certified.,False
+5f43de4c-6ada-5af7-819d-917fe9e07804,4018,dddbada0-5761-57c9-902c-b60a13e7d9c2,,utz certified,This product is UTZ certified for sustainable sourcing.,True
+cb48fea2-02d3-5f40-bdb6-15b089a09988,4019,dddbada0-5761-57c9-902c-b60a13e7d9c2,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+b00a5287-a5b1-52aa-ab60-3ed8ce125365,4020,0f4da2d5-6632-56c3-9779-5fc1f808e27d,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+11458e93-4d9f-5e49-82e2-aa796f3feadd,4021,0f4da2d5-6632-56c3-9779-5fc1f808e27d,,asc certified,This product is from ASC certified responsible aquaculture.,False
+1a88b1bc-2760-5a77-9b92-c4324b9741b5,4022,0f4da2d5-6632-56c3-9779-5fc1f808e27d,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+59f88a5a-8a1f-584c-8453-aa342b12d2f1,4023,8ff7461c-f715-50b5-af20-94f94eac627b,,asc certified,This product is from ASC certified responsible aquaculture.,False
+1218457e-8eee-5dd3-9458-9c72717b324e,4024,8ff7461c-f715-50b5-af20-94f94eac627b,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+13b7f444-82ec-55da-8938-2d8b19d942a4,4025,4a5e0aa7-ba80-502b-aef7-b3c508c3a15d,,kosher,This product is kosher certified.,False
+7112bb75-794c-53a4-a64d-b04c12dfb991,4026,c95520f4-65c0-569f-b1d4-8da67cf2d449,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+3670552b-b82b-50f8-926b-d82d5e261d73,4027,003f4e82-b4e2-5a44-98f2-f1afec956d5f,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+3945ab30-46ef-574e-8469-b530715a0dbf,4028,003f4e82-b4e2-5a44-98f2-f1afec956d5f,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+7fe9f1b0-8f73-5125-9154-f3250ca93eec,4029,003f4e82-b4e2-5a44-98f2-f1afec956d5f,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+b10b1889-8f67-58ca-b62f-5b9cb098737b,4030,f9f68da6-9b15-5435-abb9-6b15107c0f7d,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+8f5449b2-c114-5e41-b62d-b681deea1494,4031,5271b173-1b57-5ace-bb35-4253a712a456,,vegan,This product is suitable for vegans.,False
+c3a2a8fd-9adc-5cac-980c-4a923b2c67d7,4032,0caebd2f-fcdc-5ed7-81c6-f4c16e982e3c,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,True
+f6145c0e-80fc-550b-9524-7d90c9760480,4033,fa0f8c2e-a6fe-5906-a148-ae3a1ecf42a9,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+1151bbc8-cd8e-5a56-a0f9-3ab5128b0992,4034,fa0f8c2e-a6fe-5906-a148-ae3a1ecf42a9,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+78c3c9fd-69f2-5891-8a2f-e58d07b962af,4035,fef23aa6-b573-5344-ab81-88eac69e1829,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,True
+4a52b917-0a01-5dc1-b18a-a52f8b32681d,4036,1723325b-fef7-503e-b9d7-846e7c92802b,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+655d9061-84a8-596c-8f45-1d834c684637,4037,1723325b-fef7-503e-b9d7-846e7c92802b,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",True
+a1942d57-9fe1-564a-9c7b-4a028b61413b,4038,1723325b-fef7-503e-b9d7-846e7c92802b,,pdo protected,This product holds Protected Designation of Origin status.,False
+0a5734e6-30d2-56df-892a-5b866240095f,4039,b79bf84a-4cec-5a85-8a73-c88019ba0a54,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+eef29165-aa1e-5b0a-9451-4ee1d4144b7b,4040,b79bf84a-4cec-5a85-8a73-c88019ba0a54,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+e9b0ad91-3fff-5df3-b414-3e2f1b7261e4,4041,b79bf84a-4cec-5a85-8a73-c88019ba0a54,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+8497bed3-db95-5f11-93bd-7bd77de9c851,4042,f4f300ef-b389-5560-bb6e-c3c451b7de68,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+9f71965b-7cde-5a91-b28b-102aadadfcd1,4043,f4f300ef-b389-5560-bb6e-c3c451b7de68,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+3f0c8fec-f3e9-5d0a-9f49-442a1808ed72,4044,dca58130-590f-5720-8bf7-275a44323630,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+f4fd32f4-ac9b-56c3-bd2a-cfe5dd6312d2,4045,dca58130-590f-5720-8bf7-275a44323630,,carbon neutral certified,This product is certified carbon neutral.,True
+69953416-065a-5ded-94ce-88c642dbd7f4,4046,dca58130-590f-5720-8bf7-275a44323630,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,True
+20c58716-5bab-52cc-b726-3234c7018469,4047,c28fabe1-ef52-5c2b-bed5-17ae0f6fd5b2,,asc certified,This product is from ASC certified responsible aquaculture.,False
+8cd4ea7b-1a60-5638-86d7-7487bf0474ee,4048,c28fabe1-ef52-5c2b-bed5-17ae0f6fd5b2,,vegan,This product is suitable for vegans.,False
+3e756328-948a-5666-b2da-f929776532d7,4049,c28fabe1-ef52-5c2b-bed5-17ae0f6fd5b2,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+2661fcaa-f7e4-5e07-bd73-5b4f3d942315,4050,4a6cf708-9818-59e5-9dac-8a10103e17d7,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+833d8119-e201-5223-a036-3f68410dc680,4051,50ede61f-eb51-5ebe-be90-41f1717188a9,,utz certified,This product is UTZ certified for sustainable sourcing.,True
+9c7e58f1-3a92-54bf-8f48-a6e38858f19a,4052,50ede61f-eb51-5ebe-be90-41f1717188a9,,non-gmo project verified,This product contains no genetically modified ingredients.,True
+7f60a0b3-ce51-5cff-8935-31ea16ccb182,4053,50ede61f-eb51-5ebe-be90-41f1717188a9,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,True
+210a692d-ba8a-5afd-b468-09c3268b4f3b,4054,f0a9c0bf-ea75-5fd4-b57c-b6e1c64fb10c,,pdo protected,This product holds Protected Designation of Origin status.,True
+2c7f40a4-29c4-5600-a68d-69ade55f553d,4055,9cd0f172-1894-5f09-91de-8f321e47c38e,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+b3d2cc28-5cd5-5b5e-b943-8f16a3c12d36,4056,34bf09a0-b553-5c68-83a0-e6cc2aa62b0a,,pdo protected,This product holds Protected Designation of Origin status.,True
+b2aae9ce-ce52-5162-b740-f60fa2a5994c,4057,0a1643b2-fff8-573e-a5af-f2575ccd431d,,pdo protected,This product holds Protected Designation of Origin status.,False
+48127591-d952-51c0-a857-ab6327510653,4058,45cbbf5f-794d-5bd9-8dbb-0d6872239325,,asc certified,This product is from ASC certified responsible aquaculture.,False
+933996f4-3364-57ac-a913-8a1cdd57cc66,4059,45cbbf5f-794d-5bd9-8dbb-0d6872239325,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,True
+505fb435-cbb4-5760-8f11-974d532bf8b4,4060,a69a1bd6-2f15-5964-8de3-a83f35b40078,,carbon neutral certified,This product is certified carbon neutral.,True
+97d61a98-9d7b-5a78-89de-1ae8c1262f3d,4061,dc22a7e0-4d32-58af-b6dd-d2c1f8bb412e,,asc certified,This product is from ASC certified responsible aquaculture.,True
+03b22971-73b6-5630-b9d0-e983760444ca,4062,dc22a7e0-4d32-58af-b6dd-d2c1f8bb412e,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+7c6ba8ae-3c50-5084-b37a-4afc76ba60e3,4063,e51fe116-5b3f-5e37-8844-13f75f128a04,,vegan,This product is suitable for vegans.,True
+c8fcbc89-53cf-5b92-858b-24f153f4282f,4064,e51fe116-5b3f-5e37-8844-13f75f128a04,,carbon neutral certified,This product is certified carbon neutral.,False
+71474a81-6ad2-5428-8489-ae2c08a29917,4065,da1cf73c-7c33-50a7-89fd-5fd7674a2975,,pdo protected,This product holds Protected Designation of Origin status.,True
+d3ac1a47-971e-57a7-970d-b7f59aec9c4c,4066,da1cf73c-7c33-50a7-89fd-5fd7674a2975,,kosher,This product is kosher certified.,True
+ffbabe37-df0c-5f59-a097-a7f6559978d3,4067,da1cf73c-7c33-50a7-89fd-5fd7674a2975,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+cf90e9cc-c4bf-53d8-b1a8-24122b96583e,4068,0ffc06bd-a24e-5806-8739-f931ffaa9fac,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,True
+093d43c7-59cf-5288-828e-e2d12be35212,4069,0ffc06bd-a24e-5806-8739-f931ffaa9fac,,kosher,This product is kosher certified.,False
+c560cb6c-277d-55e8-b0cf-ddbca5c59e35,4070,0ffc06bd-a24e-5806-8739-f931ffaa9fac,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+2fc7d868-b692-5799-8fe8-22e08bd762ec,4071,7e0cbcca-70b5-5f88-9534-4bb416b8c23a,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+7ef2af4e-48aa-5133-bc2a-2035a8265f33,4072,7e0cbcca-70b5-5f88-9534-4bb416b8c23a,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+6e05a54a-6cbd-5f5e-9aa1-d1e78ee09278,4073,6c329b73-7531-533f-a300-caaa89b57081,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+3ad7918b-cf51-5234-8f15-b399bd9fd3a0,4074,6c329b73-7531-533f-a300-caaa89b57081,,kosher,This product is kosher certified.,False
+904a2ac1-49eb-5571-b4a0-298f441e5fab,4075,5fd350b4-729f-5a6a-991c-4bf6de446db1,,utz certified,This product is UTZ certified for sustainable sourcing.,True
+4dcb8a44-f058-5bf9-931e-d72e82d45362,4076,5fd350b4-729f-5a6a-991c-4bf6de446db1,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+31b6ba93-7c5d-5d5e-8e86-b4bc66372729,4077,9daec94a-9915-51cb-992f-669ca771a941,,vegan,This product is suitable for vegans.,False
+92b3b290-0f90-5d8a-9a21-306e57c0374f,4078,9daec94a-9915-51cb-992f-669ca771a941,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,True
+19d3bfb2-963b-5fe5-8947-7c832ec6fffa,4079,9daec94a-9915-51cb-992f-669ca771a941,,asc certified,This product is from ASC certified responsible aquaculture.,True
+3359629b-b585-5a01-9325-62ad2a0b3abb,4080,b90ac73f-5ca6-573c-9cfb-b26dbd00a3d3,,carbon neutral certified,This product is certified carbon neutral.,False
+6a064aba-7f30-5d1a-8be6-6160c8924968,4081,b90ac73f-5ca6-573c-9cfb-b26dbd00a3d3,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+47177335-9ed1-555c-b1ae-10709571c4d2,4082,c4a5d168-7718-56a7-81a7-310962e2aca0,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+050f4034-b707-5654-90b6-fa8d2277bcdd,4083,c4a5d168-7718-56a7-81a7-310962e2aca0,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,True
+ed572009-a72d-5d51-8df3-fc2899caa606,4084,c4a5d168-7718-56a7-81a7-310962e2aca0,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+67079cf2-516c-52f8-8454-3c3dbd2d4aa5,4085,961972d1-bc00-5f20-a63f-246f7293f2be,,carbon neutral certified,This product is certified carbon neutral.,True
+0614c715-91bc-5ee3-86c4-03a1a2eb7c57,4086,961972d1-bc00-5f20-a63f-246f7293f2be,,asc certified,This product is from ASC certified responsible aquaculture.,True
+ef535a3d-d8be-5921-ab90-a31429104723,4087,0f2a198d-c07b-59db-8228-8e0853305cde,,utz certified,This product is UTZ certified for sustainable sourcing.,True
+b80c43bf-258a-56d7-a002-96d2386830c7,4088,0f2a198d-c07b-59db-8228-8e0853305cde,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+c99d56db-888d-5052-9c79-f7fc7ec864f7,4089,0d60e6a4-e959-5c3e-9cfb-22e204929744,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+5babef8d-5f02-54d2-9a22-eb91969d5d85,4090,0d60e6a4-e959-5c3e-9cfb-22e204929744,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+5408ed4c-9336-55c2-9970-6e22efa4790a,4091,0d60e6a4-e959-5c3e-9cfb-22e204929744,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+18eaf766-c489-5885-97bc-eb6b02258bce,4092,9373d074-38f0-5687-bc5a-ea6134f7cacc,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+7bd7df5a-afac-59eb-8d41-4a39b89ceb37,4093,9373d074-38f0-5687-bc5a-ea6134f7cacc,,pdo protected,This product holds Protected Designation of Origin status.,False
+a9bd7a1d-8e9c-5b00-829e-a2804594f5b8,4094,9373d074-38f0-5687-bc5a-ea6134f7cacc,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+6ded93f7-a459-59d0-8da6-7d61e55d962f,4095,e7308a57-b070-56b4-a8b4-1cb1a04ddc8c,,vegan,This product is suitable for vegans.,False
+bbed0821-523d-518b-ac18-c249c568d57b,4096,e7308a57-b070-56b4-a8b4-1cb1a04ddc8c,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+67452209-ba4e-5e18-941a-ff99350cef1b,4097,5d54ca08-03f8-5abc-b2b0-27ea16e6009d,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+b13ff4f0-cc89-52ae-bc93-a8c202bd522b,4098,65900a67-9ec2-5bf6-9dd1-babae5f7faa9,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+cbb623af-a7e7-5334-bfff-f026e9b5b4d3,4099,65900a67-9ec2-5bf6-9dd1-babae5f7faa9,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+59ad315b-8cba-536a-ab43-d169d1cc9187,4100,65900a67-9ec2-5bf6-9dd1-babae5f7faa9,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+a52a3e1d-4088-52c0-8a13-d7639f9ad94a,4101,a18bacfc-19ac-5525-a85c-65870082cf1d,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,True
+74bfea7c-bab0-5a1c-8992-646672d24074,4102,f48bad2d-832a-589f-8ecf-a087520b9e6c,,asc certified,This product is from ASC certified responsible aquaculture.,True
+5ef8b224-6772-52ab-89bd-554fb966c30a,4103,f48bad2d-832a-589f-8ecf-a087520b9e6c,,utz certified,This product is UTZ certified for sustainable sourcing.,True
+18cbd5aa-5085-5bc6-992b-24a050dc4fee,4104,22ecd446-d259-504b-9d2d-fbef7d4b0276,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",True
+0d62e0a8-9d75-503c-af37-cacd6c88b382,4105,22ecd446-d259-504b-9d2d-fbef7d4b0276,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+235a4a7e-313e-59e6-8fe1-823a01f6963a,4106,22ecd446-d259-504b-9d2d-fbef7d4b0276,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+d1a37c9a-6298-5b23-bc64-a5afc1383650,4107,d53303ae-8986-5d3c-897e-b6e79f05cd7b,,asc certified,This product is from ASC certified responsible aquaculture.,True
+982f3deb-ddca-5e17-8740-ed8a8115539a,4108,d53303ae-8986-5d3c-897e-b6e79f05cd7b,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+bed914f3-34dd-55d2-b031-1604ad01bf96,4109,a1a412c7-b193-525c-9865-825106d41877,,pdo protected,This product holds Protected Designation of Origin status.,False
+2d7b8e5d-135a-5ec3-aa04-3525fb161bd9,4110,a1a412c7-b193-525c-9865-825106d41877,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+a0307a37-bf5f-5541-8832-e97907ae6e03,4111,e40c4bd5-89ce-5182-9a4f-713191d39d38,,kosher,This product is kosher certified.,False
+9809cc0a-19d9-5421-8edf-3746574f50ec,4112,e40c4bd5-89ce-5182-9a4f-713191d39d38,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+6542cb5c-ebc5-5254-8db0-541857f7cbfa,4113,7ecfaf65-164e-5e75-9eb2-b4fcf11de750,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,True
+9f20a9d2-5e00-5bcb-a63a-fd49447ce32d,4114,7ecfaf65-164e-5e75-9eb2-b4fcf11de750,,carbon neutral certified,This product is certified carbon neutral.,False
+edbc9afd-049d-5b35-84eb-780759cd4248,4115,1b21ebaa-afa6-5f5e-94b6-0fd071c1dfee,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+eba8f998-a29c-5ef4-b831-13a7056bd779,4116,1b21ebaa-afa6-5f5e-94b6-0fd071c1dfee,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+800c4de2-058b-554b-bd0a-7db5501beb14,4117,1b21ebaa-afa6-5f5e-94b6-0fd071c1dfee,,vegan,This product is suitable for vegans.,True
+d3539514-8f7e-58cb-bbe5-bc00dc08a449,4118,71d1ec94-7068-5b03-aa37-77b9803f36fa,,carbon neutral certified,This product is certified carbon neutral.,True
+15163e32-92b4-5fd9-ab20-d6b3daf734b8,4119,71d1ec94-7068-5b03-aa37-77b9803f36fa,,vegan,This product is suitable for vegans.,True
+ace80fb4-2605-5e2c-8a6c-4e4dfc723b11,4120,c67893e2-b9ad-51ac-ad1e-7c81f09ddf60,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+f22938fc-9e1f-57b3-ba3d-2f7c5c67db89,4121,f60914c6-0765-514e-ab4c-50eb31cf8672,,carbon neutral certified,This product is certified carbon neutral.,False
+76783426-d749-58d4-a3bd-85c80110b429,4122,f60914c6-0765-514e-ab4c-50eb31cf8672,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+e3373253-9b31-5212-8c87-57d01207f398,4123,f60914c6-0765-514e-ab4c-50eb31cf8672,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+34849d51-a8f9-5ccf-8ccf-cbfcd47eb82a,4124,a1490ad5-2574-5d0d-a3b4-0f269107f5a1,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+ad4b4e63-b290-5012-b116-9bea43b29c7a,4125,a1490ad5-2574-5d0d-a3b4-0f269107f5a1,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,True
+9e220c41-2c66-5147-99a6-973d7b938a69,4126,a1490ad5-2574-5d0d-a3b4-0f269107f5a1,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+55cab882-5196-5b9b-910c-b52915b02763,4127,334107c1-80d7-5332-9942-e975b4f1de5a,,pdo protected,This product holds Protected Designation of Origin status.,False
+9c46eb77-9fb4-5349-8c2e-eae71e762c81,4128,334107c1-80d7-5332-9942-e975b4f1de5a,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,True
+21b5b69e-d0bc-580e-b608-92f49a13dc81,4129,334107c1-80d7-5332-9942-e975b4f1de5a,,vegan,This product is suitable for vegans.,True
+f85bf6d2-4bdb-529c-98a5-de15489d9e19,4130,ab00ecec-36a3-5509-b5c1-b588f3298f64,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+d9defe2b-3592-5bf2-9c27-5f75d7fb2d49,4131,ab00ecec-36a3-5509-b5c1-b588f3298f64,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+944e1960-949f-5e71-8a1d-6963ca5423e9,4132,ab00ecec-36a3-5509-b5c1-b588f3298f64,,vegan,This product is suitable for vegans.,False
+c13100f8-d263-5214-a8b9-72cb03215675,4133,1d4caf1d-ded8-50ba-85b8-7fbd0be27f49,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+d4a1ff9f-a4ca-55e4-8529-c12a174674cc,4134,14a2f731-9946-586b-81c6-e8bfd1593242,,asc certified,This product is from ASC certified responsible aquaculture.,False
+47219c4b-30be-5396-91a6-33f3b06cfee5,4135,14a2f731-9946-586b-81c6-e8bfd1593242,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+4ad7d041-9ff8-57f4-92ba-56e97c989459,4136,14a2f731-9946-586b-81c6-e8bfd1593242,,carbon neutral certified,This product is certified carbon neutral.,False
+74a67f3d-f607-52ad-aa55-e4f090ed7e32,4137,31a93434-57fb-5e00-99ee-26f6a00d14b2,,carbon neutral certified,This product is certified carbon neutral.,False
+9cd97129-2188-5861-8d5f-8f2d677d775f,4138,2184d2eb-5e2f-502d-bbd1-ff61b64c4a23,,asc certified,This product is from ASC certified responsible aquaculture.,False
+00f4b9e6-63ec-519b-b428-340024f001d6,4139,2184d2eb-5e2f-502d-bbd1-ff61b64c4a23,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+1b00c280-e293-5667-8a4d-59ba5f7f1214,4140,27eccc03-c587-502a-be5a-5a5d4aa35b54,,vegan,This product is suitable for vegans.,False
+dcdbe7d5-7202-557b-9f34-5f76b1da92ae,4141,27eccc03-c587-502a-be5a-5a5d4aa35b54,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+6c97307f-6508-5029-8d95-52478788b7b6,4142,d2e81760-8058-54d8-a4ca-a7d48d9e39ad,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+d79d0239-6bf4-53f3-964a-b2f25be4cdd4,4143,d2e81760-8058-54d8-a4ca-a7d48d9e39ad,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+90ad996c-1658-57eb-870c-bf20030eb6af,4144,d2e81760-8058-54d8-a4ca-a7d48d9e39ad,,kosher,This product is kosher certified.,False
+4422904c-df8d-5491-bb1f-ea5f5286c6e3,4145,356221fb-43c5-5f26-9882-b6449a0f334b,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+8aee6d63-0365-59d6-9515-8e99706e5ea4,4146,356221fb-43c5-5f26-9882-b6449a0f334b,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+905e9acb-67d0-53b2-a43f-56f1c2585ac2,4147,8ed161fa-14dd-5faa-87b9-ee936b2436a7,,vegan,This product is suitable for vegans.,False
+4a047223-ce40-55df-9686-3b66beafe981,4148,8ed161fa-14dd-5faa-87b9-ee936b2436a7,,asc certified,This product is from ASC certified responsible aquaculture.,False
+90029508-40dc-5a0d-8617-979d52192f8b,4149,8ed161fa-14dd-5faa-87b9-ee936b2436a7,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,True
+02d0b883-d318-52d3-92f0-6d0d8df48375,4150,1de10981-4bad-59c2-87de-173ae763682c,,asc certified,This product is from ASC certified responsible aquaculture.,False
+448a88a0-f728-58e2-b97a-07ba58938f48,4151,1de10981-4bad-59c2-87de-173ae763682c,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+e7cd3e36-7c02-5348-9821-d4cc39aaecd1,4152,98c024f2-2ad6-5a7d-9b39-e9d5816b9113,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+da19f119-44e9-54dc-bdc2-c4b06a75656a,4153,4f5fdf32-ab7e-59c5-ba5b-9421dc62dfb0,,asc certified,This product is from ASC certified responsible aquaculture.,False
+3f3813af-a0ff-571a-b9b0-7cafd7b37bc8,4154,4f5fdf32-ab7e-59c5-ba5b-9421dc62dfb0,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+897332e3-3346-5bac-8e27-ff89bd56bc2b,4155,d2d6faf6-481d-5b1e-bff4-fcaaa1a86657,,carbon neutral certified,This product is certified carbon neutral.,False
+eed1281a-0409-5590-a9b1-57c2287e4669,4156,d2d6faf6-481d-5b1e-bff4-fcaaa1a86657,,asc certified,This product is from ASC certified responsible aquaculture.,False
+b30fbb32-4d9b-5d5e-a288-0d9fff782ec4,4157,d2d6faf6-481d-5b1e-bff4-fcaaa1a86657,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,True
+478f5bdd-4db1-599e-a26a-92b138cf263a,4158,275cf7a2-34dd-54d2-b19e-e0eeb8a8de24,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+6d91cf35-6f94-5bb1-b2fd-9b06967cd890,4159,275cf7a2-34dd-54d2-b19e-e0eeb8a8de24,,red tractor assured,This product is Red Tractor assured for British farming standards.,True
+b09cd1b6-780c-544d-8d83-8a44923b14b6,4160,275cf7a2-34dd-54d2-b19e-e0eeb8a8de24,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+7bb507e9-1dbd-5f44-843b-ab2abca4d1fb,4161,4363a876-7947-5455-9b17-3721487a1d9e,,red tractor assured,This product is Red Tractor assured for British farming standards.,True
+c1002e51-3857-5f50-b43b-39d8d4581e84,4162,4363a876-7947-5455-9b17-3721487a1d9e,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,True
+703b51df-f90c-51b3-9864-499ec1555ea0,4163,fe61420a-95af-5ea1-8eef-11274b821700,,vegan,This product is suitable for vegans.,False
+3d83826a-2961-550f-b346-bbff45cb65a3,4164,fe61420a-95af-5ea1-8eef-11274b821700,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+04660e30-9148-5f0e-a345-779c10a99432,4165,dd2135d9-113f-58a1-a4ad-39e10794103b,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+d946175d-a383-5adc-a2de-12c2aa158c61,4166,dd2135d9-113f-58a1-a4ad-39e10794103b,,pdo protected,This product holds Protected Designation of Origin status.,False
+eb779f22-f821-50b3-9640-cd66603589e0,4167,c47f8301-44c2-5e75-b149-baeed168ae7c,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+ea245bc7-c42f-56f3-a73c-29aa9d174ef6,4168,c47f8301-44c2-5e75-b149-baeed168ae7c,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,True
+7a7784ce-6c89-558f-8429-f50737cc262a,4169,9ae09c0a-2d7b-5fe7-9a34-9a5e93398967,,vegan,This product is suitable for vegans.,False
+23acf335-fdb0-5191-86f1-b7b1cb159b48,4170,9ae09c0a-2d7b-5fe7-9a34-9a5e93398967,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+dd39a57c-5849-5f7a-90b6-182fabd80eb1,4171,20cb986d-59d7-5aa2-9627-a7664103d069,,asc certified,This product is from ASC certified responsible aquaculture.,False
+c0d01ee7-7043-5cc4-8013-893a214b0788,4172,20cb986d-59d7-5aa2-9627-a7664103d069,,kosher,This product is kosher certified.,False
+f77f085c-40ee-5083-8055-cfe1c8d862e3,4173,c8b35ee4-9ebc-5188-8292-b6d7aebb2358,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+6654788c-3c7f-5077-8956-12895735a4ca,4174,6d1d4286-c65a-58b9-ae79-560c210662c2,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+98f23f52-53fd-5f67-8f03-31a6865d6a1d,4175,6d1d4286-c65a-58b9-ae79-560c210662c2,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+ec6c96ea-c7ec-5d41-a0ac-014431260619,4176,6d1d4286-c65a-58b9-ae79-560c210662c2,,pdo protected,This product holds Protected Designation of Origin status.,False
+85daf345-66c1-5ebc-9ceb-4c62835b78df,4177,107a5329-e4b0-5c80-9dd1-b16990bc3298,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+ef403cd5-50d8-515e-9585-7b6efe39e0e5,4178,107a5329-e4b0-5c80-9dd1-b16990bc3298,,kosher,This product is kosher certified.,False
+ee4de5e5-59fd-57f7-9e62-fda1b92f6782,4179,482639a8-557f-587d-9290-44114fa09e6f,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+5cc6a979-7515-5859-805b-b781eb1735fc,4180,482639a8-557f-587d-9290-44114fa09e6f,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+b1ec0bfb-147c-5e26-a23a-bfe235bed3f7,4181,a415d0b8-a5eb-525b-9954-cb77d0155c90,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+2ed6c3f9-3f74-532b-b195-bfaeffa43d6e,4182,c8eb4b89-721c-59be-99a0-da4f689e7c7b,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,True
+511ec86b-e85a-51ec-9a49-0861d5871e52,4183,c8eb4b89-721c-59be-99a0-da4f689e7c7b,,pdo protected,This product holds Protected Designation of Origin status.,True
+326bd8e2-8cd2-5863-93fe-6ae87fbf2af6,4184,c8eb4b89-721c-59be-99a0-da4f689e7c7b,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+e7d84547-3c45-592f-84b4-cb41fe954d15,4185,867a2285-6048-5968-91cf-4887f038d89f,,utz certified,This product is UTZ certified for sustainable sourcing.,True
+7fc296fd-0e20-5324-a0bd-5fefaaa3fd85,4186,867a2285-6048-5968-91cf-4887f038d89f,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+08c9b724-001b-592c-9712-d0dd90a8b15a,4187,0e90de1f-df13-5b3f-be35-adc8e07918f8,,carbon neutral certified,This product is certified carbon neutral.,False
+d6ce9a67-ae1c-54b8-996b-9f73d448da45,4188,0e90de1f-df13-5b3f-be35-adc8e07918f8,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+bf9ca434-e12b-521a-8af0-479c3741457b,4189,72063d8a-7f02-5e04-8499-b2d43ed43b87,,non-gmo project verified,This product contains no genetically modified ingredients.,True
+14552da5-31f8-51a2-b72d-824cfc2eb5ad,4190,72063d8a-7f02-5e04-8499-b2d43ed43b87,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,True
+2369e117-18af-5e5e-b570-23cfe773a8f6,4191,7782bdb2-0efd-51e0-b6b1-160096f06293,,red tractor assured,This product is Red Tractor assured for British farming standards.,True
+9ff0ba5c-3604-5148-a994-42da28f7be5a,4192,7782bdb2-0efd-51e0-b6b1-160096f06293,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+6880447a-ba0e-580b-aae2-e1262ce7add7,4193,7782bdb2-0efd-51e0-b6b1-160096f06293,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+f73a0bfe-7cd0-53a1-a329-562fccb7201e,4194,080ced10-c031-522d-abc0-a17d6a7af432,,pdo protected,This product holds Protected Designation of Origin status.,True
+55f702d8-2db2-50fc-92cc-e48cc0b07dc4,4195,2661b5dc-3eed-5b45-8af8-32d0662f7e9f,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+7ff1240d-57a2-5a99-a543-06751984f798,4196,472081f8-1008-5fca-9244-8050ddfdc247,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+6e599e58-d751-56af-a234-37118ab4ecd9,4197,2f77cf77-4747-5386-87a5-01343c74faf5,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,True
+29a8bac0-5fee-51c8-a0bd-00c692e88919,4198,f47c867a-6f0e-581c-bbf6-3e985c9f6961,,red tractor assured,This product is Red Tractor assured for British farming standards.,True
+c86eb2ac-cded-5d45-be9f-ac0aafb4a5ce,4199,e129caf7-c48d-5ed9-82c9-668409b2bfc7,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+ccb9c90c-afc9-5698-98ef-12d78ab28561,4200,e129caf7-c48d-5ed9-82c9-668409b2bfc7,,pdo protected,This product holds Protected Designation of Origin status.,False
+7d94debc-6229-5e56-8b21-be086425ee04,4201,e129caf7-c48d-5ed9-82c9-668409b2bfc7,,kosher,This product is kosher certified.,True
+e8c7aaee-6037-5ac6-b33e-77c3138a8b35,4202,a7aa433e-a714-5598-94bb-045757fc9a0f,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,True
+830e9a22-b843-5715-8c81-18c11abf5657,4203,a7aa433e-a714-5598-94bb-045757fc9a0f,,vegan,This product is suitable for vegans.,True
+ac0f79f7-bf80-5f82-828f-42558171c0c7,4204,ecb4cecc-9db2-5f1d-a540-6172a1e6ffba,,vegan,This product is suitable for vegans.,False
+74a88582-7aa8-5c34-939e-39755dfdd368,4205,ecb4cecc-9db2-5f1d-a540-6172a1e6ffba,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+67c6c749-a573-53e7-bdbf-7c2bf96b331d,4206,ecb4cecc-9db2-5f1d-a540-6172a1e6ffba,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,True
+96217acf-8c0c-54c3-9d21-00d651b34e42,4207,448537da-5f45-5cc3-8596-196021f26e57,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+898efa90-f743-557d-8f0d-72488dcd5d4e,4208,448537da-5f45-5cc3-8596-196021f26e57,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,True
+3e683b20-09e7-5cab-98d2-41874b64839e,4209,448537da-5f45-5cc3-8596-196021f26e57,,non-gmo project verified,This product contains no genetically modified ingredients.,True
+f220c12e-3eba-5a5a-8a56-b2c78c28772c,4210,50d82bef-3fac-55eb-920d-29a7a16e6d90,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+0dba5d55-529a-505a-8841-bf6e72383bf8,4211,50d82bef-3fac-55eb-920d-29a7a16e6d90,,carbon neutral certified,This product is certified carbon neutral.,False
+6939985a-a065-5259-9616-d9270791cb18,4212,50d82bef-3fac-55eb-920d-29a7a16e6d90,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+80458b8a-ae07-5c40-87f8-3d66d5335cb2,4213,f42ea80e-3647-5d1a-afda-4248c0dd7f5e,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+07eeb11d-27d7-5d93-b50d-b3240fff2400,4214,f42ea80e-3647-5d1a-afda-4248c0dd7f5e,,pdo protected,This product holds Protected Designation of Origin status.,False
+1fa1cd23-8b10-5d1b-a7f3-843188fa6f0f,4215,340c9e77-10e7-5df2-9932-41d6d5bc8841,,vegan,This product is suitable for vegans.,False
+f32f4d7a-9fc3-5d90-9729-48777801322f,4216,340c9e77-10e7-5df2-9932-41d6d5bc8841,,kosher,This product is kosher certified.,False
+ffc643aa-0516-5d8d-a568-3c9a8d7cc29e,4217,2ea4690a-2fbb-57c1-8c7a-690df8eec1fa,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+ed511546-1b66-500e-a91c-b441d96582fc,4218,2ea4690a-2fbb-57c1-8c7a-690df8eec1fa,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",True
+d3e33e65-a0c7-5178-b6d0-4ecade370d41,4219,ad024d34-41e1-5a3f-8366-2476c88d07e3,,carbon neutral certified,This product is certified carbon neutral.,True
+d4ce9fa6-7019-560b-bef6-1267d740d9e5,4220,b86d26ca-e58b-52e7-8465-9d375fd05a7d,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+1ebb7572-129c-59e8-b3af-9ba3bececf37,4221,b86d26ca-e58b-52e7-8465-9d375fd05a7d,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+b640d84d-86d8-5c9a-be7e-3edc4c325ec9,4222,c101b486-f7b4-5e0a-8673-6f7e8be1763f,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+34ca5977-77fe-55e3-a0ed-a02a04c29645,4223,265866d8-6951-50f4-969b-7ef2aafab5d2,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+90af083c-d36d-566a-a36c-a0f03ea82cb2,4224,265866d8-6951-50f4-969b-7ef2aafab5d2,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,True
+1f23ad62-c1be-5963-b5c1-2cd144e841f2,4225,0aec4ca7-2c3a-520b-a6d1-61e60dee18af,,carbon neutral certified,This product is certified carbon neutral.,True
+c06b0cd7-dfc0-59ba-b8cc-3bd48714a119,4226,0aec4ca7-2c3a-520b-a6d1-61e60dee18af,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+5c97b735-7fc2-5d13-94e3-5d7599a6248e,4227,0aec4ca7-2c3a-520b-a6d1-61e60dee18af,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+4dd8e14d-e9a1-5103-a5dc-330c58d63cb6,4228,df94297b-b723-533b-8d4d-a300d457e1e7,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+e9265066-fe58-5954-9ec7-85ac974637be,4229,14554e14-0bf2-52b2-8a2f-b43b1f8cc601,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,True
+7108098b-e217-51a5-af06-c8a401b896e9,4230,5dc324d9-1a77-53f2-8766-a78cc1080f3b,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+7ea2f4fa-c9dd-5cd1-b32c-a0296ab17604,4231,5dc324d9-1a77-53f2-8766-a78cc1080f3b,,vegan,This product is suitable for vegans.,False
+817f6a5a-53b0-5a9d-97eb-7dffb58814f0,4232,4bbfedd5-3263-5bbc-93d3-4fd2a7435868,,asc certified,This product is from ASC certified responsible aquaculture.,False
+42604b67-1aa6-57f4-b856-1c9046f2a0fc,4233,8cf25d77-5347-5151-b28b-3ace9d82d1da,,kosher,This product is kosher certified.,False
+27a0bf54-6168-55c6-828a-67bca427f709,4234,559ee91e-6f54-545f-80a3-0dccdd74a4ac,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,True
+f768b204-266f-5ab0-be15-664ee8360688,4235,0da944df-e775-5690-8d65-9d5b4a06f692,,vegan,This product is suitable for vegans.,False
+e832800c-75af-538b-8176-0224d13a3a7a,4236,0da944df-e775-5690-8d65-9d5b4a06f692,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+205c14b3-36cd-5b9e-80fd-fed4fbb27930,4237,0da944df-e775-5690-8d65-9d5b4a06f692,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",True
+afb1a91c-1a45-5cf6-a14e-86ca61950bcc,4238,5e8d8c92-b0c9-5e4f-9f6a-594314470d7b,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+a0b7e40f-3820-5309-96c3-675ff86cc628,4239,5e8d8c92-b0c9-5e4f-9f6a-594314470d7b,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+4e7f9ef1-6f64-57ea-a56d-5600bbd2414a,4240,bf82b2c1-a10d-5cdf-b5e1-8bfc0c7c61bc,,asc certified,This product is from ASC certified responsible aquaculture.,False
+12fb1144-c450-5565-a14e-a6897297f53d,4241,216225f1-dfa8-57d8-992b-749e520a8f15,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+3d9c21a9-8bc6-5bcc-8a6b-030a5d2798f7,4242,a8c2cdac-500f-5981-a66e-efc81ddff902,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,True
+a8c77225-905e-50f2-b7ae-195d625da755,4243,a8c2cdac-500f-5981-a66e-efc81ddff902,,kosher,This product is kosher certified.,False
+3a2ea0ec-9466-581f-9487-35019ca680fe,4244,deaf42fe-4493-586a-ba05-7e91a243f63c,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+7329210f-008f-55cd-9ca0-c8072083bcab,4245,deaf42fe-4493-586a-ba05-7e91a243f63c,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+35a61412-ce87-5583-8082-c4dd4109b4ba,4246,23d14860-9498-56ee-9d50-ddc213ddecf4,,red tractor assured,This product is Red Tractor assured for British farming standards.,True
+b59fe71d-c88a-5d16-8408-f2fdfdab707e,4247,23d14860-9498-56ee-9d50-ddc213ddecf4,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+31763899-dde1-5740-a8bb-7acfc6445492,4248,321d492e-6a36-5514-bd67-4711dd77c146,,kosher,This product is kosher certified.,False
+5acfeb99-ed83-57e1-a8cd-b099f38b6e18,4249,5670277e-dd9c-52e0-b304-7aeb6bdfac17,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+699e80e7-e4df-5c13-91ec-179ec911c186,4250,5670277e-dd9c-52e0-b304-7aeb6bdfac17,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+6de6ff3c-3013-5d80-ac05-6bad257e5835,4251,b1be0a9f-cbb7-55eb-9ef4-7269f8e69eca,,kosher,This product is kosher certified.,True
+55bea9ad-266a-5359-8431-b4347710cfe8,4252,b1be0a9f-cbb7-55eb-9ef4-7269f8e69eca,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+b460c8b3-20c0-557a-8c01-3d6eed341ebe,4253,b1be0a9f-cbb7-55eb-9ef4-7269f8e69eca,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+5d02ae19-db2c-5980-807e-4190de9326c3,4254,50a87220-7919-574f-9a72-693a53d24c06,,red tractor assured,This product is Red Tractor assured for British farming standards.,True
+ffa841d1-633b-5c4d-81c7-736a7c19b0c4,4255,50a87220-7919-574f-9a72-693a53d24c06,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+900e75b5-f4f2-5157-a6ed-aba901153e5c,4256,50a87220-7919-574f-9a72-693a53d24c06,,pdo protected,This product holds Protected Designation of Origin status.,False
+9612f9ef-3c98-5aeb-9425-a8325349c613,4257,9c6906d1-b977-5686-8553-6e0da2d1cfff,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+4def7983-1bd1-5b8e-8052-f70fc03b2b28,4258,5942796e-186e-5121-b613-138f5f460455,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+53d37b2b-2843-50ac-ba13-facbe095192b,4259,65c3c1dc-aa9f-57e6-a305-9e4854ac6deb,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+21c0382f-2e8a-5e8a-8e7a-206e3c0a9937,4260,65c3c1dc-aa9f-57e6-a305-9e4854ac6deb,,asc certified,This product is from ASC certified responsible aquaculture.,False
+216033cd-feca-5565-b69a-68e1053966eb,4261,65c3c1dc-aa9f-57e6-a305-9e4854ac6deb,,carbon neutral certified,This product is certified carbon neutral.,False
+2f5d51e0-7a10-59e9-9840-e38ae3b9f299,4262,d2dea250-c2c1-5d51-bf16-b3e569ba23ae,,asc certified,This product is from ASC certified responsible aquaculture.,True
+03565e50-fa75-5243-b388-16aa72c13dc1,4263,d2dea250-c2c1-5d51-bf16-b3e569ba23ae,,carbon neutral certified,This product is certified carbon neutral.,True
+1cad8f58-d42d-5ae1-b338-5e2d7944b735,4264,d2dea250-c2c1-5d51-bf16-b3e569ba23ae,,utz certified,This product is UTZ certified for sustainable sourcing.,True
+23dbb024-63d0-5630-85d6-38daec017a51,4265,6c9acb95-28b1-53f3-b194-b8503c0ba19f,,carbon neutral certified,This product is certified carbon neutral.,False
+261b291b-1b3b-5827-b06a-ae0486711182,4266,6c9acb95-28b1-53f3-b194-b8503c0ba19f,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+8ce3d1cc-6658-5574-a308-0fb9100b269c,4267,6c9acb95-28b1-53f3-b194-b8503c0ba19f,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,True
+9e475ba0-26c3-5c50-b4a1-0f51081ed71c,4268,68e79028-d138-5f55-a3f2-188d2ea586ba,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+8fdbbeae-bd2c-5e1d-b1a1-f87e50aada29,4269,68e79028-d138-5f55-a3f2-188d2ea586ba,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+359952fd-fd5a-56ef-a086-2d21087cbcf3,4270,9cdc0108-54a9-5e98-8980-ca34fa401b18,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,True
+2aa8a15b-6340-5075-a307-6ea3b896bacf,4271,9cdc0108-54a9-5e98-8980-ca34fa401b18,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,True
+1be20430-6fac-51aa-8d12-74d3549b2c03,4272,9cdc0108-54a9-5e98-8980-ca34fa401b18,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+8c1192ba-b5d2-5eaa-880f-fc3ce37f3ac4,4273,238f9786-60be-5e59-b49c-7bba051bd340,,vegan,This product is suitable for vegans.,False
+5fd16f95-17de-525a-a0c4-528d9d28af31,4274,238f9786-60be-5e59-b49c-7bba051bd340,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+9d60c616-229e-5a99-a858-4a3bd8616b43,4275,238f9786-60be-5e59-b49c-7bba051bd340,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+45700dc1-5917-57a6-910b-b95741b3fd26,4276,f57916fa-004f-5d6d-bfcd-88ab37231edc,,pdo protected,This product holds Protected Designation of Origin status.,True
+da57edf8-9693-5687-8663-d6ade0aae252,4277,f57916fa-004f-5d6d-bfcd-88ab37231edc,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+a0dfc414-5c99-588d-bc21-0426efc7737a,4278,f57916fa-004f-5d6d-bfcd-88ab37231edc,,kosher,This product is kosher certified.,False
+62555fe4-19d2-52fe-9a75-b0b02a1eb946,4279,78cca17a-9ab9-5129-955e-1d1868f9d867,,kosher,This product is kosher certified.,False
+a268cc90-c740-5647-8467-5bbc8405477c,4280,78cca17a-9ab9-5129-955e-1d1868f9d867,,asc certified,This product is from ASC certified responsible aquaculture.,False
+a4bce34c-6229-5912-9023-aa07595217eb,4281,daefd259-0dfc-5ab6-9b19-2b863f838aef,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+f71be76f-846d-5385-b792-7526ec216388,4282,daefd259-0dfc-5ab6-9b19-2b863f838aef,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+b9b6f040-73a1-53b6-9184-d88aff23bc3f,4283,daefd259-0dfc-5ab6-9b19-2b863f838aef,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+25f0e4d8-ff17-5515-8561-d28808531395,4284,8f43030d-42c5-5c6e-a9d5-00e93037a0aa,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+040577ee-72a3-521a-8674-b287806300e5,4285,5bf6eee8-0fc0-541d-ad9c-d0aa3bc7a6d8,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+f0dab269-2190-5f52-b17e-56ce34279285,4286,5bf6eee8-0fc0-541d-ad9c-d0aa3bc7a6d8,,kosher,This product is kosher certified.,False
+3a66901f-f5e0-5ade-bec4-04e2179d7b6f,4287,57d8a259-e736-5422-b74e-287108555535,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+2a10357b-a2e4-5cf1-ac90-73011e694411,4288,57d8a259-e736-5422-b74e-287108555535,,asc certified,This product is from ASC certified responsible aquaculture.,True
+0bf5c620-bf79-5cd2-96ee-02ba32563865,4289,57d8a259-e736-5422-b74e-287108555535,,non-gmo project verified,This product contains no genetically modified ingredients.,True
+a3c04fc3-46a1-5f23-baff-7e611845b417,4290,8526487d-c22e-5a63-a39f-735285f2ae0b,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+ec9a1499-3eb6-57cb-9714-e5f65f31f2e8,4291,add817e0-489e-5f55-9bf6-c4c6b2307834,,vegan,This product is suitable for vegans.,False
+9c9e6208-af77-58d3-8f5a-5d0c2a4fca24,4292,ce9d2b2c-f82a-5271-a442-d26b778a8367,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+c3883e32-d305-5d15-8ecf-d45224870fe1,4293,a008d049-0022-5eb6-94b2-ba335a463f1d,,kosher,This product is kosher certified.,False
+8068a616-ec41-5e5b-bb80-7e8899821168,4294,a008d049-0022-5eb6-94b2-ba335a463f1d,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,True
+ef1da0e4-9dfc-547c-8b13-51282ca6d8af,4295,00066904-c12e-522e-abc6-ea4923c12812,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+35ff2361-c318-595e-b991-be83ff497242,4296,8e9fb637-abed-535e-9a95-737f7d74857c,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+4da2cbd2-1a4a-5b7d-a51a-523623488089,4297,cc00b4f5-2b50-54e1-bfb7-1f172cd95b0b,,vegan,This product is suitable for vegans.,False
+5edd0825-2582-5032-bf9b-80f1584e8da6,4298,fc467a3c-f8e1-5435-b03b-49cf18085608,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+c49b9704-bee7-5f55-a97a-2b0dfe8ea8fd,4299,fc467a3c-f8e1-5435-b03b-49cf18085608,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+797f70ea-0ec6-580a-9727-3105274c46df,4300,fc467a3c-f8e1-5435-b03b-49cf18085608,,asc certified,This product is from ASC certified responsible aquaculture.,False
+329ac586-6133-5ca8-b99d-ff2ce8894d28,4301,df5bab7d-9b81-53af-95e7-63104c4e3c9d,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+2fb042d0-5195-5528-9c61-f2d3a7f223bb,4302,df5bab7d-9b81-53af-95e7-63104c4e3c9d,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,True
+3e312f55-dc1e-5d55-aef1-dff198cc5451,4303,df5bab7d-9b81-53af-95e7-63104c4e3c9d,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+9a948634-a688-59a9-a489-b00f4235af78,4304,9eb71497-6b25-5dfc-aa74-055800dd1628,,kosher,This product is kosher certified.,True
+3dc95477-243b-5d68-bfde-f8c5f32f0361,4305,cbc7173f-3b0f-5842-86c4-aaf746874c41,,kosher,This product is kosher certified.,False
+7f44fa06-2a04-59f8-89cf-646b39347651,4306,3bf43943-ff79-56c0-808d-e1af804c213a,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+b6f9da8c-b8a7-5d73-8036-b7c4d03308ab,4307,3bf43943-ff79-56c0-808d-e1af804c213a,,kosher,This product is kosher certified.,False
+c90840e0-7ec5-5aef-ae58-e95957fef9d5,4308,3bf43943-ff79-56c0-808d-e1af804c213a,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,True
+c6210abc-acb3-5d93-9e01-7491c19ceddb,4309,a5811059-b98c-5ea3-915e-0f4de62bd06f,,vegan,This product is suitable for vegans.,False
+df26bb76-37ba-5e4f-bbc7-4ed1887d6971,4310,a5811059-b98c-5ea3-915e-0f4de62bd06f,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+87609b0c-cd0b-5ad9-af74-9454bd6aba1e,4311,a5811059-b98c-5ea3-915e-0f4de62bd06f,,utz certified,This product is UTZ certified for sustainable sourcing.,True
+8f9cafdd-23d7-539b-b8db-dfe6870b2eae,4312,337fb2aa-602b-5b5e-87ab-5263110ae294,,kosher,This product is kosher certified.,False
+25048b91-0a3b-5477-8465-c912d85b3549,4313,337fb2aa-602b-5b5e-87ab-5263110ae294,,asc certified,This product is from ASC certified responsible aquaculture.,False
+a3ef6f95-2c73-5907-a35a-fb5882afaa0c,4314,6fbdf50e-b87e-566d-90fa-6d75f909f086,,pdo protected,This product holds Protected Designation of Origin status.,False
+525b718c-bae7-5cca-ad35-6ccb79f322b4,4315,6fbdf50e-b87e-566d-90fa-6d75f909f086,,asc certified,This product is from ASC certified responsible aquaculture.,True
+6a485fe4-fa8c-58a5-8838-36a1ffddb924,4316,7c6079a0-b304-5cbe-bd32-e7e9dc51ca9b,,non-gmo project verified,This product contains no genetically modified ingredients.,True
+f80ebcd1-bb29-5884-8014-285e886113d0,4317,7c6079a0-b304-5cbe-bd32-e7e9dc51ca9b,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+a8fe0a6c-d238-5eaa-957a-da4bfcbe5126,4318,7c6079a0-b304-5cbe-bd32-e7e9dc51ca9b,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+8e248892-325b-5a93-b2fc-fbbf069b8e16,4319,6e9bf19a-12bc-5535-88eb-c522244ccac3,,carbon neutral certified,This product is certified carbon neutral.,True
+184937cb-f52e-5a3f-9749-26aa2223ca51,4320,6e9bf19a-12bc-5535-88eb-c522244ccac3,,kosher,This product is kosher certified.,False
+22b5deb9-cd3b-5a9d-b5df-0dc36f02c52c,4321,43e656ab-c84d-5755-83d6-1a9b1b51a6a1,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+6a692d56-2fe8-5cf2-8241-381149efa151,4322,43e656ab-c84d-5755-83d6-1a9b1b51a6a1,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+26398d15-1c4b-56b9-a0cb-148f657dee72,4323,b7f8e0dd-f4a5-5797-b7d6-cafe7e3d3f3a,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,True
+3c3461e5-ec8e-5f63-a475-db38ed2a7b64,4324,b7f8e0dd-f4a5-5797-b7d6-cafe7e3d3f3a,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,True
+191d4a7b-77ff-58ad-82ce-8f9e8db0be9b,4325,b7f8e0dd-f4a5-5797-b7d6-cafe7e3d3f3a,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+01666b66-f6fb-5623-98f6-4430b3305d49,4326,e598cf68-e7e8-59e9-9c1d-21726f0202d5,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+00c40a7b-1db4-50cd-a277-c6f8d2fd7c5b,4327,e598cf68-e7e8-59e9-9c1d-21726f0202d5,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+1717042c-3d9a-55ae-ae75-50ef1ed70e3a,4328,e598cf68-e7e8-59e9-9c1d-21726f0202d5,,kosher,This product is kosher certified.,True
+87c748ed-6e69-54a1-b69b-8b8a0ef6c8d7,4329,4163e17b-b9ae-56ea-805d-7ab88aa8190d,,vegan,This product is suitable for vegans.,False
+3251e383-47f3-56ca-8a02-1993d16d2386,4330,437a1793-278e-58f9-901e-e03cf882cf5d,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,True
+c25b2fa2-bda6-534d-8fd0-ee84af45a3ee,4331,b153e43e-0be1-5895-a5ff-e560c42f0d0d,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+c43c5aa7-28ce-577c-8cd9-17c9af862305,4332,23b3528d-da5b-5ac6-900f-19d9417942c6,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+2f70d40f-3e15-5da6-b532-3b538413a0d2,4333,23b3528d-da5b-5ac6-900f-19d9417942c6,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+67c97254-8e51-58b9-9d4c-076d90aa6c05,4334,dfd05a0c-7059-598a-860a-9310484969b5,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+738a0882-e38d-5836-b866-a6a152db9254,4335,cfd9a04f-03d4-5017-b109-964981444242,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+dee4fb71-5310-579d-855a-4bfda1b61681,4336,cfd9a04f-03d4-5017-b109-964981444242,,vegan,This product is suitable for vegans.,False
+0ffcf992-c8d3-51b3-a719-ac03c60db329,4337,f3ccab7d-fdc3-5cdf-a798-59db2bb07faf,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+9da8a2f5-92a4-5da6-9f05-56326aa6e1b0,4338,f3ccab7d-fdc3-5cdf-a798-59db2bb07faf,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+5885b0f1-3780-5906-8868-3abb84aa69d0,4339,f3ccab7d-fdc3-5cdf-a798-59db2bb07faf,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+927b334d-43e6-5637-a78f-a3668f39ab25,4340,cc054131-2580-5efb-8b52-935dc5607339,,asc certified,This product is from ASC certified responsible aquaculture.,False
+48576f9a-2eab-53dd-939e-dc15971520a3,4341,cc054131-2580-5efb-8b52-935dc5607339,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+42417e44-5ea2-5932-beb6-9cfb353483a0,4342,248e3615-fc44-534f-9a16-fbe3b0509433,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+43a6a76e-75b1-5b5c-8baf-358527cdf5f5,4343,c05ccba2-58a2-58fb-8891-46cb19210fd7,,carbon neutral certified,This product is certified carbon neutral.,False
+bf54e9e3-6f8d-5c28-98a5-4848d0a38e5e,4344,c05ccba2-58a2-58fb-8891-46cb19210fd7,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+b538463e-a953-5712-b4a8-265e5f831046,4345,c05ccba2-58a2-58fb-8891-46cb19210fd7,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+ad5caeff-ff9a-5e9d-a444-144c68cdb9ff,4346,ea7da9b5-2197-5c07-bdb5-05a33f8a0200,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+a767840b-174f-5e10-96ff-1c3a4cbf6ba4,4347,ea7da9b5-2197-5c07-bdb5-05a33f8a0200,,asc certified,This product is from ASC certified responsible aquaculture.,False
+e64fb8bb-45c5-5c9a-9a6b-f85be74e0741,4348,ea7da9b5-2197-5c07-bdb5-05a33f8a0200,,kosher,This product is kosher certified.,False
+f64fb743-c003-5ebf-a223-aa4fe823f589,4349,f3033690-ac8b-5882-8d30-b28526141eb9,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,True
+e0a1fc96-7bea-5b87-b5ce-02ad429b6ece,4350,f3033690-ac8b-5882-8d30-b28526141eb9,,kosher,This product is kosher certified.,False
+efedde95-916b-5192-a116-ed41433cf7a8,4351,f3033690-ac8b-5882-8d30-b28526141eb9,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+e5d2e3db-db02-58a0-9e98-8848106eb761,4352,8d707edc-fc8a-5ece-b07b-af3d5ae2b4c8,,asc certified,This product is from ASC certified responsible aquaculture.,False
+78b3da0a-e3e3-5e69-a73b-355bd96add66,4353,e81051af-8164-5448-ba00-7021d74e7565,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+9e0c51fd-364a-5a1e-9b15-5df9c939ffa7,4354,e81051af-8164-5448-ba00-7021d74e7565,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",True
+d12eb03e-6b25-5361-9db9-a7ea3a05b479,4355,e81051af-8164-5448-ba00-7021d74e7565,,kosher,This product is kosher certified.,False
+240342c5-1b12-547a-95b6-3d67e30aed86,4356,3649a95e-da06-5666-8168-6902c344cf73,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+6cf0ef09-aad0-592d-8d94-b474fa55209d,4357,3649a95e-da06-5666-8168-6902c344cf73,,carbon neutral certified,This product is certified carbon neutral.,True
+49ac7db6-0e81-59d5-830d-64dc78240079,4358,3649a95e-da06-5666-8168-6902c344cf73,,pdo protected,This product holds Protected Designation of Origin status.,True
+077cb81f-2286-57ec-9b90-576903e4d907,4359,bb2ee452-9a89-5f9a-aeeb-dd392297064a,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+52093cb7-c9ae-5514-ae8a-a1f52e1a4bdd,4360,bb2ee452-9a89-5f9a-aeeb-dd392297064a,,kosher,This product is kosher certified.,False
+123e566d-4089-5a6e-8c13-5a95634334dd,4361,bb2ee452-9a89-5f9a-aeeb-dd392297064a,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+193145bc-22e0-58f4-b2f1-8e8742839b7c,4362,4292a6ca-fcc1-54c4-badf-4f91d953d5f7,,asc certified,This product is from ASC certified responsible aquaculture.,False
+93508eab-ebbf-5bf1-b3e5-00e636e5e40a,4363,4292a6ca-fcc1-54c4-badf-4f91d953d5f7,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+25e6a5ad-a29f-53fa-b8c8-afc1f57eb0f4,4364,ca9566da-ce53-59f7-a21d-2e92a7d08f08,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+bd40b36f-035b-5006-b8aa-5ac984d24ac7,4365,ca9566da-ce53-59f7-a21d-2e92a7d08f08,,asc certified,This product is from ASC certified responsible aquaculture.,False
+2f709696-6f59-5f27-8d50-5423b1cd9980,4366,7baf236b-f99a-52bc-9e1a-67033cbd91a6,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+f9561166-b57b-5f4d-81b6-2b59dbad2bd4,4367,7baf236b-f99a-52bc-9e1a-67033cbd91a6,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",True
+63e19eaa-f181-556c-8c81-bc15d265f54a,4368,7baf236b-f99a-52bc-9e1a-67033cbd91a6,,carbon neutral certified,This product is certified carbon neutral.,False
+3c059d51-499e-5654-92fe-852144d337a3,4369,b190592f-736e-5c0a-bd32-c8bcdbc4161d,,vegan,This product is suitable for vegans.,False
+127f8a36-6e9e-58ce-a93a-1848dc10f671,4370,94beb2df-d692-58ac-9e8a-cb0d4faea16a,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+5aae628f-ad5d-5c71-a35a-a870c46e228c,4371,ea8bb8f2-9e03-52fa-81a2-60e7054280ef,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+d94eeee8-b163-58a4-b6e3-dce839a9e975,4372,ea8bb8f2-9e03-52fa-81a2-60e7054280ef,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+6a4a9157-7e20-5ef2-84d9-baed2b76844b,4373,ea8bb8f2-9e03-52fa-81a2-60e7054280ef,,pdo protected,This product holds Protected Designation of Origin status.,False
+b6386f29-e189-5918-8d35-53c6f31c340c,4374,25eec045-4df6-5cf2-a3d6-85f4372cf0b5,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+12693dee-e037-59a9-9251-96cc99a89c0c,4375,25eec045-4df6-5cf2-a3d6-85f4372cf0b5,,carbon neutral certified,This product is certified carbon neutral.,True
+ae5320c8-d1fb-5fcf-b7ef-6d3e49420681,4376,426dc15a-1cf2-51e7-a9d7-7b940e17c96f,,asc certified,This product is from ASC certified responsible aquaculture.,True
+d78f2643-9d4a-5af2-8ffe-e394fc95b001,4377,d186d304-978c-5a34-b7dd-c43cefd2cabc,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+da26041a-c061-5dbd-bd5b-7dc3299cfbfb,4378,d186d304-978c-5a34-b7dd-c43cefd2cabc,,pdo protected,This product holds Protected Designation of Origin status.,True
+ce6e9381-56e8-5830-9388-6007281e10cb,4379,d186d304-978c-5a34-b7dd-c43cefd2cabc,,kosher,This product is kosher certified.,False
+e62541b4-a898-5b54-b27b-2135da084591,4380,6959bb72-0bb0-5d80-bc26-d38892544b10,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+4b0a64b1-8788-5a77-bfb2-e63b72d80c62,4381,6959bb72-0bb0-5d80-bc26-d38892544b10,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,True
+d71c7e40-1633-5536-81d7-e154cf9d84d9,4382,6959bb72-0bb0-5d80-bc26-d38892544b10,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,True
+7bfd8361-93c1-5a0e-864d-6602bef757e8,4383,4c80a3bd-fa61-5156-a136-2038c625c5f3,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+309efba2-639a-5324-83c5-8ba5dde13cc3,4384,4c80a3bd-fa61-5156-a136-2038c625c5f3,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+bf24893b-36cd-5dce-98ca-5a92fb0ee938,4385,40899539-5677-5b43-a9f1-2c2a323d299b,,vegan,This product is suitable for vegans.,False
+c7b3f2fd-4f91-54d7-9700-7cdccee606df,4386,fbc0933d-8b57-59b1-ace4-37c603f3522f,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+1e0efda5-b3dd-55d0-8cd5-5cd576963a89,4387,fbc0933d-8b57-59b1-ace4-37c603f3522f,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+6cf6909b-2006-52f7-9f07-3c0fe013a254,4388,fee3dddd-771b-5c79-9808-0e1a9147abeb,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+ddbe395d-3d05-57ad-a898-c7d6900ffacc,4389,fee3dddd-771b-5c79-9808-0e1a9147abeb,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+4436000e-b213-5353-9eb4-3d747baa0617,4390,0581b18e-ce79-5bc3-9abd-caf6806ca89c,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,True
+bfddabea-7c21-51c0-b377-44832b449f5a,4391,0581b18e-ce79-5bc3-9abd-caf6806ca89c,,asc certified,This product is from ASC certified responsible aquaculture.,False
+4870fdb9-8964-5fdc-a54a-01dde7f98e5f,4392,0581b18e-ce79-5bc3-9abd-caf6806ca89c,,vegan,This product is suitable for vegans.,True
+f4ed9fa5-c590-54e6-a5ad-7e8c35ae14ea,4393,4aebbd32-f0e9-5b7a-ab9b-c8c64ff1e561,,kosher,This product is kosher certified.,True
+1d5b9a6a-ae97-5193-916b-9d4c20373993,4394,4aebbd32-f0e9-5b7a-ab9b-c8c64ff1e561,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+44b3ce5c-5b31-585c-a619-e11f22d131b2,4395,db3696e1-0961-5cc4-bb4f-df7ed1e8d990,,asc certified,This product is from ASC certified responsible aquaculture.,False
+61df8cf2-6f9c-5d72-acd2-56e23d5fbb6e,4396,db3696e1-0961-5cc4-bb4f-df7ed1e8d990,,vegan,This product is suitable for vegans.,False
+fecb473b-2d9d-5e80-8ecf-f1922de74abd,4397,6b6213c4-72e8-5180-9421-31ff0d6cfdac,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+e08cd20c-a1a6-50f6-aefb-02104dac41ef,4398,6b6213c4-72e8-5180-9421-31ff0d6cfdac,,asc certified,This product is from ASC certified responsible aquaculture.,False
+3cb71176-0c19-558b-9fdd-63b8a4dfac1b,4399,8567653d-7e9b-5f09-aaae-5a926dd05c7f,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,True
+66a92619-1fa3-51b6-a7af-c9e075389e04,4400,8567653d-7e9b-5f09-aaae-5a926dd05c7f,,carbon neutral certified,This product is certified carbon neutral.,False
+3db7c065-a69d-5e42-a1a0-39f9c4075396,4401,8567653d-7e9b-5f09-aaae-5a926dd05c7f,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",True
+2620112f-7ac8-5a3b-bc24-c38b1a0f721b,4402,e147fa49-0efb-53ce-a338-223794156337,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+f49ed8cc-0c8f-5040-a323-1fa2ecec7699,4403,e147fa49-0efb-53ce-a338-223794156337,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+99a6464a-9ab9-5f83-918a-1525959bb98f,4404,47240515-76ae-5ff0-a692-1f545459ed40,,non-gmo project verified,This product contains no genetically modified ingredients.,True
+3ebbae54-6f28-567f-a8b7-c636a3638327,4405,47240515-76ae-5ff0-a692-1f545459ed40,,kosher,This product is kosher certified.,False
+7eb45a4a-3689-54fb-864e-01e069e03bc6,4406,47240515-76ae-5ff0-a692-1f545459ed40,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+9667c2a7-ab9c-5590-ac29-4af62d8fff76,4407,b68b046c-2e66-5d5b-b238-6d5b134f00d7,,non-gmo project verified,This product contains no genetically modified ingredients.,True
+ed5b32d3-6804-566b-a65a-8ff4f1418c7f,4408,be046c34-d3ad-51e3-b7f9-c014c5c055e7,,vegan,This product is suitable for vegans.,False
+6cb2138c-b811-503f-93e3-d8a8b27f2510,4409,be046c34-d3ad-51e3-b7f9-c014c5c055e7,,kosher,This product is kosher certified.,False
+b1bead7e-243b-59bf-9a8e-61b43cc02099,4410,3f341112-29a0-5294-a573-dbfd02d38c78,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+5af56295-0182-5021-a5a0-492d73d453d9,4411,3f341112-29a0-5294-a573-dbfd02d38c78,,carbon neutral certified,This product is certified carbon neutral.,False
+90ef15e4-93f0-5653-b9b6-e59d0562bd5f,4412,3f341112-29a0-5294-a573-dbfd02d38c78,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+f8466e9c-47e7-578a-bc65-430a5c2e14d6,4413,2e829805-0fa2-57f8-bba7-b0d818f07e3f,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+a8e79955-d1d6-51ce-a005-a24a76650ebf,4414,656f509d-125b-5828-b75e-71084a11d23b,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+c80c6652-f565-505f-a6d8-098a7efce633,4415,656f509d-125b-5828-b75e-71084a11d23b,,kosher,This product is kosher certified.,False
+e929ac7d-0669-50bc-8c68-04d9f9e1e2db,4416,b17fb416-7985-556b-93a4-624e3bd5fe22,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+50ccbf23-7a99-5fe3-94e2-9e45a62726f0,4417,b17fb416-7985-556b-93a4-624e3bd5fe22,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+eb37531d-168b-524b-8689-289bca9295dd,4418,b22cc153-8dd1-5851-8560-ef5821043cc3,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+a7fb8589-b738-5333-ac9e-1c7c265e8bad,4419,b22cc153-8dd1-5851-8560-ef5821043cc3,,vegan,This product is suitable for vegans.,False
+17bdff81-b329-5396-8e69-529abc54eb53,4420,03b513b6-181e-5e4c-9244-051a9cf1a647,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+cba3da37-ee9b-54bc-8a04-d68797eb9f44,4421,e80db4a4-151f-5928-8454-bde22490b069,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+3be27e2c-5b14-5b69-8bed-9af7c8072035,4422,e80db4a4-151f-5928-8454-bde22490b069,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+c2cf74e4-0d9d-5e26-b9a1-b2fd7582aed2,4423,e80db4a4-151f-5928-8454-bde22490b069,,pdo protected,This product holds Protected Designation of Origin status.,False
+46c542ff-9788-5e59-90fd-8bb7394bfc60,4424,0d23c701-f2b2-5376-9807-84a55f974499,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+7f836018-f3f0-58de-914c-e857ddc1fd3b,4425,0d23c701-f2b2-5376-9807-84a55f974499,,asc certified,This product is from ASC certified responsible aquaculture.,False
+25d957fb-671c-5cbe-9fca-4f132e708292,4426,0d23c701-f2b2-5376-9807-84a55f974499,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+ad3880e8-4b4f-5fb8-9a30-e91fa264f917,4427,5406a454-a761-50b9-8daf-ccbe07719c1b,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+a5f32c83-4b81-58cd-b82a-af6bf5d3fee3,4428,5406a454-a761-50b9-8daf-ccbe07719c1b,,asc certified,This product is from ASC certified responsible aquaculture.,True
+41f971b7-5088-51c7-9115-5bda980d4691,4429,5406a454-a761-50b9-8daf-ccbe07719c1b,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+7c924015-2344-5d89-ab53-a1e81a7d118f,4430,fd623195-7a13-5d74-86f1-f13941a88c95,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+54fbd274-cc16-508e-93e2-5cba0d242548,4431,a7857eab-9d46-58c6-b0e3-d6a75e61c8c8,,pdo protected,This product holds Protected Designation of Origin status.,False
+fd4a8266-f10f-5ef1-9064-fd935899bf41,4432,29db674b-944f-57be-af22-f6f8b6ec8e70,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+89d1bee6-1b63-51ce-825a-340880835ba0,4433,9437b8b9-4a85-59a2-8da2-d1065f2ce4ca,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+3a261d4d-6c44-5d3b-a6ad-ab2f1ca6a56d,4434,6f79d750-375a-5390-abe2-10d806b13c5d,,vegan,This product is suitable for vegans.,False
+887910e4-b88d-5852-a980-08dd1cc6da32,4435,6f79d750-375a-5390-abe2-10d806b13c5d,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+b048c59c-0ab0-507a-9268-d262e7e38d94,4436,6f79d750-375a-5390-abe2-10d806b13c5d,,asc certified,This product is from ASC certified responsible aquaculture.,False
+f9d60a00-9861-5603-87a0-84629f818c29,4437,0cbcc2d1-979c-5e7a-88a1-858a7bea5c17,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+904c1b84-52a8-5dfa-a29f-e686f91a39cd,4438,0cbcc2d1-979c-5e7a-88a1-858a7bea5c17,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+f0f56d76-131b-5cb6-84d5-b896b7baf824,4439,0cbcc2d1-979c-5e7a-88a1-858a7bea5c17,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+34e9d1f7-46fb-5141-ac0d-398c849cf446,4440,577541a5-d78d-5379-b8e4-09aee3a5181c,,kosher,This product is kosher certified.,False
+6e8db094-eb0c-5980-81c4-d9eaad16fe86,4441,577541a5-d78d-5379-b8e4-09aee3a5181c,,utz certified,This product is UTZ certified for sustainable sourcing.,True
+2ae550ba-a12b-50d8-bca4-9b5e6f42a087,4442,577541a5-d78d-5379-b8e4-09aee3a5181c,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+e9ac7573-6be2-5f9d-82a4-1f4aadb25a04,4443,9152c7ac-0fe5-5818-8005-55f4539f702e,,pdo protected,This product holds Protected Designation of Origin status.,True
+b2d6f199-f3c9-5cc1-9541-ecb4e644d037,4444,31ceb176-5b65-59e4-849d-c3112a6faeb2,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+3b695e20-4cfe-5261-b41d-d7bcb0e28ebb,4445,31ceb176-5b65-59e4-849d-c3112a6faeb2,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+9c2a67be-6cb6-5747-b293-6dc9d8eed5ac,4446,31ceb176-5b65-59e4-849d-c3112a6faeb2,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",True
+a2aab3f0-345e-5c0b-ac9f-2a927d5029a7,4447,4dbe7a09-8b06-551b-a6b5-51bf5faa225b,,vegan,This product is suitable for vegans.,False
+0c767e81-5f76-5d32-9966-9b5eb06be35d,4448,4dbe7a09-8b06-551b-a6b5-51bf5faa225b,,non-gmo project verified,This product contains no genetically modified ingredients.,True
+c595637d-35f1-5d73-98ad-7cd04ba1065f,4449,35b5d23e-debd-50d0-9da5-8f4f252afb07,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+4fecdd92-dbd0-545e-aa67-2fefc8eea3f6,4450,02f92b2c-8956-525c-bd6e-1c50f67c215f,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+e542f824-3426-5164-8a1f-a907489fff42,4451,f601afe5-6ca8-56ee-90fd-051543b96fb1,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,True
+dabbf6a7-8ac2-5aa1-ae21-7d36aec5a11c,4452,f601afe5-6ca8-56ee-90fd-051543b96fb1,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+6b5b0ce2-12f3-5849-a124-5ce14beb1701,4453,fb1ab256-4435-5df1-9cb1-eb9d4f864c2b,,carbon neutral certified,This product is certified carbon neutral.,True
+8fb570f8-083f-566c-bb77-ccdd5f174847,4454,145e1278-84e0-528d-81ba-6b6ca1f21af4,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,True
+399e13a1-38cd-50b4-ac7a-7d4f9144ee85,4455,145e1278-84e0-528d-81ba-6b6ca1f21af4,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+bbfe79a2-6f78-5bb0-9164-5d4bf30a0d70,4456,145e1278-84e0-528d-81ba-6b6ca1f21af4,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,True
+f90bcb82-2560-51b6-959e-22cc26fa1a76,4457,dc4050d5-8f94-5a01-8016-4692ae68f4a5,,pdo protected,This product holds Protected Designation of Origin status.,False
+44512582-1a81-59ff-a688-333cc2bec555,4458,dc4050d5-8f94-5a01-8016-4692ae68f4a5,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+c5e4291a-81c5-5650-89c4-f02df2cd566f,4459,dc4050d5-8f94-5a01-8016-4692ae68f4a5,,vegan,This product is suitable for vegans.,False
+77fa9450-dc75-5f4e-8ba9-b673f73ea23a,4460,0d3c7431-2f46-53ec-8606-518beffc86e9,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+b33af5ba-5186-5b8e-985f-06045bcdc4c2,4461,0d3c7431-2f46-53ec-8606-518beffc86e9,,pdo protected,This product holds Protected Designation of Origin status.,False
+af9fa47a-b28e-5203-ab4c-4b8af2cffd95,4462,0d3c7431-2f46-53ec-8606-518beffc86e9,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+2bddf41f-9209-56ef-8e49-93f3e7d194d7,4463,e5a4e723-6fb8-5787-b570-4a0d8f65002f,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,True
+e5c485a7-749e-5a1f-84a3-6e250e57047c,4464,e5a4e723-6fb8-5787-b570-4a0d8f65002f,,carbon neutral certified,This product is certified carbon neutral.,False
+9fee8682-cc2f-544f-8a92-32639642a602,4465,439f697a-d4e5-5fd7-840b-63550bb28e3e,,non-gmo project verified,This product contains no genetically modified ingredients.,True
+be8f92de-bea0-56d3-9e2c-e18227f0588c,4466,439f697a-d4e5-5fd7-840b-63550bb28e3e,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+667715d1-e86a-5746-a7d8-2715bb3ed4c4,4467,439f697a-d4e5-5fd7-840b-63550bb28e3e,,carbon neutral certified,This product is certified carbon neutral.,False
+a45ce547-b587-580f-8d25-d1a94aa4be31,4468,fda4a8cc-e566-59dc-980b-ae6554a20efb,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+7a6e81e6-e877-534d-90c3-a0e2b8af8e68,4469,2538afef-4849-5891-a325-280a613c5a36,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+48257867-92f9-5856-807e-bf4f73ecd7fd,4470,2538afef-4849-5891-a325-280a613c5a36,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,True
+7413cd74-ccd4-5e77-880f-dc1f3cb7bdd9,4471,75f5fe44-7053-593d-a240-8b9528ffc2fd,,red tractor assured,This product is Red Tractor assured for British farming standards.,True
+02c096e7-d841-5164-864c-a244b8a6450a,4472,4f8ef1b5-6bcc-5371-8c29-4e0875a531d8,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",True
+21b600ca-538c-5548-92d2-e65fe7eae4d6,4473,4f8ef1b5-6bcc-5371-8c29-4e0875a531d8,,vegan,This product is suitable for vegans.,True
+02cbbfa9-16ad-57a2-bc28-4bcec0564d18,4474,ffa43b1d-0d10-5883-bdfd-921514e27394,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,True
+4854ff58-0ad9-57af-b017-521a92075a1e,4475,c721cf7b-e2fc-55ca-90f0-46d8a3d86672,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,True
+23a267a2-d1f4-5a50-ac0d-c19ca8de3872,4476,d8d1bef9-ce42-5af9-9c04-fc550a2fe9fb,,vegan,This product is suitable for vegans.,True
+e7632d1a-5413-545e-ad12-6c13ccadcaa8,4477,d8d1bef9-ce42-5af9-9c04-fc550a2fe9fb,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+669f558a-3db1-5e31-9313-a5c43ec1df71,4478,a1a8a130-7200-5974-a918-0e1a375423ac,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+df4d0de8-9445-53c5-a006-007f2e370dad,4479,a1a8a130-7200-5974-a918-0e1a375423ac,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,True
+53b1645d-ab53-5590-9f3b-56ba1cae57d6,4480,a1a8a130-7200-5974-a918-0e1a375423ac,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+bcb2e7a6-f5a6-51ee-8f5c-46c0c6b95cc2,4481,6e0028a3-2753-59f2-a59f-e404fe9a9f1e,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+9b7d9e56-1d4e-5643-9369-7e0ae2b45b2a,4482,260a1874-2495-598f-ac9a-6664aa2bf7b3,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,True
+af244598-e39d-5ce5-8358-2b550d376e79,4483,901bc879-8116-5222-aa5d-3f40a47bb5ac,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,True
+ea8f92f9-ccbe-5508-9f8f-6cf9a0b873a4,4484,901bc879-8116-5222-aa5d-3f40a47bb5ac,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+34708cdd-db79-58c2-99e7-0f5c0787046d,4485,901bc879-8116-5222-aa5d-3f40a47bb5ac,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+4a90e71e-6293-5d8a-a645-70677f4f6ba0,4486,75a30741-3e8b-55ed-b544-120d83fab5f9,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+95bf9e16-23cd-5293-914f-70b4fc765de8,4487,2d679fa7-22ed-5bf0-80d6-4bbf6de4a706,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+6fc312b7-67b1-51a0-ae8e-6a82765e8d74,4488,2d679fa7-22ed-5bf0-80d6-4bbf6de4a706,,pdo protected,This product holds Protected Designation of Origin status.,False
+bc55f0bb-0f4e-5542-af5f-576d5fe763dd,4489,2d679fa7-22ed-5bf0-80d6-4bbf6de4a706,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+819af44d-4630-5c57-ac2a-b4dd9025e9d2,4490,c372838f-f176-58b5-b824-e447e4614b20,,asc certified,This product is from ASC certified responsible aquaculture.,True
+d4ae89ba-da6a-545f-889c-88e987206653,4491,c372838f-f176-58b5-b824-e447e4614b20,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",True
+b98fa1b7-1107-56ac-86a6-a19d363e816c,4492,c372838f-f176-58b5-b824-e447e4614b20,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+d8c878c7-56bd-55cd-9996-00d4b852186c,4493,e425f008-fb36-5707-84ed-c1cbe95477e7,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+5cfcf450-6288-57b4-a772-d0c0e710cbef,4494,e425f008-fb36-5707-84ed-c1cbe95477e7,,kosher,This product is kosher certified.,False
+99575b3a-9da4-57bc-b9f9-975d42dc874c,4495,732bce27-afeb-5aef-81d1-3c351228d091,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+1eb67b8f-2575-596e-b6c8-09119d8b8573,4496,4d93ba79-4f41-5c89-a87c-d684989dadf8,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+b002a26e-788a-5581-a35d-6d269e11fda6,4497,4d93ba79-4f41-5c89-a87c-d684989dadf8,,kosher,This product is kosher certified.,True
+1020ea3d-6891-544f-8541-3b4008b48ebe,4498,4d93ba79-4f41-5c89-a87c-d684989dadf8,,red tractor assured,This product is Red Tractor assured for British farming standards.,True
+5a214f5b-fb60-5a0a-b817-8517a505a254,4499,5ee10789-cc05-5572-b2c7-1505e4fe0e4e,,kosher,This product is kosher certified.,False
+ff99e291-8740-5eeb-a70b-cd262d77cd04,4500,5ee10789-cc05-5572-b2c7-1505e4fe0e4e,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+c484eaeb-ff75-5d70-b021-971dfa7f548e,4501,5ee10789-cc05-5572-b2c7-1505e4fe0e4e,,vegan,This product is suitable for vegans.,False
+aaef0801-e6c3-5387-989e-53e8a6487872,4502,67a4fc62-dcf6-589f-a1bb-c62deb9e13a1,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,False
+898fba66-8cff-5bd7-89f6-4e223769f49f,4503,67a4fc62-dcf6-589f-a1bb-c62deb9e13a1,,kosher,This product is kosher certified.,True
+c5081776-38a6-5a48-b3d9-a83107b0a4d0,4504,427ba315-0d2f-5483-acfa-a96183bfcfd2,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+c9ecd8a6-5def-5652-863d-0aceb8bf449c,4505,427ba315-0d2f-5483-acfa-a96183bfcfd2,,vegan,This product is suitable for vegans.,True
+b1799fce-62df-5608-9e60-d5a7f6f5b033,4506,427ba315-0d2f-5483-acfa-a96183bfcfd2,,kosher,This product is kosher certified.,False
+6e03cb9b-fbf7-5293-8eea-cca7ce66c7f6,4507,de00d978-3c4c-57fc-9315-69100061fa6c,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+a7e4cbcb-613f-53a3-8e59-f955e1bdbd55,4508,de00d978-3c4c-57fc-9315-69100061fa6c,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",True
+60e855f4-5022-5653-a78c-af8e813fe239,4509,4cdd34f7-d9ad-5967-b141-e5e41f232c3d,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+432cdafd-a732-5c9a-bbab-96fb10e54d70,4510,428fc8cc-d042-53d2-9b4e-05aecb06dbe5,,non-gmo project verified,This product contains no genetically modified ingredients.,False
+aaa68132-cedb-534d-9962-6bb4c8364f3f,4511,428fc8cc-d042-53d2-9b4e-05aecb06dbe5,,pdo protected,This product holds Protected Designation of Origin status.,False
+d26ec518-ce27-584b-9958-481baec02c85,4512,428fc8cc-d042-53d2-9b4e-05aecb06dbe5,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+42b33e0f-9219-5bd9-9c54-2a821a60fedb,4513,25486be2-ebd8-5a7d-b4b9-81b55d991404,,red tractor assured,This product is Red Tractor assured for British farming standards.,True
+9df60992-e6f7-5897-b6d1-37246cdc4581,4514,25486be2-ebd8-5a7d-b4b9-81b55d991404,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+f72d263c-e346-584b-a498-15c8450ddcc3,4515,25486be2-ebd8-5a7d-b4b9-81b55d991404,,msc certified sustainable,This product is made from MSC certified sustainable wild-caught fish.,True
+d30f14c4-e48d-5c04-9885-754081e5c046,4516,6281f2ce-ec4e-5531-9ce4-51e5c93512a6,,asc certified,This product is from ASC certified responsible aquaculture.,False
+f4b82e4b-4c79-5214-a034-d19661b11c94,4517,6281f2ce-ec4e-5531-9ce4-51e5c93512a6,,carbon neutral certified,This product is certified carbon neutral.,False
+ce5dd46b-82f2-5401-a8c8-28f0e67c6c9a,4518,6281f2ce-ec4e-5531-9ce4-51e5c93512a6,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+1cd9b9c5-3b71-5ab0-8887-6d3002070a84,4519,ead09ed8-1c5c-5c87-b1dd-96b3f46868f5,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+9f5d72d0-819b-5840-a454-ed8109477570,4520,ead09ed8-1c5c-5c87-b1dd-96b3f46868f5,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",False
+83e61953-27f9-52c7-a106-7d71c3304aad,4521,ead09ed8-1c5c-5c87-b1dd-96b3f46868f5,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+bb7f1385-7537-5117-828a-9dfd8b947a5b,4522,88b01c5b-56eb-5901-a5f4-ed581728e3d8,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+5069caeb-b4f8-539e-a2b4-10bf6a6fb7b8,4523,bad98d9b-4e91-5923-a954-1c1764c550b7,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+b82948b1-978e-5f8b-82a6-0aee7ddd04ce,4524,fce8f192-a8e8-55aa-af70-cb23af658d0b,,pdo protected,This product holds Protected Designation of Origin status.,True
+f6d550a4-b260-53de-9b1b-d3e3c44f7204,4525,fce8f192-a8e8-55aa-af70-cb23af658d0b,,asc certified,This product is from ASC certified responsible aquaculture.,False
+02fd14b3-fec4-50ad-a0f8-c5b7486a5b09,4526,fce8f192-a8e8-55aa-af70-cb23af658d0b,,vegan,This product is suitable for vegans.,False
+638a3569-c20d-5a87-94e6-7f40cc282ce9,4527,d4d906b9-3553-52ae-a1df-3188bc1844c0,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+cdf7db9b-52f8-5cf5-945e-fc4e7cfbaea5,4528,d4d906b9-3553-52ae-a1df-3188bc1844c0,,utz certified,This product is UTZ certified for sustainable sourcing.,False
+23956b65-8fce-562e-8cc4-67b020f98d86,4529,d4d906b9-3553-52ae-a1df-3188bc1844c0,,asc certified,This product is from ASC certified responsible aquaculture.,True
+ea5741ca-a950-543d-b4e0-73a145da3b03,4530,27694370-16ae-55b0-9b23-8945295268a3,,carbon neutral certified,This product is certified carbon neutral.,False
+276b5033-b464-552c-8508-646b47ba0ffd,4531,27694370-16ae-55b0-9b23-8945295268a3,,pdo protected,This product holds Protected Designation of Origin status.,False
+31b5434a-f737-51ca-890c-5b2ca8fc8a95,4532,597fc0b7-11ca-52a9-a65b-187bedb2f7c4,,asc certified,This product is from ASC certified responsible aquaculture.,False
+6c255226-bf4b-5e81-a337-1fac31f9a7a6,4533,1e8a3afe-8626-5569-9359-c9f41cb88845,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+dd7e11c7-4ee7-5e4b-9255-525dbf386502,4534,1e8a3afe-8626-5569-9359-c9f41cb88845,,organic,This product is certified organic with no synthetic pesticides or fertilisers.,False
+7a71c73d-5479-584d-b43c-6448e4167f26,4535,1e8a3afe-8626-5569-9359-c9f41cb88845,,rspo certified sustainable palm oil,Palm oil in this product is from RSPO certified sustainable sources.,False
+7345649b-a122-54cd-92b5-898c4ba38cf3,4536,9a92134c-64a8-52d4-9bc7-d427e11e157f,,sustainable farming,This product is sourced from farms meeting sustainable practice standards.,False
+1f632163-210d-5e36-9af9-1c99e037eda0,4537,9a92134c-64a8-52d4-9bc7-d427e11e157f,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,False
+70af1da9-a9b6-54cb-856c-36ea0f31737f,4538,85dfacaf-0018-5f68-b060-ba2e8f7f3018,,rainforest alliance certified,This product is sourced from Rainforest Alliance certified farms.,False
+cd16331d-c3de-5971-8764-d555d18dff74,4539,85dfacaf-0018-5f68-b060-ba2e8f7f3018,,vegan,This product is suitable for vegans.,True
+7f284cea-ed22-5eb8-a158-f40aff95977b,4540,3549676c-da77-5dd0-b244-ccf44bacc519,,red tractor assured,This product is Red Tractor assured for British farming standards.,False
+0d793614-ad47-5e97-8088-2efba4f4e2e5,4541,3549676c-da77-5dd0-b244-ccf44bacc519,,kosher,This product is kosher certified.,False
+0c24919f-e070-51ee-bf2c-cb9415eb5ca8,4542,396c7a99-0fed-5294-a174-d7a86d5ad105,,carbon neutral certified,This product is certified carbon neutral.,False
+4a682153-2037-5509-8359-ff48e16449ae,4543,4bbd0583-496d-54de-87ec-73c9821a158a,,kosher,This product is kosher certified.,False
+6f2caa14-80d5-516e-b53b-5f5ec14562da,4544,4bbd0583-496d-54de-87ec-73c9821a158a,,fairtrade,"This product is Fairtrade certified, ensuring fair wages for producers.",True
+bf21aeae-b691-5265-82a4-888058956d02,4545,90be0b72-53e8-5485-972a-1063ebe5cba6,,pdo protected,This product holds Protected Designation of Origin status.,True
+ff7465d1-2a8f-52c9-bc41-b8791554bed2,4546,90be0b72-53e8-5485-972a-1063ebe5cba6,,vegan,This product is suitable for vegans.,False
+f8a24fb7-0d2d-5c37-a670-644030d3d905,4547,85a9d2bd-f2df-5c17-a6b7-aa7c5d7c8916,,leaf marque sustainable farming,This product is sourced from LEAF Marque accredited farms.,True
+d59435e6-b763-5b35-9020-c2d375f825aa,4548,a05bec0a-81f5-5448-b44e-a38874c3cf5f,,red tractor assured,This product is Red Tractor assured for British farming standards.,False

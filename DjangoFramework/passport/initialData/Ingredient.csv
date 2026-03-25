@@ -1,0 +1,85 @@
+ingredient_uuid,ingredient_id,name
+f2854c8b-1c44-53a0-a8f4-7dab1fd7361d,1001,apple
+8ac04a21-4fab-5179-a532-1acfdc5e209d,1002,apple puree
+07c9314c-b5e9-57e0-bab4-08fe3609ac80,1003,apple juice
+bc40f1ee-2cbe-5214-b493-db1c612cfbe2,1004,apple concentrate
+e33d05a9-6ae3-5d28-a368-bf440fe840a9,1005,ascorbic acid
+8671d620-f42d-503f-b692-6502d5e8d8db,1006,Alcohol
+2a814dcf-c0ba-5a23-94c6-8fe19c0d6fb5,1007,Xanthan Gum
+f592e3b1-8592-54c7-abc3-ef0bd82e419a,1008,Emulsifier
+48e1ad80-d6f5-506c-b9f5-4a85ec8fe5df,1009,Extra virgin olive oil
+074563e4-21b3-5890-ab5a-a585f233c248,1010,Natural Flavouring
+b29aeed7-6a45-5c2a-9c9d-04d46e50b0b9,1011,Olive oil
+161299dd-6d7d-546d-a7f9-7180dc7b3001,1012,Olive oil composed of refined olive oils
+80c2331a-cb42-5bba-b6f3-0847fda7e6c7,1013,Rapeseed oil
+e8e6a3a9-62ec-5c99-884c-40012ee8dc33,1014,Refined olive oil
+e148ae1a-2d09-50e0-b91d-7d58ef251aa0,1015,Sunflower Lecithin
+4f4aa0c8-73c4-52b6-80f0-312937bec59b,1016,Thickener
+b129e130-2652-5e12-8c8e-2b70b9c42565,1017,Virgin olive oil
+52615504-f74f-57a2-890a-9dbd811604e5,1018,Water
+2b27212d-54bd-5f1a-a2ea-4bba813b0d5c,1019,arabica coffee
+fa330dc8-9b8a-56a3-812d-936c4fe52f8a,1020,robusta coffee
+4b737ffb-8c4f-50d3-9a57-7b4fffa3d8ad,1021,cocoa paste
+cc444326-9f97-52d0-8699-e77ebf4dd61e,1022,cocoa butter
+a7ed939b-4caa-5699-a220-f3ea0261fec2,1023,sugar
+af6c1922-664b-5fc4-9291-3e7562a3e171,1024,milk powder
+25a4380b-f6cd-5ec4-a50a-1a10445a39bf,1025,vanilla
+f865f0b1-dd43-5d07-a751-70925e2293d3,1026,black tea
+c2b2d4aa-0513-5028-ae28-7f9e3cc31f9e,1027,green tea
+f212dc62-0dc0-5215-b73d-9b29814dd03f,1028,peppermint
+d9e879b2-1194-56de-a698-32f3c04c691c,1029,chamomile
+72a5dfaf-ce88-5ac5-b3fa-a5abe0f9642c,1030,bergamot
+2d73e143-ddea-5530-8774-3f4ce31b6c54,1031,orange juice
+034ea2a9-dc8a-55e3-bbc6-1b98f9500b7b,1032,grape juice
+cbc4c55d-d452-5886-9065-a6e47390ad22,1033,vitamin c
+317f3122-dacd-5526-8032-a322af6f9733,1034,honey
+f5f28084-80ba-513d-9f36-cfde3b81361b,1035,durum wheat semolina
+7a1cea88-1f00-5ddd-aa46-2b0d47c0ab01,1036,egg
+088a84f7-aefd-5b23-8a03-c00957bdc570,1037,salt
+af3e89e6-d37d-54b1-98ef-e7e2173fb36c,1038,whole wheat
+bbe6205b-7591-5fa9-8e24-999c696cfebb,1039,oats
+34ac7862-3bf1-539b-b296-0c333e800f19,1040,barley malt
+63ee40d6-9ffe-5736-8c2f-d7119e6f6136,1041,milk
+70d86dac-acec-5418-acb5-083e4adebf73,1042,cream
+ea3b244c-c020-57e7-a4ec-d153d3056d1d,1043,cultures
+33362b48-97e9-5aca-967a-2dcbcd77a5d7,1044,rennet
+da663dc1-c856-53b5-aba9-bb057b10ed85,1045,chicken
+e4ecb7b3-ad1e-52b1-9da1-76ef01870c61,1046,beef
+0bcff8a6-ea77-5bc6-b459-176cb3070584,1047,pork
+16c9b06a-94db-5f04-ac83-2ba152096716,1048,lamb
+ddbe3ee4-e121-5049-a466-5f7d7dde30d3,1049,salmon
+845c4c1d-0f39-5046-8443-5cbb4e7b7025,1050,tuna
+7e1b9efb-b8f2-5365-adbc-d2cab5d22bb0,1051,cod
+a8c5c84a-2d77-5ca8-a10a-744d54757555,1052,sardine
+be987686-3519-52c6-8754-55c1548f30cc,1053,tomato
+f410d848-2a2b-5804-b75d-bf43eb97beeb,1054,citric acid
+d9f39786-555c-53a0-9a09-0451bf214733,1055,almonds
+01b86c89-dd8a-55ad-9554-ad31cc947bcc,1056,cashews
+22434fec-7995-5bcc-869e-1fbffd6a005e,1057,peanuts
+3ce9f173-4fba-5c3a-9606-cb856dc3e358,1058,sunflower seeds
+63ca0fd0-b083-5831-9c45-10cc0a1388f1,1059,walnuts
+52ee3847-2ee0-522a-ac26-1c607eb16e30,1060,vinegar
+1cdb6974-7235-55c5-ad04-78ca1da3f938,1061,spices
+453afb53-e565-50d4-9714-110398d066f6,1062,strawberry
+0dd7627b-b135-5c0c-a968-66c8e2399bdd,1063,raspberry
+f96d47ab-13ca-5ac5-be42-0ce7c704bdd9,1064,pectin
+d4ca3ef1-aa5e-5f83-9e5e-0293cb874a4f,1065,lemon juice
+a8880066-1533-5b3e-b21b-7c3014fd8165,1066,peas
+97ae17d3-a5a9-56b0-b5ec-b88367e98c15,1067,carrots
+19ead09a-2408-5c7c-bcd4-a85403c2fc91,1068,sweetcorn
+e1d14d86-8b5a-5d05-9dce-b2ef6d0ab991,1069,broccoli
+c3a5af10-40f7-5b3b-8fce-200646e57080,1070,spinach
+75e9d088-33e9-5f95-911b-2c835673eb28,1071,carbon dioxide
+24bbf7b9-6ec2-5acc-a9cd-d64bd2819d0d,1072,natural flavours
+13ee93de-2671-5e65-b3a1-d586e44ebf6a,1073,grapes
+74ecb67e-0819-5aa3-b68e-cd1394c607c3,1074,sulfites
+bf0b4bac-c922-55b0-b490-7a30a8e18b30,1075,yeast
+cbad3dc3-cc5d-53e2-aefd-3137c4d9f4a1,1076,tartaric acid
+0805f9a7-7fff-54ba-9f3f-448c75d304b1,1077,malted barley
+e41eb6e4-231f-58ea-bd08-1ab209b82bdb,1078,hops
+c18ffc14-eb5f-5f73-aba1-1d5120469101,1079,maize
+5d1f1447-1cab-5b7f-823f-277bb217cd6f,1080,black pepper
+240a1546-c691-564c-bc94-347399a91c37,1081,cumin
+f092718b-a5d2-5294-a079-109cba36d979,1082,coriander
+8a2a2e99-d5d8-5eb4-a28e-dec194016808,1083,turmeric
+01dab6b2-6c30-56af-80e9-0d94acce3e01,1084,paprika
