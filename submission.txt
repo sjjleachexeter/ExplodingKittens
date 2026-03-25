@@ -1,1 +1,11 @@
-https://140.238.102.7/
+Github repo url: https://github.com/sjjleachexeter/ExplodingKittens
+
+Release URL for cw2_final_v1: https://github.com/sjjleachexeter/ExplodingKittens/releases/tag/cw2_final_v1
+
+Github deployed demo url: https://140.238.102.7/
+> please be aware that this site is blocked on the university Wifi
+> to access from the deployed demo please access it via VPN or on a different network
+
+Admin/demo account details: 
+- account name: super_account
+- account password: example_1234

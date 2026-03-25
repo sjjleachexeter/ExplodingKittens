@@ -12,7 +12,7 @@
     - Position: Technical lead
     - Responsibilities: Backend cohesion, scanner development, software design consultant
 5. Sebastian Leach
-    - Position: Project manager
+    - Position: Project owner
     - Responsibilites: Defining goals, UX (CSS) dev, Docs and Comms, presentation design
 6. Steffan Griffiths
     - Position: Gamification dev
@@ -25,6 +25,6 @@
     - Responsibilities: Dictating workflows, assigning tasks, user login, privacy and GDPR
 
 ---
-### As of Wednesday 18th March:
+### As of Tuesday 24th March:
 
-![Contributors](docs/contributors-1.png)
+![Contributors](docs/contributors-2.png)
